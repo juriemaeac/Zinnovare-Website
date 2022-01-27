@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-$url = 'index.php';
+$url = 'adminLogin.php';
 header('Location: ' . $url);
 
 ?>
