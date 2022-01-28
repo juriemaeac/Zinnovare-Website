@@ -6,7 +6,7 @@ error_reporting(0);
 session_start();
 if(empty($_SESSION["adm_id"]))
 {
-	header('location:adminLogin.php');
+	header('location:index.php');
 }
 else
 {
@@ -43,17 +43,17 @@ else
     <!-- Main wrapper  -->
     <div id="main-wrapper">
         <!-- header header  -->
-        <div class="header">
+        <div class="header" style="background-color: #FFF1DD;">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
-                <div class="navbar-header">
+                <div class="navbar-header" style="background-color: orange; border-radius: 0 50px 50px 0">
                 
                 <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
-                        <b><img src="images/logo1.png" alt="homepage" class="dark-logo" width="35px" height="35px"/></b>
+                        <b><img src="images/logo_Z.png" alt="homepage" class="dark-logo" width="35px" height="35px"/></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo3.png" alt="homepage" class="dark-logo" width="120px" height="30px"/></span>
+                        <span><img src="images/logo_Zt.png" alt="homepage" class="dark-logo" width="120px" height="25px"/></span>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -160,13 +160,13 @@ else
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:1200px;">
+        <div class="page-wrapper" style="height:1200px; margin-top:20px"> <!--background-->
             <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+            <!--<div class="row page-titles" style="background-color: orange;">-->
+            <!--    <div class="col-md-5 align-self-center">-->
+            <!--        <h3 class="text-primary">Dashboard</h3> </div>-->
                
-            </div>
+            <!--</div>-->
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
@@ -177,7 +177,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i><img src="images/icons/category.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/categ.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from restaurant";
@@ -195,7 +195,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i><img src="images/icons/dish.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/dish2.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from dishes";
@@ -213,7 +213,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i ><img src="images/icons/user1.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i ><img src="images/icons/users.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users";
@@ -231,7 +231,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/orders.png" alt="orders" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/order.png" alt="orders" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders";
@@ -249,7 +249,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/pending.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/pen.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders";
@@ -267,7 +267,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/reject.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/rej.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders";
@@ -285,7 +285,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/feedback1.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/feedb.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders";
@@ -303,7 +303,7 @@ else
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/revenue1.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/rev.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders";
@@ -318,20 +318,20 @@ else
                     </div>
 
 
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <div>
-                                <p class="m-b-0">Recent Orders</p>
+                            <div style="margin-top: 0;">
                                 <div class="row">
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body">
+                                        <p class="m-b-0" style="margin-bottom: 0;padding: 0;">Recent Orders</p>
                                             <div class="table-responsive m-t-30">
-                                                <table id="myTable" class="table table-bordered table-striped">
-                                                    <thead>
-                                                        <tr>
+                                                <table id="myTable" class="table table-hover">
+                                                    <thead >
+                                                        <tr style="font-size: 13px;margin-top: 0;padding: top 0;">
                                                             <th>Username</th>		
-                                                            <th>Title</th>
+                                                            <th>Orders</th>
                                                             <th>Quantity</th>
                                                             <th>price</th>
                                                             <th>Address</th>
@@ -357,7 +357,7 @@ else
                                                                                                                                                     
                                                                     ?>
                                                                         <?php
-                                                                            echo ' <tr>
+                                                                            echo ' <tr style="font-size:13px">
                                                                             <td>'.$rows['username'].'</td>
                                                                             <td>'.$rows['title'].'</td>
                                                                             <td>'.$rows['quantity'].'</td>
@@ -369,18 +369,19 @@ else
                                                                             if($status=="" or $status=="NULL")
                                                                             {
                                                                                 ?>
-                                                                                    <td> <button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Dispatch</button></td>
+                                                                                    <td> <button type="button" class="btn btn-info" style="font-weight:bold; border: none; background: Orange">
+                                                                                        <span class="fa fa-bars"  aria-hidden="true" >Waiting</button></td>
                                                                                 <?php 
                                                                             }
                                                                             if($status=="in process")
                                                                     { ?>
-                                                                    <td> <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On a Way!</button></td> 
+                                                                    <td> <button type="button" class="btn btn-warning" style="border: none; background: Blue"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>Delivery</button></td> 
                                                                     <?php
                                                                         }
                                                                     if($status=="closed")
                                                                         {
                                                                     ?>
-                                                                    <td> <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></td> 
+                                                                    <td> <button type="button" class="btn btn-success" style="border: none; background: #00CC00"><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></td> 
                                                                     <?php 
                                                                     } 
                                                                     ?>
@@ -388,22 +389,20 @@ else
                                                                     if($status=="rejected")
                                                                         {
                                                                     ?>
-                                                                    <td> <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i>cancelled</button></td> 
-                                                                    <?php 
-                                                                    } 
-                                                                    ?>
+                                                                    <td> <button type="button" class="btn btn-danger" style="border: none; background: Red"> <i class="fa fa-close"></i>Cancelled</button></td> 
+                                                                        <?php 
+                                                                        } 
+                                                                        ?>
                                                                         <?php																									
                                                                             echo '	<td>'.$rows['date'].'</td>';
-                                                                            ?>
-                                                                                    <td>
-                                                                                    <a href="delete_orders.php?order_del=<?php echo $rows['o_id'];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-                                                                                <?php
-                                                                                echo '<a href="view_order.php?user_upd='.$rows['o_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
-                                                                                    </td>
-                                                                                    </tr>';
-                                                                            
-                                                                                
-                                                                                
+                                                                        ?>
+                                                                    <td>
+                                                                    <a href="delete_orders.php?order_del=<?php echo $rows['o_id'];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+                                                                    <?php
+                                                                        echo '<a href="view_order.php?user_upd='.$rows['o_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+                                                                        </td>
+                                                                        </tr>';
+                                                                             
                                                                 }	
                                                             }
                                                         ?>
@@ -416,10 +415,66 @@ else
                             </div>
                         </div>
                     </div>
+
+                    
                 </div>
+                <div class="col-md-4">
+                    <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <div class="media">
+                            <div class="media-left meida media-middle"> 
+                                <span><i><img src="images/icons/revenue1.png" alt="user" width="60px" height="60px"/></i></span>
+                            </div>
+                            <div class="media-body media-text-right">
+                                <h2><?php $sql="select * from users_orders";
+                                            $result=mysqli_query($db,$sql); 
+                                                $rws=mysqli_num_rows($result);
+                                                
+                                                echo $rws;?></h2>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-15">
+                    <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <div class="media">
+                            <div class="media-left meida media-middle"> 
+                                <span><i><img src="images/icons/revenue1.png" alt="user" width="60px" height="60px"/></i></span>
+                            </div>
+                            <div class="media-body media-text-right">
+                                <h2><?php $sql="select * from users_orders";
+                                            $result=mysqli_query($db,$sql); 
+                                                $rws=mysqli_num_rows($result);
+                                                
+                                                echo $rws;?></h2>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Revenue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+   </div>
 					
 					
                 </div>
