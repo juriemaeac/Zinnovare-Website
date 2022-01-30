@@ -31,7 +31,7 @@ session_start(); //start temp session until logout/browser closed
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="src/logo6.png" alt="" height="45px" width="150px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -62,7 +62,7 @@ session_start(); //start temp session until logout/browser closed
             <!-- /.navbar -->
         </header>
         <!-- banner part starts -->
-        <section class="hero bg-image" data-image-src="images/img/main.jpeg">
+        <section class="hero bg-image" data-image-src="src/bg.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
                     <h1>Order Delivery & Take-Out </h1>
