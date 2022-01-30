@@ -37,6 +37,10 @@ if(isset($_POST['submit']))   // if button is submit
 	$result=mysqli_query($db, $loginquery); //executing
 	$row=mysqli_fetch_array($result);
 	
+	//for admin login 
+	if($username === 'admin' && $password === '1234'){
+		$_SESSION['login'] = true; header('LOCATION:admin/dashboard.php'); die();
+	  }
 	                        if(is_array($row))  // if matching records in the array & if everything is right
 								{
                                     	$_SESSION["user_id"] = $row['u_id']; // put user id into temp session

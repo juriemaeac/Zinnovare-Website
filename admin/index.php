@@ -87,19 +87,24 @@
 		<link rel="stylesheet" href="css/login.css">
 	</head>
 	<body>
+	
+	
 	<div  class="headerPic">
+	<!--<button class="orderNow"><a href="admin/dashboard.php">Proceed</a></button>-->
       <div class="headerMsg">
         <div class="headTag">ZINNOVARE</div>
         <div class="subTag">Admin Login Page</div>
 		<div class="subsubTag">Login to your account to manage all the services.</div>
+		
       </div>
-	  <div style="margin-left:50%;">
-			<div style="padding-top: 7%;">
+	  
+	  	<div style="margin-left:50%;">
+			<div style="padding-top: 8vw;padding-right:3vw;padding-bottom:2vw">
 			<div class="form">
-				<div style="margin-bottom: 30px">
-					<img src="images/login.png" width="150px"/>
+				<div style="margin-bottom: 2vw">
+					<img src="images/login.png" width="100vw"/>
 				</div>
-				<form class="register-form" action="index.php" method="post">
+				<!--<form class="register-form" action="index.php" method="post">
 					<input type="text" placeholder="username" name="cr_user"/>
 					<input type="text" placeholder="email address"  name="cr_email"/>
 					<input type="password" placeholder="password"  name="cr_pass"/>
@@ -107,21 +112,194 @@
 					<input type="password" placeholder="Unique-Code"  name="code"/>
 					<input type="submit"  name="submit1" value="Create" />
 					<p class="message">Already registered? <a href="#">Sign In</a></p>
-				</form>
+				</form>-->
 				<!--<span>username:admin</span>&nbsp;<span>password:1234</span>-->
-				<span style="color:red;"><?php echo $message; ?></span>
+				
 				<span style="color:green;"><?php echo $success; ?></span>
 				<form class="login-form" action="index.php" method="post">
-					<input style="margin-top: 30px" type="text" placeholder="username" name="username"/>
-					<input type="password" placeholder="password" name="password"/>
-					<input style="background-color: orange;" type="submit"  name="submit" value="Login" />
-					<p class="message">Not registered? <a href="#">Create an account</a></p>
+					<input style="background: #D9D9D9;" style="margin-top: 30px" type="text" placeholder="username" name="username"/>
+					<input style="background: #D9D9D9;" type="password" placeholder="password" name="password"/>
+					<input style="background-color: orange;" type="submit"  name="submit" value="Proceed" />
+					<!--<p class="message">Not registered? <a href="#">Create an account</a></p>-->
 				</form>
+				<span style="color:red;"><?php echo $message; ?></span>
 			</div>
+			
 			</div>
+			
 		</div>
-	</div>
+		<div class="footerCopyright">
+        <div class="row">
+
+          <div class="column">
+            <img src="images/logo6.png" alt="Zinnovare" width="150px" height="40px"/>
+          </div>
+
+          <div class="column">
+            <a class="fa" href="https://www.facebook.com/zinnovare.finest">
+              <img alt="Facebook" src="images/fb.png" width="30" height="30">
+            </a>
+            <a class="fa" href="https://www.instagram.com/zinnovare">
+              <img alt="instagram" src="images/ig.png" width="30" height="30">
+            </a>
+            <a href=""><img alt="twitter" src="images/twitter.png" width="30" height="30"></a>
+            <a href=""><img alt="youtube" src="images/yt.png" width="30" height="30"></a>
+            <a href=""><img alt="linkedin" src="images/linkedin.png" width="30" height="30"></a>
+          </div>
+          
+          <div class="column">
+            Copyright © 2017-2022
+            <span class="copyright">
+              Zinnovare Inc.
+            </span>
+          </div>
+
+        </div>
+      </div>
 		
+	</div>
+
+	<div  class="headerPic1">
+	<!--<button class="orderNow" onclick="window.location.href='application/index.php'">Order Now</button>-->
+      <div class="headerMsg">
+        <div class="headTag">ZINNOVARE</div>
+        <div class="subTag">Admin Login Page</div>
+		<div class="subsubTag">Login to your account to manage all the services.</div>
+		
+      </div>
+	  
+	  	<div style="margin-left:50%;">
+			<div style="padding-top: 8vw;padding-right:3vw;padding-bottom:2vw">
+			<div class="form">
+				<div style="margin-bottom: 2vw">
+					<img src="images/login.png" width="100vw"/>
+				</div>
+				<!--<form class="register-form" action="index.php" method="post">
+					<input type="text" placeholder="username" name="cr_user"/>
+					<input type="text" placeholder="email address"  name="cr_email"/>
+					<input type="password" placeholder="password"  name="cr_pass"/>
+					<input type="password" placeholder="Confirm password"  name="cr_cpass"/>
+					<input type="password" placeholder="Unique-Code"  name="code"/>
+					<input type="submit"  name="submit1" value="Create" />
+					<p class="message">Already registered? <a href="#">Sign In</a></p>
+				</form>-->
+				<!--<span>username:admin</span>&nbsp;<span>password:1234</span>-->
+				
+				<span style="color:green;"><?php echo $success; ?></span>
+				<form class="login-form" action="index.php" method="post">
+					<input style="background: #D9D9D9;" style="margin-top: 30px" type="text" placeholder="username" name="username"/>
+					<input style="background: #D9D9D9;" type="password" placeholder="password" name="password"/>
+					<input style="background-color: orange;" type="submit"  name="submit" value="Proceed" />
+					<!--<p class="message">Not registered? <a href="#">Create an account</a></p>-->
+				</form>
+				<span style="color:red;"><?php echo $message; ?></span>
+			</div>
+			
+			</div>
+			
+		</div>
+		<div class="footerCopyright">
+        <div class="row">
+
+          <div class="column">
+            <img src="images/logo6.png" alt="Zinnovare" width="150px" height="40px"/>
+          </div>
+
+          <div class="column">
+            <a class="fa" href="https://www.facebook.com/zinnovare.finest">
+              <img alt="Facebook" src="images/fb.png" width="30" height="30">
+            </a>
+            <a class="fa" href="https://www.instagram.com/zinnovare">
+              <img alt="instagram" src="images/ig.png" width="30" height="30">
+            </a>
+            <a href=""><img alt="twitter" src="images/twitter.png" width="30" height="30"></a>
+            <a href=""><img alt="youtube" src="images/yt.png" width="30" height="30"></a>
+            <a href=""><img alt="linkedin" src="images/linkedin.png" width="30" height="30"></a>
+          </div>
+          
+          <div class="column">
+            Copyright © 2017-2022
+            <span class="copyright">
+              Zinnovare Inc.
+            </span>
+          </div>
+
+        </div>
+      </div>
+		
+	</div>
+
+	<div  class="headerPic2">
+	<!--<button class="orderNow" onclick="window.location.href='application/index.php'">Order Now</button>-->
+      <div class="headerMsg">
+        <div class="headTag">ZINNOVARE</div>
+        <div class="subTag">Admin Login Page</div>
+		<div class="subsubTag">Login to your account to manage all the services.</div>
+		
+      </div>
+	  
+	  	<div style="margin-left:50%;">
+			<div style="padding-top: 8vw;padding-right:3vw;padding-bottom:2vw">
+			<div class="form">
+				<div style="margin-bottom: 2vw">
+					<img src="images/login.png" width="100vw"/>
+				</div>
+				<!--<form class="register-form" action="index.php" method="post">
+					<input type="text" placeholder="username" name="cr_user"/>
+					<input type="text" placeholder="email address"  name="cr_email"/>
+					<input type="password" placeholder="password"  name="cr_pass"/>
+					<input type="password" placeholder="Confirm password"  name="cr_cpass"/>
+					<input type="password" placeholder="Unique-Code"  name="code"/>
+					<input type="submit"  name="submit1" value="Create" />
+					<p class="message">Already registered? <a href="#">Sign In</a></p>
+				</form>-->
+				<!--<span>username:admin</span>&nbsp;<span>password:1234</span>-->
+				
+				<span style="color:green;"><?php echo $success; ?></span>
+				<form class="login-form" action="index.php" method="post">
+					<input style="background: #D9D9D9;" style="margin-top: 30px" type="text" placeholder="username" name="username"/>
+					<input style="background: #D9D9D9;" type="password" placeholder="password" name="password"/>
+					<input style="background-color: orange;" type="submit"  name="submit" value="Proceed" />
+					<!--<p class="message">Not registered? <a href="#">Create an account</a></p>-->
+				</form>
+				<span style="color:red;"><?php echo $message; ?></span>
+			</div>
+			
+			</div>
+			
+		</div>
+		<div class="footerCopyright">
+        <div class="row">
+
+          <div class="column">
+            <img src="images/logo6.png" alt="Zinnovare" width="150px" height="40px"/>
+          </div>
+
+          <div class="column">
+            <a class="fa" href="https://www.facebook.com/zinnovare.finest">
+              <img alt="Facebook" src="images/fb.png" width="30" height="30">
+            </a>
+            <a class="fa" href="https://www.instagram.com/zinnovare">
+              <img alt="instagram" src="images/ig.png" width="30" height="30">
+            </a>
+            <a href=""><img alt="twitter" src="images/twitter.png" width="30" height="30"></a>
+            <a href=""><img alt="youtube" src="images/yt.png" width="30" height="30"></a>
+            <a href=""><img alt="linkedin" src="images/linkedin.png" width="30" height="30"></a>
+          </div>
+          
+          <div class="column">
+            Copyright © 2017-2022
+            <span class="copyright">
+              Zinnovare Inc.
+            </span>
+          </div>
+
+        </div>
+      </div>
+		
+	</div>
+
+
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script src='js/index.js'></script>
 		<style>
