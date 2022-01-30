@@ -43,7 +43,7 @@ else*/
     <!-- Main wrapper  -->
     <div id="main-wrapper">
         <!-- header header  -->
-        <div class="header" style="background-color: #FFF1DD;">
+        <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <div class="navbar-header" style="background-color: orange; border-radius: 0 50px 50px 0">
@@ -177,7 +177,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i><img src="images/icons/categ.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/menu.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from restaurant";
@@ -195,7 +195,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i><img src="images/icons/dish2.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/dish.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from dishes";
@@ -231,14 +231,17 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/order.png" alt="orders" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/orders.png" alt="orders" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
+                                    <h2>
+                                        <?php 
+                                            $sql="select * from users_orders";
+											$result=mysqli_query($db,$sql); 
+                                            $rws=mysqli_num_rows($result);
+                                            echo $rws;
+                                        ?>
+                                    </h2>
                                     <p class="m-b-0">Orders</p>
                                 </div>
                             </div>
@@ -249,10 +252,10 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/pen.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/pending.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders";
+                                    <h2><?php $sql="select * from users_orders WHERE status=''";
 												$result=mysqli_query($db,$sql); 
 													$rws=mysqli_num_rows($result);
 													
@@ -267,10 +270,28 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/rej.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/feedback.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders";
+                                    <h2><?php $sql="select * from users_orders WHERE status='in process'";
+												$result=mysqli_query($db,$sql); 
+													$rws=mysqli_num_rows($result);
+													
+													echo $rws;?></h2>
+                                    <p class="m-b-0">For Delivery Orders</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i><img src="images/icons/rejected.png" alt="user" width="60px" height="60px"/></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php $sql="select * from users_orders WHERE status='rejected'";
 												$result=mysqli_query($db,$sql); 
 													$rws=mysqli_num_rows($result);
 													
@@ -285,33 +306,23 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/feedb.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/revenue.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Feedback</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                <h2><?php 
+                                $sql="select SUM(total) from users_orders WHERE status='closed'";
 
-                    <div class="col-md-3">
-                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <div class="media">
-                                <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/rev.png" alt="user" width="60px" height="60px"/></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Revenue</p>
+                                $result = mysqli_query($db,$sql);
+
+                                while($row = mysqli_fetch_array($result)){
+                                    $sum = $row['SUM(total)'];
+                                }
+                                echo $sum;
+												?></h2>
+
+                                
+                                <p class="m-b-0">Revenue</p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -334,6 +345,7 @@ else*/
                                                             <th>Orders</th>
                                                             <th>Quantity</th>
                                                             <th>price</th>
+                                                            <th>total</th>
                                                             <th>Address</th>
                                                             <th>status</th>												
                                                             <th>Reg-Date</th>
@@ -343,7 +355,7 @@ else*/
                                                     </thead>
                                                     <tbody>
                                                         <?php
-                                                            $sql="SELECT users.*, users_orders.* FROM users INNER JOIN (SELECT * FROM users_orders LIMIT 0,3) users_orders ON users.u_id=users_orders.u_id" ;
+                                                            $sql="SELECT users.*, users_orders.* FROM users INNER JOIN (SELECT * FROM users_orders ORDER BY date DESC LIMIT 0,3) users_orders ON users.u_id=users_orders.u_id" ;
                                                             $query=mysqli_query($db,$sql);
                                                             
                                                             if(!mysqli_num_rows($query) > 0 )
@@ -362,6 +374,7 @@ else*/
                                                                             <td>'.$rows['title'].'</td>
                                                                             <td>'.$rows['quantity'].'</td>
                                                                             <td>$'.$rows['price'].'</td>
+                                                                            <td>$'.$rows['price']*$rows['quantity'].'</td>
                                                                             <td>'.$rows['address'].'</td>';
                                                                         ?>
                                                                         <?php 
@@ -380,16 +393,19 @@ else*/
                                                                         }
                                                                     if($status=="closed")
                                                                         {
+                                                                            
                                                                     ?>
                                                                     <td> <button type="button" class="btn btn-success" style="border: none; background: #00CC00"><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></td> 
+                                                                    
+                                                                    
                                                                     <?php 
                                                                     } 
                                                                     ?>
                                                                     <?php
-                                                                    if($status=="rejected")
-                                                                        {
+                                                                        if($status=="rejected")
+                                                                            {
                                                                     ?>
-                                                                    <td> <button type="button" class="btn btn-danger" style="border: none; background: Red"> <i class="fa fa-close"></i>Cancelled</button></td> 
+                                                                        <td> <button type="button" class="btn btn-danger" style="border: none; background: Red"> <i class="fa fa-close"></i>Cancelled</button></td> 
                                                                         <?php 
                                                                         } 
                                                                         ?>

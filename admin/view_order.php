@@ -232,6 +232,12 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 													   
 												   																							
 											</tr>
+                                            <tr>
+													<td><strong>Total:</strong></td>
+												    <td><center>$<?php echo $rows['total']; ?></center></td>
+													   
+												   																							
+											</tr>
 											<tr>
 													<td><strong>Address:</strong></td>
 												    <td><center><?php echo $rows['address']; ?></center></td>
@@ -251,7 +257,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 																			if($status=="" or $status=="NULL")
 																			{
 																			?>
-																			<td> <center><button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Dispatch</button></center></td>
+																			<td> <center><button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Waiting</button></center></td>
 																		   <?php 
 																			  }
 																			   if($status=="in process")

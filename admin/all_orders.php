@@ -182,6 +182,7 @@ session_start();
                                                 <th>Title</th>
                                                 <th>Quantity</th>
                                                 <th>price</th>
+                                                <th>total</th>
 												<th>Address</th>
 												<th>status</th>												
 												 <th>Reg-Date</th>
@@ -212,6 +213,7 @@ session_start();
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
 																								<td>$'.$rows['price'].'</td>
+                                                                                                <td>$'.$rows['price']*$rows['quantity'].'</td>
 																								<td>'.$rows['address'].'</td>';
 																								?>
 																								<?php 
@@ -219,7 +221,7 @@ session_start();
 																			if($status=="" or $status=="NULL")
 																			{
 																			?>
-																			<td> <button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Dispatch</button></td>
+																			<td> <button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Waiting</button></td>
 																		   <?php 
 																			  }
 																			   if($status=="in process")
