@@ -56,7 +56,7 @@ h6 {
 }
 
 a {
-    color: #f30;
+    color: #FF9F00;
 }
 
 a:hover {
@@ -128,7 +128,7 @@ hr {
 
 .custom-control-input:checked~.custom-control-indicator {
     color: #fff;
-    background-color: #f30;
+    background-color: #FF9F00;
     margin-top: 0;
     padding: 10px;
     border-radius: 100%;
@@ -146,8 +146,8 @@ hr {
 }
 
 .custom-control-input:focus~.custom-control-indicator {
-    -webkit-box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #f30;
-    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #f30;
+    -webkit-box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #FF9F00;
+    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #FF9F00;
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-indicator {
@@ -156,7 +156,7 @@ hr {
 
 .custom-control-input:active~.custom-control-indicator {
     color: #fff;
-    background-color: #f30
+    background-color: #FF9F00;
 }
 
 .custom-control-input:disabled~.custom-control-indicator {
@@ -206,28 +206,28 @@ hr {
 }
 
 .theme-btn {
-    background-color: #f30;
-    border-color: #f30;
+    background-color: #FF9F00;
+    border-color: #FF9F00;
     color: #fff
 }
 
 .theme-btn-dash {
-    border: 2px dashed #f30;
+    border: 2px dashed #FF9F00;
     background-color: transparent;
-    color: #f30
+    color: ##FF9F00;
 }
 
 .theme-btn-dash:hover,
 .theme-btn,
 .theme-btn.btn-lg:hover,
 .btn-secondary:hover {
-    background-color: #f30;
+    background-color: #FF9F00;
     color: #fff;
-    border: 1px solid #f30
+    border: 1px solid #FF9F00;
 }
 
 .theme-btn-dash:hover {
-    border: 2px solid #f30;
+    border: 2px solid #FF9F00;
     color: #fff
 }
 
@@ -235,8 +235,20 @@ hr {
     background-color: #fff
 }
 
+.bgfull{
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('images/login_bg/pic3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 1;
+}
+
 .primary-color {
-    color: #f30
+    color: #FF9F00;
 }
 
 
@@ -349,8 +361,8 @@ hr {
 .page-item.active .page-link,
 .page-item.active .page-link:focus,
 .page-item.active .page-link:hover {
-    background-color: #f30;
-    border-color: #f30;
+    background-color: #FF9F00;
+    border-color: #FF9F00;
 }
 
 
@@ -432,7 +444,7 @@ hr {
     line-height: 1;
     background: 0 0;
     border: 1px solid transparent;
-    color: #f30;
+    color: #FF9F00;
     border-radius: 2px;
 }
 
@@ -454,7 +466,7 @@ hr {
 }
 
 .link-item.active span {
-    background-color: #f30;
+    background-color: #FF9F00;
     color: #fff
 }
 
@@ -559,7 +571,7 @@ hr {
 }
 
 .step-item h4 span {
-    color: #f30;
+    color: #FF9F00;
 }
 
 .step1:after,
@@ -612,7 +624,7 @@ hr {
 }
 
 .location-match a {
-    color: #f30;
+    color: #FF9F00;
 }
 
 .location-match a:hover {
@@ -764,7 +776,7 @@ hr {
 
 .food-item-wrap:hover h5>a,
 .food-item-wrap:hover .right-text>a {
-    color: #f30;
+    color: #FF9F00;
 }
 
 .food-item-wrap .figure-text {
@@ -789,7 +801,7 @@ hr {
 }
 
 .food-item-wrap .distance {
-    background: #f30;
+    background: #FF9F00;
     border-radius: 3px;
     color: #fff;
     font-size: 12px;
@@ -955,7 +967,7 @@ button.close {
     right: -15px;
     position: absolute;
     top: -15px;
-    background-color: #f30;
+    background-color: #FF9F00;
     opacity: 1;
     width: 30px;
     height: 30px;
@@ -986,7 +998,6 @@ How it works section
     position: absolute;
     right: 20px;
     top: -30px;
-    background: url(../images/peanuts.png);
     width: 150px;
     height: 51px;
     content: "";
@@ -1055,7 +1066,7 @@ Steps
     width: 32px;
     height: 32px;
     line-height: 38px;
-    background-color: #f30;
+    background-color: #FF9F00;
     border-radius: 50%;
     font-size: 1.5em;
     font-family: "Give You Glory", cursive;
@@ -1152,6 +1163,7 @@ Steps
     }
 }
 
+/*
 .featured-restaurants:before {
     position: absolute;
     top: -81px;
@@ -1161,6 +1173,7 @@ Steps
     height: 151px;
     content: "";
 }
+*/
 
 @media (min-width: 280px) and (max-width: 580px) {
     .featured-restaurants:before {
@@ -1223,7 +1236,7 @@ Steps
 }
 
 .featured-restaurants .ratings span i {
-    color: #f30;
+    color: #FF9F00;
 }
 
 .featured-restaurants .ratings .fa-star-o {}
@@ -1275,7 +1288,7 @@ Steps
 
 .add-restaurants p strong {
     font-weight: 600;
-    color: #f30;
+    color: #FF9F00;
 }
 
 @media (min-width: 320px) and (max-width: 543px) {
@@ -1315,7 +1328,7 @@ App section
 .app-section:after {
     content: "";
     background: url(../images/city-2.png) center bottom;
-    background-color: #f30;
+    background-color: #FF9F00;
     display: block;
     position: absolute;
     top: 100px;
@@ -1463,7 +1476,7 @@ footer span {
 }
 
 .address h5 a {
-    color: #f30;
+    color: #FF9F00;
     font-size: 26px;
     font-family: "Give You Glory", cursive;
     margin-left: 20px;
@@ -1497,7 +1510,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: #f30;
+    color: #FF9F00;
 }
 
 footer li a {
@@ -1779,7 +1792,7 @@ footer li a {
 
 .sidebar-title {
     padding: 15px 15px 15px;
-    background: #f30;
+    background: #FF9F00;
     float: left;
     width: 100%;
 }
@@ -1827,7 +1840,7 @@ footer li a {
 }
 
 .main-block ul li:hover a {
-    color: #f30
+    color: #FF9F00;
 }
 
 .main-block ul:hover li:last-child {
@@ -2093,7 +2106,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .restaurant-entry .right-review .rating-block {
-    color: #f30;
+    color: #FF9F00;
     background: transparent;
     border: none;
     padding: 5px 15px 5px;
@@ -2170,8 +2183,8 @@ a[aria-expanded=false] .fa-angle-down {
 
 .tag:hover {
     color: #fff;
-    border-color: #f30;
-    background-color: #f30
+    border-color: #FF9F00;
+    background-color: #FF9F00;
 }
 
 
@@ -2322,7 +2335,7 @@ a[aria-expanded=false] .fa-angle-down {
     display: block;
     width: 20px;
     height: 20px;
-    background-color: #f30;
+    background-color: #FF9F00;
     color: #fff;
     line-height: 20px;
     text-align: center;
@@ -2355,7 +2368,7 @@ a[aria-expanded=false] .fa-angle-down {
     left: 10px;
     top: 10px;
     z-index: 9999;
-    background: #f30;
+    background: #FF9F00;
     display: inline-block;
     padding: 0px 10px;
     margin-top: 5px;
@@ -2387,7 +2400,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .wwone__map-infobox__inner__heading {
-    color: #f30;
+    color: #FF9F00;
     display: block;
     width: 100%;
     font-size: 16px;
@@ -2407,7 +2420,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .wwone__map-infobox__inner__btn {
-    background-color: #f30;
+    background-color: #FF9F00;
     padding: 6px 15px;
     border-radius: 3px;
     display: inline-block;
@@ -2626,7 +2639,7 @@ a[aria-expanded=false] .fa-angle-down {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 4px;
-    background-color: #f30;
+    background-color: #FF9F00;
 }
 
 .slider-selection.tick-slider-selection {

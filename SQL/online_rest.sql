@@ -91,13 +91,13 @@ CREATE TABLE IF NOT EXISTS `dishes` (
 --
 
 INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
-(11, 48, 'Bonefish', 'Three ounces of lightly seasoned fresh tilapia ', '55.77', 'burger.png'),
-(12, 48, 'Hard Rock Cafe', 'A mix of chopped lettuces, shredded cheese, chicken cubes', '22.12', '5ad7590d9702b.jpg'),
-(13, 49, 'Uno Pizzeria & Grill', 'Kids can choose their pasta shape, type of sauce, favorite veggies (like broccoli or mushrooms)', '12.35', '5ad7597aa0479.jpg'),
-(14, 50, 'Red Robins Chick on a Stick', 'Plain grilled chicken breast? Blah.', '34.99', '5ad759e1546fc.jpg'),
-(15, 51, 'Lyfe Kitchens Tofu Taco', 'This chain, known for a wide selection of vegetarian and vegan choices', '11.99', '5ad75a1869e93.jpg'),
-(16, 52, 'Houlihans Mini Cheeseburger', 'Creekstone Farms, where no antibiotics or growth hormones are used', '22.55', '5ad75a5dbb329.jpg'),
-(17, 53, 'jklmno', 'great taste great whatever', '17.99', '5ad79fcf59e66.jpg');
+(11, 48, 'Burgerdilla', 'A hybrid of a burger and a quesadilla', '160', 'burger.png'),
+(12, 48, 'Tacos', '3 Fried tortilla filled with ground beef, sauce, cheese, and veggies', '150', 'tacos1.png'),
+(13, 49, 'Tuna Quesadilla', '8” tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'tuna.jpg'),
+(14, 50, 'Icecream', 'Fresh icecream available in different flavors', '100', 'icecream.png'),
+(15, 51, 'Tachos', '2 layer taco strips with ground beef, sauce, cheese, and veggies', '130', 'tachos.png'),
+(16, 52, 'Chicken', 'Fried chicken filled with ground beef, sauce, cheese, and veggies', '120', 'chicken.jpg'),
+(17, 53, 'Decker', '2 deck of soft tortilla filled with beef strips, sauce, cheese, and veggies', '160', 'decker.jpg');
 
 -- --------------------------------------------------------
 
