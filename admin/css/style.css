@@ -107,7 +107,7 @@ a.link {
 }
 a.link:focus,
 a.link:hover {
-  color: #1976d2;
+  color: orange;
 }
 .img-responsive,
 .carousel.vertical .carousel-inner > .item > img,
@@ -1634,15 +1634,15 @@ textarea {
 .sidebar-nav > ul > li > a.active {
   font-weight: 400;
   background: #fff;
-  color: #1976d2;
+  color: orange;
 }
 .sidebar-nav > ul > li.active > a {
-  color: #1976d2;
+  color: orange;
   font-weight: 500;
   border-left: 3px solid #fff;
 }
 .sidebar-nav > ul > li.active > a i {
-  color: #1976d2;
+  color: orange;
 }
 .sidebar-nav .has-arrow {
   position: relative;
@@ -2111,9 +2111,9 @@ textarea {
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 500%;
-  stroke-dasharray: 0 /;
+  stroke-dasharray: 0 ;
   /* fixes IE prob */
-  stroke-dashoffset: 0 /;
+  stroke-dashoffset: 0 ;
   /* fixes IE prob */
   -webkit-animation: am-draw 40s;
   animation: am-draw 40s;
