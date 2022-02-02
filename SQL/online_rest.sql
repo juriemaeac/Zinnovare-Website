@@ -227,7 +227,8 @@ CREATE TABLE IF NOT EXISTS `users_orders` (
   `title` varchar(222) NOT NULL,
   `quantity` int(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `status` varchar(222) DEFAULT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `status` varchar(222) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`o_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
@@ -236,9 +237,9 @@ CREATE TABLE IF NOT EXISTS `users_orders` (
 -- Dumping data for table `users_orders`
 --
 
-INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `status`, `date`) VALUES
-(37, 31, 'jklmno', 5, '17.99', 'closed', '2018-04-18 19:51:50'),
-(38, 31, 'Red Robins Chick on a Stick', 2, '34.99', NULL, '2018-04-18 19:52:34');
+INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `total`, `status`, `date`) VALUES
+(37, 31, 'jklmno', 5, '17.99', '89.95', 'closed', '2018-04-18 19:51:50'),
+(38, 31, 'Red Robins Chick on a Stick', 2, '34.99', '69.98', '', '2018-04-18 19:52:34');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -262,6 +262,7 @@ only screen and (max-width: 760px),
 							  <th>Item</th>
 							  <th>Quantity</th>
 							  <th>price</th>
+                              <th>total</th>
 							   <th>status</th>
 							     <th>Date</th>
 								   <th>Action</th>
@@ -289,13 +290,14 @@ only screen and (max-width: 760px),
 														 <td data-column="Item"> <?php echo $row['title']; ?></td>
 														  <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
 														  <td data-column="price">$<?php echo $row['price']; ?></td>
+                                                          <td data-column="total">$<?php echo $row['price']*$row['quantity'] ; ?></td>
 														   <td data-column="status"> 
 														   <?php 
 																			$status=$row['status'];
 																			if($status=="" or $status=="NULL")
 																			{
 																			?>
-																			<button type="button" class="btn btn-info" style="font-weight:bold;">Dispatch</button>
+																			<button type="button" class="btn btn-info" style="font-weight:bold;">Waiting</button>
 																		   <?php 
 																			  }
 																			   if($status=="in process")
