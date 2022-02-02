@@ -45,19 +45,25 @@
                     </div>
                     <div class="col-6">
                         <h3>INVOICE:</h3>
-                        <p class="mb-0"><?php echo $userdetails['f_name']." ".$userdetails['l_name']?></p>
-                        <p class="mb-0"><?php echo $userdetails['address'] ?></p>
-                        <p class="mb-0"><?php echo $userdetails['email'] ?></p>
-                        <p class="mb-0"><?php echo $userdetails['phone'] ?></p>
                     </div>
-                    <div class="col-6">
-                        <br><br>
-                        <p class="mb-0"><b>Order Number:</b> <?php echo "#".$details['o_id']; ?></p>
-                        <?php $cDate = strtotime($details['date']); ?>
-                        <p class="mb-0"><b>Order Date:</b> <?php echo date('d-M-Y',$cDate); ?></p>
-                        <p class="mb-0"><b>Payment Mode:</b> Cash On Delivery</p>
+                    <div>
+                        <div class="col-6 block1">
+                            <p class="mb-0"><?php echo $userdetails['f_name']." ".$userdetails['l_name']?></p>
+                            <p class="mb-0"><?php echo $userdetails['address'] ?></p>
+                            <p class="mb-0"><?php echo $userdetails['email'] ?></p>
+                            <p class="mb-0"><?php echo $userdetails['phone'] ?></p>
+                        </div>
+                        <div class="col-6 block2">
+                            <p class="mb-0"><b>Order Number:</b> <?php echo "#".$details['o_id']; ?></p>
+                            <?php $cDate = strtotime($details['date']); ?>
+                            <p class="mb-0"><b>Order Date:</b> <?php echo date('d-M-Y',$cDate); ?></p>
+                            <p class="mb-0"><b>Payment Mode:</b> Cash On Delivery</p>
+                        </div>
                     </div>
-                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                     <div class="col-12">
                     <hr>
                         <table class="table responsive">
@@ -104,7 +110,7 @@
             
         </div>
         <div class="container text-center" style="padding-bottom:20px">
-            <center><a href="your_orders.php" class="btn btn-sm btn-warning p-2">Back to Orders</a></center>
+            <center><a href="your_orders.php" class="btn btn-sm btn-warning p-2 inv-button">Back to Orders</a></center>
         </div>
 
         <!-- Bootstrap core JavaScript

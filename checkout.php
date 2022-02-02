@@ -85,7 +85,7 @@
             <!-- /.navbar -->
         </header>
         <div class="page-wrapper">
-            <div class="top-links">
+            <!--<div class="top-links">
                 <div class="container">
                     <ul class="row links">
                       
@@ -93,8 +93,9 @@
                         <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Pick Your favorite food</a></li>
                         <li class="col-xs-12 col-sm-4 link-item active" ><span>3</span><a href="checkout.php">Order and Pay online</a></li>
                     </ul>
+                        
                 </div>
-            </div>
+            </div>-->
 			
                 <div class="container">
                  
@@ -118,7 +119,77 @@
                                 <div class="col-sm-12">
                                     <div class="cart-totals margin-b-20">
                                         <div class="cart-totals-title">
-                                            <h4>Cart Summary</h4> </div>
+                                            <h4>Order Preview</h4> </div>
+
+                                        <!--Order Preview start-->
+
+                    <div class="modal-content">
+                    <div class="widget widget-cart">
+                        
+                        <div class="order-row bg-white">
+                            <div class="widget-body">
+                                <div class="full">
+                                    <table class="full">
+                                        <tr>
+                                            <th class="cotable" width="50%">Dish</th>
+                                            <th class="cotable" width="15%">Price</th>
+                                            <th class="cotable" width="20%">Quantity</th>
+                                            <th class="cotable" width="15%">Subtotal</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <?php
+
+                                    $item_total = 0;
+                                    
+
+                                    foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into session ID
+                                    {
+                                        ?>
+                                        <!-- table start -->
+                                        <div class="full">
+                                        <table class="full">
+                                                
+                                                <tr>
+                                                    <td class="cotable" width="50%">
+                                                        <div class="title-row">
+                                                        <?php echo $item["title"]; ?>
+                                                        </div>
+                                                    </td>
+                                                    <td class="cotable" width="15%">
+                                                        <div class="col-xs-8">
+                                                        <input type="text" class="form-control b-r-0" value=<?php echo "$".$item["price"]; ?> readonly id="exampleSelect1">
+                                                        </div>
+                                                    </td>
+                                                    <td class="cotable" width="20%">
+                                                        <div class="col-xs-4">
+                                                        <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> 
+                                                        </div>
+                                                    </td>
+                                                    <td class="cotable" width="15%">
+                                                        <div class="col-xs-8">
+                                                        <input type="text" class="form-control b-r-0" value=<?php echo "$".$item["price"]*$item["quantity"]; ?> readonly id="exampleSelect1">     
+                                                        </div>
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </table>
+                                        </div>							
+                                    <!-- table end-->
+                                        
+                                        <?php
+                                        $item_total += ($item["price"]*$item["quantity"]); // calculating current price into cart
+                                    }
+                                ?>	
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <!--end modal -->
+                    
+                </div>
+                                    <!-- Order Preview end-->
                                         <div class="cart-totals-fields">
 										
                                             <table class="table">
@@ -140,6 +211,9 @@
                                             </table>
                                         </div>
                                     </div>
+
+                                    
+                                    
                                     <!--cart summary-->
                                     <div class="payment-option">
                                         <ul class=" list-unstyled">

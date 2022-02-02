@@ -251,6 +251,44 @@ hr {
     color: #FF9F00;
 }
 
+.quan{
+    display: inline-block;
+    margin-left: 48px;
+    width: 50px;
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button {  
+
+   -webkit-appearance: "Always Show Up/Down Arrows";
+
+}
+}
+
+.full{
+    width: 100%;
+}
+
+.cotable{
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.inv-button{
+    margin-top: -15px;
+}
+
+.block1{
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    float: left;
+}
+.block2{
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    float: right;
+}
+
 
 /* ==========================
 *   Helpers
