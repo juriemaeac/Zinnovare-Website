@@ -117,13 +117,14 @@ if(isset($_POST['submit'] ))
          <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
-                <div class="navbar-header">
+                <div class="navbar-header" style="background-color: orange; border-radius: 0 0px 0px 0">
+                
                 <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
-                        <b><img src="images/logo1.png" alt="homepage" class="dark-logo" width="35px" height="35px"/></b>
+                        <b><img src="images/logo_Z.png" alt="homepage" class="dark-logo" width="35px" height="35px"/></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo3.png" alt="homepage" class="dark-logo" width="120px" height="30px"/></span>
+                        <span><img src="images/logo_Zt.png" alt="homepage" class="dark-logo" width="120px" height="25px"/></span>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -231,13 +232,6 @@ if(isset($_POST['submit'] ))
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
         <div class="page-wrapper" style="height:1200px;">
-            <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
-               
-            </div>
-            <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
@@ -249,14 +243,14 @@ if(isset($_POST['submit'] ))
                 <!-- Start Page Content -->
                   
 									
-									<?php  echo var_dump($_POST);
+									<?php 
 									        echo $error;
 									        echo $success; ?>
 									
 									
 								
 								
-					    <div class="col-lg-12">
+					    <div>
                         <div class="card card-outline-primary">
                             <div class="card-header">
                                 <h4 class="m-b-0 text-white">Add Users</h4>

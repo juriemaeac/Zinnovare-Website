@@ -93,11 +93,11 @@ CREATE TABLE IF NOT EXISTS `dishes` (
 INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
 (11, 48, 'Burgerdilla', 'A hybrid of a burger and a quesadilla', '160', 'burger.png'),
 (12, 48, 'Tacos', '3 Fried tortilla filled with ground beef, sauce, cheese, and veggies', '150', 'tacos1.png'),
-(13, 49, 'Tuna Quesadilla', '8” tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'tuna.jpg'),
-(14, 50, 'Icecream', 'Fresh icecream available in different flavors', '100', 'icecream.png'),
-(15, 51, 'Tachos', '2 layer taco strips with ground beef, sauce, cheese, and veggies', '130', 'tachos.png'),
-(16, 52, 'Chicken', 'Fried chicken filled with ground beef, sauce, cheese, and veggies', '120', 'chicken.jpg'),
-(17, 53, 'Decker', '2 deck of soft tortilla filled with beef strips, sauce, cheese, and veggies', '160', 'decker.jpg');
+(13, 48, 'Tuna Quesadilla', '8” tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'tuna.jpg'),
+(14, 48, 'Icecream', 'Fresh icecream available in different flavors', '100', 'icecream.png'),
+(15, 48, 'Tachos', '2 layer taco strips with ground beef, sauce, cheese, and veggies', '130', 'tachos.png'),
+(16, 48, 'Chicken', 'Fried chicken filled with ground beef, sauce, cheese, and veggies', '120', 'chicken.jpg'),
+(17, 48, 'Decker', '2 deck of soft tortilla filled with beef strips, sauce, cheese, and veggies', '160', 'decker.jpg');
 
 -- --------------------------------------------------------
 

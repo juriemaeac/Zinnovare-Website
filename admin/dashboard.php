@@ -46,7 +46,7 @@ else*/
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
-                <div class="navbar-header" style="background-color: orange; border-radius: 0 50px 50px 0">
+                <div class="navbar-header" style="background-color: orange; border-radius: 0 0 0 0">
                 
                 <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
@@ -76,13 +76,46 @@ else*/
                         </li>
                         <!-- Comment -->
                         <li class="nav-item dropdown">
-                           
+                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                                 <ul>
                                     <li>
                                         <div class="drop-title">Notifications</div>
                                     </li>
-                                    
+                                    <li>
+                                        <div class="message-center">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
                                     <li>
                                         <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
@@ -90,10 +123,59 @@ else*/
                             </div>
                         </li>
                         <!-- End Comment -->
+                        <!-- Messages -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">You have 4 new messages</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="images/users/5.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Messages -->
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -160,13 +242,13 @@ else*/
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:1200px; margin-top:20px"> <!--background-->
+        <div class="page-wrapper" style="height:100%; margin-top:20px"> <!--background-->
             <!-- Bread crumb -->
-            <!--<div class="row page-titles" style="background-color: orange;">-->
-            <!--    <div class="col-md-5 align-self-center">-->
-            <!--        <h3 class="text-primary">Dashboard</h3> </div>-->
+            <div class="row page-titles" style="background-color: orange;" style="color: white;">
+                <div class="col-md-5 align-self-center">
+                   <h3 style="color: white;">Dashboard</h3> </div>
                
-            <!--</div>-->
+            </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
@@ -177,7 +259,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i><img src="images/icons/menu.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/menu1.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from restaurant";
@@ -213,7 +295,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i ><img src="images/icons/users.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i ><img src="images/icons/users1.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users";
@@ -231,7 +313,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/orders.png" alt="orders" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/orders1.png" alt="orders" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2>
@@ -252,7 +334,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/pending.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/pending1.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders WHERE status=''";
@@ -270,7 +352,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/feedback.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/process1.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders WHERE status='in process'";
@@ -288,7 +370,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/rejected.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/rejected1.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php $sql="select * from users_orders WHERE status='rejected'";
@@ -306,7 +388,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/revenue.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/revenue1.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                 <h2><?php 
@@ -436,34 +518,21 @@ else*/
                 </div>
                 <div class="col-md-4">
                     <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                        <div class="media">
+                        <div class="media" style="padding-top: 10px;">
                             <div class="media-left meida media-middle"> 
-                                <span><i><img src="images/icons/revenue1.png" alt="user" width="60px" height="60px"/></i></span>
+                                <span><i><img src="images/icons/sales.png" alt="user" width="60px" height="60px"/></i></span>
                             </div>
-                            <div class="media-body media-text-right">
-                                <h2><?php $sql="select * from users_orders";
-                                            $result=mysqli_query($db,$sql); 
-                                                $rws=mysqli_num_rows($result);
-                                                
-                                                echo $rws;?></h2>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
+                            <div style="padding-left: 25px;" class="">
+                                <h3><p style="color:gray">Sales</p></h3>
                             </div>
+                            <span><i><img src="images/chart.png" alt="user" width="180px" height="180px"/></i></span>
                         </div>
                     </div>
                     <div class="col-md-15">
                     <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                         <div class="media">
                             <div class="media-left meida media-middle"> 
-                                <span><i><img src="images/icons/revenue1.png" alt="user" width="60px" height="60px"/></i></span>
+                                <span><i><img src="images/icons/feedback1.png" alt="user" width="60px" height="60px"/></i></span>
                             </div>
                             <div class="media-body media-text-right">
                                 <h2><?php $sql="select * from users_orders";
@@ -471,17 +540,7 @@ else*/
                                                 $rws=mysqli_num_rows($result);
                                                 
                                                 echo $rws;?></h2>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
-                                <p class="m-b-0">Revenue</p>
+                                <p class="m-b-0">Feedback</p>
                             </div>
                         </div>
                     </div>

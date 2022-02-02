@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-include("connection/connect.php");
-include_once 'product-action.php';
-error_reporting(0);
-session_start();
-if(empty($_SESSION["user_id"]))
-{
-	header('location:login.php');
-}
-else{
-
-										  
-    foreach ($_SESSION["cart_item"] as $item)
-    {
-
-    $item_total += ($item["price"]*$item["quantity"]);
-    
-        if($_POST['submit'])
+    <?php
+        include("connection/connect.php");
+        include_once 'product-action.php';
+        error_reporting(0);
+        session_start();
+        if(empty($_SESSION["user_id"]))
         {
-
-        $SQL="insert into users_orders(u_id,title,quantity,price, total) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','".$item["price"]*$item["quantity"]."')";
-
-            mysqli_query($db,$SQL);
-            
-            $success = "Thankyou! Your Order Placed successfully!";
-
-            
-            
+            header('location:login.php');
         }
-    }
-?>
+        else{
+
+                                                
+            foreach ($_SESSION["cart_item"] as $item)
+            {
+
+            $item_total += ($item["price"]*$item["quantity"]);
+            
+                if($_POST['submit'])
+                {
+                    $SQL="insert into users_orders(u_id,title,quantity,price, total) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','".$item["price"]*$item["quantity"]."')";
+
+                    mysqli_query($db,$SQL);
+                    
+                    $success = "Thankyou! Your Order Placed successfully!";
+                    header("Location: your_orders.php");
+                }
+            }
+    ?>
 
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animsition.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet"> </head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="#">
+        <title>Starter Template for Bootstrap</title>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/animsition.min.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="css/style.css" rel="stylesheet"> 
+    </head>
 <body>
     
     <div class="site-wrapper">
@@ -63,7 +61,7 @@ else{
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
-                            
+                            <li class="nav-item"><a data-target="#myModal" data-toggle="modal" href="#myModal" class="nav-link active" >Cart <span class="sr-only"></span></a> 
 							<?php
 						if(empty($_SESSION["user_id"]))
 							{
@@ -126,8 +124,6 @@ else{
                                             <table class="table">
 											<tbody>
                                           
-												 
-											   
                                                     <tr>
                                                         <td>Cart Subtotal</td>
                                                         <td> <?php echo "$".$item_total; ?></td>
@@ -141,10 +137,6 @@ else{
                                                         <td class="text-color"><strong> <?php echo "$".$item_total; ?></strong></td>
                                                     </tr>
                                                 </tbody>
-												
-												
-												
-												
                                             </table>
                                         </div>
                                     </div>
@@ -161,9 +153,9 @@ else{
                                                     <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span> </label>
                                             </li>
                                         </ul>
-                                        <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn btn-outline-success btn-block" value="Order now"> </p>
+                                        <p class="text-xs-center"><input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn theme-btn btn-lg" value="Order now"></p>
                                     </div>
-									</form>
+                                    </form>
                                 </div>
                             </div>
                        

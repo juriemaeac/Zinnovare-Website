@@ -70,6 +70,17 @@
 42. responsive
 
 */
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .preloader {
   width: 100%;
   height: 100%;
@@ -208,7 +219,7 @@ h6 {
 }
 .page-wrapper {
   background: #fafafa;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 .container-fluid {
   padding: 0 30px 25px;
@@ -1579,17 +1590,17 @@ textarea {
   white-space: nowrap;
 }
 .sidebar-nav ul li a:hover {
-  color: #1976d2;
+  color: orange;
 }
 .sidebar-nav ul li a:hover i {
-  color: #1976d2;
+  color: orange;
 }
 .sidebar-nav ul li a.active {
-  color: #1976d2;
+  color: orange;
   font-weight: 500;
 }
 .sidebar-nav ul li a.active i {
-  color: #1976d2;
+  color: orange;
 }
 .sidebar-nav ul li ul {
   padding-left: 28px;
@@ -2036,6 +2047,7 @@ textarea {
   padding: 17px 15px;
   position: absolute;
   right: 0;
+  height: 20px;
 }
 .footer {
   left: 240px;
@@ -2245,11 +2257,11 @@ textarea {
   border-color: #ef5350;
 }
 .card-outline-primary {
-  border-color: #5c4ac7;
+  border-color: orange;
 }
 .card-outline-primary .card-header {
-  background: #5c4ac7 none repeat scroll 0 0;
-  border-color: #5c4ac7;
+  background: orange none repeat scroll 0 0;
+  border-color: orange;
 }
 .card-body {
   padding: 0;
@@ -2879,7 +2891,7 @@ table.dataTable thead .sorting::after {
   box-shadow: 0 14px 26px -12px rgba(116, 96, 238, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(116, 96, 238, 0.2);
 }
 .btn-primary.disabled:focus {
-  background: #6352ce;
+  background: hsl(24, 100%, 37%);
   -webkit-box-shadow: 0 14px 26px -12px rgba(116, 96, 238, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(116, 96, 238, 0.2);
   box-shadow: 0 14px 26px -12px rgba(116, 96, 238, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(116, 96, 238, 0.2);
 }
@@ -2940,8 +2952,8 @@ table.dataTable thead .sorting::after {
   background: #028ee1;
 }
 .btn-success {
-  background: #26dad2;
-  border: 1px solid #26dad2;
+  background: orange;
+  border: 2px solid orange;
   -webkit-box-shadow: 0 2px 2px 0 rgba(40, 190, 189, 0.14), 0 3px 1px -2px rgba(40, 190, 189, 0.2), 0 1px 5px 0 rgba(40, 190, 189, 0.12);
   box-shadow: 0 2px 2px 0 rgba(40, 190, 189, 0.14), 0 3px 1px -2px rgba(40, 190, 189, 0.2), 0 1px 5px 0 rgba(40, 190, 189, 0.12);
   -webkit-transition: 0.2s ease-in;
@@ -2949,10 +2961,10 @@ table.dataTable thead .sorting::after {
   transition: 0.2s ease-in;
 }
 .btn-success:hover {
-  background: #26dad2;
+  background: #be4c00;
   -webkit-box-shadow: 0 14px 26px -12px rgba(40, 190, 189, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(40, 190, 189, 0.2);
   box-shadow: 0 14px 26px -12px rgba(40, 190, 189, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(40, 190, 189, 0.2);
-  border: 1px solid #26dad2;
+  border: 4px solid #be4c00;
 }
 .btn-success:active {
   background: #1eacbe;

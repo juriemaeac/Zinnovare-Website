@@ -29,7 +29,7 @@ session_start();
 <![endif]-->
 </head>
 
-<body class="fix-header fix-sidebar">
+<body class="fix-header fix-sidebar" style="height: 100%;">
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -41,13 +41,14 @@ session_start();
           <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
+                <div class="navbar-header" style="background-color: orange; border-radius: 0 0px 0px 0">
+                
+                <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
-                        <b><img src="images/logo1.png" alt="homepage" class="dark-logo" width="35px" height="35px"/></b>
+                        <b><img src="images/logo_Z.png" alt="homepage" class="dark-logo" width="35px" height="35px"/></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo3.png" alt="homepage" class="dark-logo" width="120px" height="30px"/></span>
+                        <span><img src="images/logo_Zt.png" alt="homepage" class="dark-logo" width="120px" height="25px"/></span>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -155,21 +156,11 @@ session_start();
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
         <div class="page-wrapper">
-            <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
-                
-            </div>
-            <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-12">
-                        
-						
-						
 						     <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">All Menu data</h4>
@@ -252,23 +243,6 @@ session_start();
                                 </div>
                             </div>
                         </div>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
 						 </div>
                       
                             </div>
@@ -278,9 +252,6 @@ session_start();
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
-            <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. </footer>
-            <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
     </div>
@@ -309,6 +280,7 @@ session_start();
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
     <script src="js/lib/datatables/datatables-init.js"></script>
+    
 </body>
 
 </html>
