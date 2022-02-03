@@ -109,8 +109,12 @@
 			
 				  
             <div class="container m-t-30">
+                <table class="co">
+                    <tr>
+                        <td><!--left side start-->
+            <div class="left-side">
 			<form action="" method="post">
-                <div class="widget clearfix">
+                <div class="clearfix">
                     
                     <div class="widget-body">
                         <form method="post" action="#">
@@ -119,22 +123,22 @@
                                 <div class="col-sm-12">
                                     <div class="cart-totals margin-b-20">
                                         <div class="cart-totals-title">
-                                            <h4>Order Preview</h4> </div>
-
-                                        <!--Order Preview start-->
+                                            <h4>Order Preview</h4>
+                                        </div>
+<!--Order Preview start-->
 
                     <div class="modal-content">
-                    <div class="widget widget-cart">
+                    <div class="widget-cart">
                         
                         <div class="order-row bg-white">
                             <div class="widget-body">
-                                <div class="full">
-                                    <table class="full">
+                                <div class="checkout-table1">
+                                    <table>
                                         <tr>
-                                            <th class="cotable" width="50%">Dish</th>
-                                            <th class="cotable" width="15%">Price</th>
-                                            <th class="cotable" width="20%">Quantity</th>
-                                            <th class="cotable" width="15%">Subtotal</th>
+                                            <th class="cotable" width="240px">Dish</th>
+                                            <th class="cotable2" width="96px"><center>Price</center></th>
+                                            <th class="cotable2" width="96px"><center>Quantity</center></th>
+                                            <th class="cotable2" width="96px"><center>Subtotal</center></th>
                                         </tr>
                                     </table>
                                 </div>
@@ -147,31 +151,32 @@
                                     {
                                         ?>
                                         <!-- table start -->
-                                        <div class="full">
-                                        <table class="full">
+                                        <div class="checkout-table2">
+                                        <table>
                                                 
                                                 <tr>
-                                                    <td class="cotable" width="50%">
+                                                    <td class="cotable" width="240px">
                                                         <div class="title-row">
                                                         <?php echo $item["title"]; ?>
                                                         </div>
                                                     </td>
-                                                    <td class="cotable" width="15%">
-                                                        <div class="col-xs-8">
-                                                        <input type="text" class="form-control b-r-0" value=<?php echo "$".$item["price"]; ?> readonly id="exampleSelect1">
-                                                        </div>
-                                                    </td>
-                                                    <td class="cotable" width="20%">
-                                                        <div class="col-xs-4">
-                                                        <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> 
-                                                        </div>
-                                                    </td>
-                                                    <td class="cotable" width="15%">
-                                                        <div class="col-xs-8">
-                                                        <input type="text" class="form-control b-r-0" value=<?php echo "$".$item["price"]*$item["quantity"]; ?> readonly id="exampleSelect1">     
-                                                        </div>
-                                                    </td>
                                                     
+                                                    <td class="cotable2" width="96px">
+                                                        <div>
+                                                        <center><?php echo "$".$item["price"]; ?></center>
+                                                        </div>
+                                                    </td>
+                                                    <td class="cotable2" width="96px">
+                                                        <div>
+                                                        <center><?php echo $item["quantity"]; ?></center>
+                                                        </div>
+                                                    </td>
+                                                    <td class="cotable2" width="96px">
+                                                        <div>
+                                                        <center><?php echo "$".$item["price"]*$item["quantity"]; ?> </center>  
+                                                        </div>
+                                                    </td>
+                                    
                                                 </tr>
                                             </table>
                                         </div>							
@@ -189,9 +194,9 @@
                     <!--end modal -->
                     
                 </div>
-                                    <!-- Order Preview end-->
+                <!-- Order Preview end-->
+                                        
                                         <div class="cart-totals-fields">
-										
                                             <table class="table">
 											<tbody>
                                           
@@ -211,10 +216,57 @@
                                             </table>
                                         </div>
                                     </div>
-
-                                    
+    
                                     
                                     <!--cart summary-->
+                                    
+                                    </form>
+                                </div>
+                            </div>
+                       
+                    </div>
+                </div>
+				 </form>
+                </div>
+                <!--left side end--></td>
+
+                <!--right side start--><td>
+                <div class="right-side">
+			<form action="" method="post">
+                <div class="clearfix">
+                    
+                    <div class="widget-body">
+                        <form method="post" action="#">
+                            <div class="row">
+                                
+                                <div class="col-sm-12">
+                                    <div class="cart-totals margin-b-20">
+                                        <div class="cart-totals-title">
+                                            <h4>Shipping Details</h4>
+                                        </div>
+                                        <div> <!-- address -->
+                                        <?php
+                        $result = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
+                        $details = mysqli_fetch_assoc($result);
+
+                        $result1 = mysqli_query($db,"SELECT users.*, users_orders.* FROM users INNER JOIN (SELECT * FROM users_orders ORDER BY date DESC LIMIT 0,3) users_orders ON users.u_id=users_orders.u_id");
+                        $userdetails = mysqli_fetch_assoc($result1);
+                    ?>
+                                        </div>
+                                        <div>
+                                        <p class="mb-0"><?php echo $userdetails['f_name']." ".$userdetails['l_name']?></p>
+                            <p class="mb-0"><?php echo $userdetails['address'] ?></p>
+                            <p class="mb-0"><?php echo $userdetails['email'] ?></p>
+                            <p class="mb-0"><?php echo $userdetails['phone'] ?></p>
+                                        </div>
+                                        
+                                    </div>
+    
+                                    
+                                    <!--cart summary-->
+                                    <br>
+                                    <h4>Payment Option</h4>
+                                    
                                     <div class="payment-option">
                                         <ul class=" list-unstyled">
                                             <li>
@@ -236,126 +288,12 @@
                     </div>
                 </div>
 				 </form>
+                </div>
+
+                </td><!--right side end-->
+                    </tr>
+                </table>
             </div>
-            <section class="app-section">
-                <div class="app-wrap">
-                    <div class="container">
-                        <div class="row text-img-block text-xs-left">
-                            <div class="container">
-                                <div class="col-xs-12 col-sm-6  right-image text-center">
-                                    <figure> <img src="images/app.png" alt="Right Image"> </figure>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 left-text">
-                                    <h3>The Best Food Delivery App</h3>
-                                    <p>Now you can make food happen pretty much wherever you are thanks to the free easy-to-use Food Delivery &amp; Takeout App.</p>
-                                    <div class="social-btns">
-                                        <a href="#" class="app-btn apple-button clearfix">
-                                            <div class="pull-left"><i class="fa fa-apple"></i> </div>
-                                            <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">App Store</span> </div>
-                                        </a>
-                                        <a href="#" class="app-btn android-button clearfix">
-                                            <div class="pull-left"><i class="fa fa-android"></i> </div>
-                                            <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">Play store</span> </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- start: FOOTER -->
-            <footer class="footer">
-                <div class="container">
-                    <!-- top footer statrs -->
-                    <div class="row top-footer">
-                        <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                            <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span> </div>
-                        <div class="col-xs-12 col-sm-2 about color-gray">
-                            <h5>About Us</h5>
-                            <ul>
-                                <li><a href="#">About us</a> </li>
-                                <li><a href="#">History</a> </li>
-                                <li><a href="#">Our Team</a> </li>
-                                <li><a href="#">We are hiring</a> </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                            <h5>How it Works</h5>
-                            <ul>
-                                <li><a href="#">Enter your location</a> </li>
-                                <li><a href="#">Choose restaurant</a> </li>
-                                <li><a href="#">Choose meal</a> </li>
-                                <li><a href="#">Pay via credit card</a> </li>
-                                <li><a href="#">Wait for delivery</a> </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-2 pages color-gray">
-                            <h5>Pages</h5>
-                            <ul>
-                                <li><a href="#">Search results page</a> </li>
-                                <li><a href="#">User Sing Up Page</a> </li>
-                                <li><a href="#">Pricing page</a> </li>
-                                <li><a href="#">Make order</a> </li>
-                                <li><a href="#">Add to cart</a> </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                            <h5>Popular locations</h5>
-                            <ul>
-                                <li><a href="#">Sarajevo</a> </li>
-                                <li><a href="#">Split</a> </li>
-                                <li><a href="#">Tuzla</a> </li>
-                                <li><a href="#">Sibenik</a> </li>
-                                <li><a href="#">Zagreb</a> </li>
-                                <li><a href="#">Brcko</a> </li>
-                                <li><a href="#">Beograd</a> </li>
-                                <li><a href="#">New York</a> </li>
-                                <li><a href="#">Gradacac</a> </li>
-                                <li><a href="#">Los Angeles</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- top footer ends -->
-                    <!-- bottom footer statrs -->
-                    <div class="row bottom-footer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-3 payment-options color-gray">
-                                    <h5>Payment Options</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 address color-gray">
-                                    <h5>Address</h5>
-                                    <p>Concept design of oline food order and deliveye,planned as restaurant directory</p>
-                                    <h5>Phone: <a href="tel:+080000012222">080 000012 222</a></h5> </div>
-                                <div class="col-xs-12 col-sm-5 additional-info color-gray">
-                                    <h5>Addition informations</h5>
-                                    <p>Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- bottom footer ends -->
-                </div>
-            </footer>
-            <!-- end:Footer -->
         </div>
         <!-- end:page wrapper -->
          </div>

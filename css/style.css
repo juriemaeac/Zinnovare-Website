@@ -263,13 +263,38 @@ hr {
 }
 }
 
-.full{
-    width: 100%;
+
+.co{
+    border-collapse: collapse;
 }
 
 .cotable{
     display: inline-block;
     padding-left: 20px;
+    
+}
+.cotable2{
+    display: inline-block;
+    
+    
+}
+
+.checkout-table1{
+background-color: #ff9f00;
+padding: 10px 10px 10px 0px;
+}
+
+.left-side{
+    width: 640px;
+    height: 640px;
+}
+
+.right-side{
+    height: 640px;
+}
+
+.checkout-table2{
+background-color: #f0ecec;
 }
 
 .inv-button{
