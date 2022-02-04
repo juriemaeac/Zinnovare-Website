@@ -5,6 +5,8 @@ include("connection/connect.php");  //include connection file
 error_reporting(0);  // using to hide undefine undex errors
 session_start(); //start temp session until logout/browser closed
 
+include_once 'product-action.php'; //including controller
+
 ?>
 <head>
     <meta charset="utf-8">
@@ -42,37 +44,42 @@ session_start(); //start temp session until logout/browser closed
             <!-- .navbar -->
             <nav class="navbar navbar-dark">
                 <div class="container">
+                
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
                     <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="src/logo6.png" alt="" height="40px" width="142px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"><a data-target="#myModal" data-toggle="modal" href="#myModal" class="nav-link active" >Cart <span class="sr-only"></span></a> 
-                            
-                        </li>
+                            <li class="nav-item"><a data-target="#myModal" data-toggle="modal" href="#myModal" class="nav-link active" >Cart <span class="sr-only"></span></a></li>
                             <li class="nav-item"> <a class="nav-link active" href="dishes.php?res_id=48">Menu <span class="sr-only"></span></a> </li>
-                            
-                           
 							<?php
-						if(empty($_SESSION["user_id"])) // if user is not login
-							{
-								echo '<li class="nav-item"><a href="login.php" class="nav-link active">login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">signup</a> </li>';
-							}
-						else
-							{
-									//if user is login
-									
-									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
-									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
-							}
-
-						?>
+                                if(empty($_SESSION["user_id"])) // if user is not login
+                                {
+                                    echo '<li class="nav-item"><a href="login.php" class="nav-link active">login</a> </li>
+                                    <li class="nav-item"><a href="registration.php" class="nav-link active">signup</a> </li>';
+                                }
+                                else
+                                {
+                                    //if user is login
+                                    echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
+                                    echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
+                                }
+                            ?>
+                            <!--<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="admin/images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
+                                <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                    <ul class="dropdown-user">
+                                        <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                        <li><a href="profile.php"><i class="fa fa-user"></i> Profile</a></li>
+                                    </ul>
+                                </div>
+                            </li>-->
 							 
                         </ul>
 						 
                     </div>
                 </div>
+                
             </nav>
             <!-- /.navbar -->
         </header>
@@ -99,7 +106,7 @@ session_start(); //start temp session until logout/browser closed
                                         ?>									
                                     
                                         <div class="title-row">
-                                            <?php echo $item["title"]; ?><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
+                                            <?php echo $item["title"]; ?><a href="?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
                                             <i class="fa fa-trash pull-right"></i></a>
                                         </div>
                                         
@@ -128,7 +135,11 @@ session_start(); //start temp session until logout/browser closed
                                         <p>TOTAL</p>
                                         <h3 class="value"><strong><?php echo "$".$item_total; ?></strong></h3>
                                         <p>Free Shipping</p>
+                                        <?php if($item_total != 0): ?>
                                         <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg">Checkout</a>
+                                        <?php elseif ($item_total == 0): ?>
+                                            <a href="dishes.php?res_id=48" onclick="return confirm('Cart is Empty. Go to Menu?');" class="btn theme-btn btn-lg">Checkout</a>
+                                        <?php endif; ?>                           
                                     </div>
                                 </div>
                             </div>

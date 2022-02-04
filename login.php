@@ -66,7 +66,7 @@ if(isset($_POST['submit']))   // if button is submit
       <div class="headerMsg">
         <div class="headTag">ZINNOVARE</div>
         <div class="subTag">Login Page</div>
-		<div class="subsubTag">Login to your account to manage all the services.</div>
+		<div class="subsubTag">Login to your account to enjoy our food selections.</div>
 		
       </div>
 	  
@@ -91,12 +91,13 @@ if(isset($_POST['submit']))   // if button is submit
 				<form class="login-form" action="" method="post">
 					<input style="background: #D9D9D9;" style="margin-top: 30px" type="text" placeholder="Username" name="username"/>
 					<input style="background: #D9D9D9;" type="password" placeholder="Password" name="password"/>
-					<input style="background-color: orange;" type="submit"  name="submit" value="Proceed" />
+					<input style="background-color: orange;" type="submit"  name="submit" value="Sign In" />
 					<!--<p class="message">Not registered? <a href="#">Create an account</a></p>-->
 				</form>
+				<div class="cta">Not registered?<a href="registration.php" style="color:#f30;"> Create an account</a></div>
 				</div>
   
-  <div class="cta">Not registered?<a href="registration.php" style="color:#f30;"> Create an account</a></div>
+  
 </div>
 				<span style="color:green;"><?php echo $message; ?></span>
 			</div>

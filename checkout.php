@@ -196,7 +196,15 @@
                 </div>
                 <!-- Order Preview end-->
                                         
-                                        <div class="cart-totals-fields">
+                <div class="cart-totals-fields">
+                    <?php
+                        $result = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
+                        $details = mysqli_fetch_assoc($result);
+
+                        $result1 = mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
+                        $userdetails = mysqli_fetch_assoc($result1);
+                    ?>
+                    
                                             <table class="table">
 											<tbody>
                                           
@@ -234,7 +242,7 @@
                 <div class="right-side">
 			<form action="" method="post">
                 <div class="clearfix">
-                    
+
                     <div class="widget-body">
                         <form method="post" action="#">
                             <div class="row">
@@ -245,13 +253,7 @@
                                             <h4>Shipping Details</h4>
                                         </div>
                                         <div> <!-- address -->
-                                        <?php
-                        $result = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
-                        $details = mysqli_fetch_assoc($result);
-
-                        $result1 = mysqli_query($db,"SELECT users.*, users_orders.* FROM users INNER JOIN (SELECT * FROM users_orders ORDER BY date DESC LIMIT 0,3) users_orders ON users.u_id=users_orders.u_id");
-                        $userdetails = mysqli_fetch_assoc($result1);
-                    ?>
+                                        
                                         </div>
                                         <div>
                                         <p class="mb-0"><?php echo $userdetails['f_name']." ".$userdetails['l_name']?></p>

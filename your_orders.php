@@ -2,6 +2,7 @@
 <html lang="en">
     <?php
         include("connection/connect.php");
+        include_once 'product-action.php'; //including controller
         error_reporting(0);
         session_start();
 
@@ -150,6 +151,18 @@
     </head>
 
     <body>
+    <script>
+        $(document).ready(
+        function()
+            {
+                $("#myBtn").click(function()
+                    {
+                        $("#myModal").modal();
+                    }
+                );
+            }
+        );
+        </script>
         <!--header starts-->
         <header id="header" class="header-scroll top-header headrom">
             <!-- .navbar -->
@@ -203,10 +216,10 @@
                                         <tbody>
                                             <?php 
                                                 // displaying current session user login orders 
-                                                $query_res= mysqli_query($db,"select * from users_orders where status != 'closed'");
+                                                $query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."' AND status !='closed'");
                                                 if(!mysqli_num_rows($query_res) > 0 )
                                                 {
-                                                    echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
+                                                    echo '<td colspan="7"><center>You have No orders Placed yet. </center></td>';
                                                 }
                                                 else
                                                 {			      
@@ -225,18 +238,18 @@
                                                                 if($status=="" or $status=="NULL")
                                                                 {
                                                                 ?>
-                                                                <button type="button" class="btn btn-info" style="font-weight:bold;">Waiting</button>
+                                                                <button type="button" class="btn btn-info" style="font-weight:bold;">Wait for Confirmation</button>
                                                                 <?php 
                                                                     }
                                                                     if($status=="in process")
                                                                     { ?>
-                                                                    <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On a Way!</button>
+                                                                    <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On the Way</button>
                                                                 <?php
                                                                     }
                                                                     if($status=="closed")
                                                                     {
                                                                 ?>
-                                                                    <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button> 
+                                                                    <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true"> Delivered</button> 
                                                                 <?php 
                                                                 } 
                                                                 ?>
@@ -274,10 +287,11 @@
                                         <tbody> 
                                             <?php 
                                                 // displaying current session user login orders 
-                                                $query_res= mysqli_query($db,"select * from users_orders where status='closed'");
+                                                $query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."' AND status ='closed'");
+                                                
                                                 if(!mysqli_num_rows($query_res) > 0 )
                                                 {
-                                                    echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
+                                                    echo '<td colspan="7"><center>You have No orders Placed yet. </center></td>';
                                                 }
                                                 else
                                                 {		  
@@ -291,6 +305,7 @@
                                                             <td data-column="total">$<?php echo $row['price']*$row['quantity'] ; ?></td>
                                                             <td data-column="status"> 
                                                             <?php 
+                                                            
                                                                 $status=$row['status'];
                                                                 if($status=="" or $status=="NULL")
                                                                 {
@@ -306,7 +321,47 @@
                                                                     if($status=="closed")
                                                                     {
                                                                 ?>
-                                                                    <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button> 
+                                                                    <p> <a type="button" class="btn btn-success" data-target="#myModal" data-toggle="modal" href="#myModal" value="<?php echo $fields+1 ?>" >
+                                                                        <span  class="fa fa-check-circle" aria-hidden="true"> Order Received</a><p>
+                                                                            <!--FEEDBACK-->
+                                                                            <div id="myModal" class="modal fade" role="dialog">                                                                                
+                                                                                <div class="modal-dialog">
+                                                                                    <!-- Modal content-->
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                            <h4 class="modal-title">Feedback</h4>
+                                                                                        </div>
+                                                                                        <div class="widget widget-cart">
+                                                                                            
+                                                                                            <div class="order-row bg-white">
+                                                                                                <div class="widget-body">
+                                                                                                <?php echo $row['title']; ?>
+                                                                                                    
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            
+                                                                                                    <!-- end:Order row -->
+                                                                                                
+                                                                                            <div class="widget-body">
+                                                                                                <div class="price-wrap text-xs-center">
+                                                                                                    <textarea name="remark" cols="50" rows="10" required="required"></textarea>
+                                                                                                    <a href=""  class="btn theme-btn btn-lg">Send</a>
+                                                                                                    <?php $status= "Received"?>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    <!--end modal content -->
+                                                                                    
+                                                                                    </div>
+                                                                                            
+                                                                                        <!--end modal -->
+                                                                                        
+                                                                                    </div>
+                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--END FEEDBACK-->
                                                                 <?php 
                                                                 } 
                                                                 ?>
@@ -332,9 +387,11 @@
                                     </table>
                                 </div>
                                 <!--end:row -->
+                                
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </section>
                 

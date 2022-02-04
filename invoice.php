@@ -30,15 +30,16 @@
 
     <body>
         <div class="container my-3" style="border: 2px outset orange; width: 60%;" id="divToPrint">
+            <?php
+                $result = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
+                $details = mysqli_fetch_assoc($result);
+
+                $result1 = mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
+                $userdetails = mysqli_fetch_assoc($result1);
+            ?>
             <div style="padding: 10px; ">
                 <div style="padding: 10px; width: 100%" >
-                    <?php
-                        $result = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
-                        $details = mysqli_fetch_assoc($result);
-
-                        $result1 = mysqli_query($db,"SELECT users.*, users_orders.* FROM users INNER JOIN (SELECT * FROM users_orders ORDER BY date DESC LIMIT 0,3) users_orders ON users.u_id=users_orders.u_id");
-                        $userdetails = mysqli_fetch_assoc($result1);
-                    ?>
+                    
     
                     <div class="col-6">
                         <h2 style="color:orange"><b>ZINNOVARE</b></h2>
