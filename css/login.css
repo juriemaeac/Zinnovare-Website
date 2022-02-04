@@ -30,6 +30,18 @@ body {
   text-decoration: none;
 }
 
+.headerPic {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('src/pic3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 1;
+}
+
 /* Form Module */
 .form-module {
   position: relative;
