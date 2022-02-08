@@ -151,18 +151,6 @@
     </head>
 
     <body>
-    <script>
-        $(document).ready(
-        function()
-            {
-                $("#myBtn").click(function()
-                    {
-                        $("#myModalFeedback").modal();
-                    }
-                );
-            }
-        );
-        </script>
         <!--CART and header/navbar starts-->
         <header id="header" class="header-scroll top-header headrom">
             <!-- .navbar -->
@@ -330,6 +318,7 @@
                                                                     if($status=="in process")
                                                                     { ?>
                                                                     <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On the Way</button>
+                                                                
                                                                 <?php
                                                                     }
                                                                     if($status=="closed")
@@ -407,45 +396,20 @@
                                                                     if($status=="closed")
                                                                     {
                                                                 ?>
-                                                                <input type="button" class="btn btn-warning" onclick="change()"value="Order Received" id="myButton1" data-target="#myModalFeedback" data-toggle="modal" href="#myModal" value="<?php echo $fields+1 ?>"><span aria-hidden="true" ></span></button>
+                                                                <input type="button" class="open-button btn btn-warning" onclick="openForm()" value="Delivered" id="myButton1">
+                                                                
+                                                                
                                                                     
                                                                             <!--FEEDBACK-->
-                                                                            <div id="myModalFeedback" class="modal fade" role="dialog">                                                                                
-                                                                                <div class="modal-dialog">
-                                                                                    <!-- Modal content-->
-                                                                                    <div class="modal-content">
-                                                                                        <div class="modal-header">
-                                                                                            <h4 class="modal-title">Feedback</h4>
-                                                                                        </div>
-                                                                                        <div class="widget widget-cart">
-                                                                                            
-                                                                                            <div class="order-row bg-white">
-                                                                                                <div class="widget-body">
-                                                                                                <?php echo $row['title']; ?>
-                                                                                                    
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            
-                                                                                                    <!-- end:Order row -->
-                                                                                                
-                                                                                            <div class="widget-body">
-                                                                                                <div class="price-wrap text-xs-center">
-                                                                                                    <textarea name="remark" cols="50" rows="10" required="required"></textarea>
-                                                                                                    <a type="button" id="FeedbackBtn" href="" class="btn theme-btn btn-lg">Send</a>
-                                                                                                    <?php $status= "Received"?> 
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <!--end modal content -->
-                                                                                    
-                                                                                    </div>
-                                                                                            
-                                                                                        <!--end modal -->
-                                                                                        
-                                                                                </div>
-                                                            
-                                                                        </div>
-                                                                    </div>
+                                                                            <div class="feedback-popup" id="myForm">
+                                                                                <form action="" class="feedback-container">
+                                                                                <h1>FEEDBACK</h1>
+                                                                                <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
+                                                                                <button type="button" class="btn cancel pull-right" onclick="closeForm()">Close</button>
+                                                                                <button type="submit" class="btn pull-right" onclick="change()">Submit</button>
+                                                                                
+                                                                            </form>
+                                                                            </div></button>
                                                                     <!--END FEEDBACK-->
                                                                 <?php 
                                                                 } 
@@ -501,13 +465,22 @@
         }
         });
 
-        function change()
+        function openForm()
             {
-                document.getElementById("myButton1").value="Received"; 
+                document.getElementById("myForm").style.display = "block";
+            }
+            function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function change()
+            {
+                document.getElementById("myButton1").value="Order Received"; 
                 document.getElementById('myButton1').onclick = function () {
     this.disabled = true;
 }
             }
+            
     </script>
     </body>
 
