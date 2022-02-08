@@ -23,7 +23,23 @@ include_once 'product-action.php'; //including controller
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet"> </head>
+    <link href="css/style.css" rel="stylesheet"> 
+    <style>
+        .parallax {
+        /* The image used */
+        background-image: url("src/bg.jpg");
+
+        /* Set a specific height */
+        min-height: 250px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+    </style>
+</head>
 
 <body class="home">
         <script>
@@ -39,175 +55,119 @@ include_once 'product-action.php'; //including controller
         );
         </script>
     
-        <!--header starts-->
-        <header id="header" class="header-scroll top-header headrom">
-            <!-- .navbar -->
-            <nav class="navbar navbar-dark">
-                <div class="container">
-                
-                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="src/logo6.png" alt="" height="40px" width="142px"> </a>
-                    <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"><a data-target="#myModal" data-toggle="modal" href="#myModal" class="nav-link active" >Cart <span class="sr-only"></span></a></li>
-                            <li class="nav-item"> <a class="nav-link active" href="dishes.php?res_id=48">Menu <span class="sr-only"></span></a> </li>
-							<?php
-                                if(empty($_SESSION["user_id"])) // if user is not login
-                                {
-                                    echo '<li class="nav-item"><a href="login.php" class="nav-link active">login</a> </li>
-                                    <li class="nav-item"><a href="registration.php" class="nav-link active">signup</a> </li>';
-                                }
-                                else
-                                {
-                                    //if user is login
-                                    echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
-                                    echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
-                                }
-                            ?>
-                            <!--<li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="admin/images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
-                                <div class="dropdown-menu dropdown-menu-right animated zoomIn">
-                                    <ul class="dropdown-user">
-                                        <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
-                                        <li><a href="profile.php"><i class="fa fa-user"></i> Profile</a></li>
-                                    </ul>
-                                </div>
-                            </li>-->
-							 
-                        </ul>
-						 
-                    </div>
-                </div>
-                
-            </nav>
-            <!-- /.navbar -->
-        </header>
-
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Your Shopping Cart</h4>
-                    </div>
-                    <div class="widget widget-cart">
-                        
-                        <div class="order-row bg-white">
-                            <div class="widget-body">
-                                <?php
-
-                                    $item_total = 0;
-
-                                    foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into session ID
-                                    {
-                                        ?>									
-                                    
-                                        <div class="title-row">
-                                            <?php echo $item["title"]; ?><a href="?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
-                                            <i class="fa fa-trash pull-right"></i></a>
-                                        </div>
-                                        
-                                        <div class="form-group row no-gutter">
-                                            <div class="col-xs-8">
-                                                    <input type="text" class="form-control b-r-0" value=<?php echo "$".$item["price"]; ?> readonly id="exampleSelect1">
-                                                    
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> 
-                                            </div>
-                                        
-                                        </div>
-                                        
-                                        <?php
-                                        $item_total += ($item["price"]*$item["quantity"]); // calculating current price into cart
-                                    }
-                                ?>	
-                            </div>
-                        </div>
-                        
-                                <!-- end:Order row -->
-                             
-                                <div class="widget-body">
-                                    <div class="price-wrap text-xs-center">
-                                        <p>TOTAL</p>
-                                        <h3 class="value"><strong><?php echo "$".$item_total; ?></strong></h3>
-                                        <p>Free Shipping</p>
-                                        <?php if($item_total != 0): ?>
-                                        <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg">Checkout</a>
-                                        <?php elseif ($item_total == 0): ?>
-                                            <a href="dishes.php?res_id=48" onclick="return confirm('Cart is Empty. Go to Menu?');" class="btn theme-btn btn-lg">Checkout</a>
-                                        <?php endif; ?>                           
-                                    </div>
-                                </div>
-                            </div>
-                        <!--end modal content -->
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                        </div>
-                        
-                    <!--end modal -->
-                    
-                </div>
-
-            </div>
+        <!--CART and header/navbar starts-->
+        <div>
+            <?php include 'header.php';?>
         </div>
+        
         <!-- banner part starts -->
-        <div class="hero bg-image bgfull" data-image-src="src/pic3.jpg">
+        <div class="hero bg-image bgfull" data-image-src="src/header.png">
             <div class="hero-inner">
-                <div class="container text-center hero-text font-white">
-                    <h1>Order Delivery & Take-Out </h1>
-                    
-                    <h4 class="font-white space-xs">Don't starve, just order.</h4>
+                <div style="text-align: left; padding-left:200px">
+                    <h1>
+                        <span> Bite into the </span>
+                        <span style="color: orange;">cheesier</span> 
+                    </h1>
+                        <h1>side of life</h1>
+                        <h5 style="color:white">
+                        <span style="letter-spacing: 1px; word-spacing: 3px"> With </span>
+                        <span style="letter-spacing: 1px; word-spacing: 3px"> deliciously sinful  </span>
+                        <span style="letter-spacing: 1px; word-spacing: 3px"> Mexican treats </span>
+                        </h5>
+                        <h5 style="color:white"></h5>
                     <div class="banner-form">
                         <form class="form-inline">
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <label class="sr-only" for="exampleInputAmount">I would like to eat....</label>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I would like to eat...."> </div>
-                            </div>
-                            <button onclick="location.href='restaurants.php'" type="button" class="btn theme-btn btn-lg">Search food</button>
+                            </div>-->
+                            <button onclick="location.href='dishes.php?res_id=48'" type="button" class="btn " style="background:orange; color:white">Order Now</button>
                         </form>
                     </div>
-                    <div class="steps">
-                        <div class="step-item step1">
-                            <div><img src="src/choice.png" alt="" width="30px" height="30px"></div>
-                            <!--<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 483 483" width="512" height="512">
-                                <g fill="#FFF">
-                                    <path d="M467.006 177.92c-.055-1.573-.469-3.321-1.233-4.755L407.006 62.877V10.5c0-5.799-4.701-10.5-10.5-10.5h-310c-5.799 0-10.5 4.701-10.5 10.5v52.375L17.228 173.164a10.476 10.476 0 0 0-1.22 4.938h-.014V472.5c0 5.799 4.701 10.5 10.5 10.5h430.012c5.799 0 10.5-4.701 10.5-10.5V177.92zM282.379 76l18.007 91.602H182.583L200.445 76h81.934zm19.391 112.602c-4.964 29.003-30.096 51.143-60.281 51.143-30.173 0-55.295-22.139-60.258-51.143H301.77zm143.331 0c-4.96 29.003-30.075 51.143-60.237 51.143-30.185 0-55.317-22.139-60.281-51.143h120.518zm-123.314-21L303.78 76h86.423l48.81 91.602H321.787zM97.006 55V21h289v34h-289zm-4.198 21h86.243l-17.863 91.602h-117.2L92.808 76zm65.582 112.602c-5.028 28.475-30.113 50.19-60.229 50.19s-55.201-21.715-60.23-50.19H158.39zM300 462H183V306h117v156zm21 0V295.5c0-5.799-4.701-10.5-10.5-10.5h-138c-5.799 0-10.5 4.701-10.5 10.5V462H36.994V232.743a82.558 82.558 0 0 0 3.101 3.255c15.485 15.344 36.106 23.794 58.065 23.794s42.58-8.45 58.065-23.794a81.625 81.625 0 0 0 13.525-17.672c14.067 25.281 40.944 42.418 71.737 42.418 30.752 0 57.597-17.081 71.688-42.294 14.091 25.213 40.936 42.294 71.688 42.294 24.262 0 46.092-10.645 61.143-27.528V462H321z"></path>
-                                    <path d="M202.494 386h22c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5h-22c-5.799 0-10.5 4.701-10.5 10.5s4.701 10.5 10.5 10.5z"></path>
-                                </g>
-                            </svg>
-                        -->
-                            <h4><span>1. </span>Choose Restaurant</h4> </div>
-                        <!-- end:Step -->
-                        <div class="step-item step2">
-                        <div><img src="src/checkout.png" alt="" width="30px" height="30px"></div>
-                            <!--<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewbox="0 0 380.721 380.721">
-                                <g fill="#FFF">
-                                    <path d="M58.727 281.236c.32-5.217.657-10.457 1.319-15.709 1.261-12.525 3.974-25.05 6.733-37.296a543.51 543.51 0 0 1 5.449-17.997c2.463-5.729 4.868-11.433 7.25-17.01 5.438-10.898 11.491-21.07 18.724-29.593 1.737-2.19 3.427-4.328 5.095-6.46 1.912-1.894 3.805-3.747 5.676-5.588 3.863-3.509 7.221-7.273 11.107-10.091 7.686-5.711 14.529-11.137 21.477-14.506 6.698-3.724 12.455-6.982 17.631-8.812 10.125-4.084 15.883-6.141 15.883-6.141s-4.915 3.893-13.502 10.207c-4.449 2.917-9.114 7.488-14.721 12.147-5.803 4.461-11.107 10.84-17.358 16.992-3.149 3.114-5.588 7.064-8.551 10.684-1.452 1.83-2.928 3.712-4.427 5.6a1225.858 1225.858 0 0 1-3.84 6.286c-5.537 8.208-9.673 17.858-13.995 27.664-1.748 5.1-3.566 10.283-5.391 15.534a371.593 371.593 0 0 1-4.16 16.476c-2.266 11.271-4.502 22.761-5.438 34.612-.68 4.287-1.022 8.633-1.383 12.979 94 .023 166.775.069 268.589.069.337-4.462.534-8.97.534-13.536 0-85.746-62.509-156.352-142.875-165.705 5.17-4.869 8.436-11.758 8.436-19.433-.023-14.692-11.921-26.612-26.631-26.612-14.715 0-26.652 11.92-26.652 26.642 0 7.668 3.265 14.558 8.464 19.426-80.396 9.353-142.869 79.96-142.869 165.706 0 4.543.168 9.027.5 13.467 9.935-.002 19.526-.002 28.926-.002zM0 291.135h380.721v33.59H0z" /> </g>
-                            </svg>
-                        -->
-                            <h4><span>2. </span>Order Food</h4> </div>
-                        <!-- end:Step -->
-                        <div class="step-item step3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewbox="0 0 612.001 612">
-                                <path d="M604.131 440.17h-19.12V333.237c0-12.512-3.776-24.787-10.78-35.173l-47.92-70.975a62.99 62.99 0 0 0-52.169-27.698h-74.28c-8.734 0-15.737 7.082-15.737 15.738v225.043h-121.65c11.567 9.992 19.514 23.92 21.796 39.658H412.53c4.563-31.238 31.475-55.396 63.972-55.396 32.498 0 59.33 24.158 63.895 55.396h63.735c4.328 0 7.869-3.541 7.869-7.869V448.04c-.001-4.327-3.541-7.87-7.87-7.87zM525.76 312.227h-98.044a7.842 7.842 0 0 1-7.868-7.869v-54.372c0-4.328 3.541-7.869 7.868-7.869h59.724c2.597 0 4.957 1.259 6.452 3.305l38.32 54.451c3.619 5.194-.079 12.354-6.452 12.354zM476.502 440.17c-27.068 0-48.943 21.953-48.943 49.021 0 26.99 21.875 48.943 48.943 48.943 26.989 0 48.943-21.953 48.943-48.943 0-27.066-21.954-49.021-48.943-49.021zm0 73.495c-13.535 0-24.472-11.016-24.472-24.471 0-13.535 10.937-24.473 24.472-24.473 13.533 0 24.472 10.938 24.472 24.473 0 13.455-10.938 24.471-24.472 24.471zM68.434 440.17c-4.328 0-7.869 3.543-7.869 7.869v23.922c0 4.328 3.541 7.869 7.869 7.869h87.971c2.282-15.738 10.229-29.666 21.718-39.658H68.434v-.002zm151.864 0c-26.989 0-48.943 21.953-48.943 49.021 0 26.99 21.954 48.943 48.943 48.943 27.068 0 48.943-21.953 48.943-48.943.001-27.066-21.874-49.021-48.943-49.021zm0 73.495c-13.534 0-24.471-11.016-24.471-24.471 0-13.535 10.937-24.473 24.471-24.473s24.472 10.938 24.472 24.473c0 13.455-10.938 24.471-24.472 24.471zm117.716-363.06h-91.198c4.485 13.298 6.846 27.54 6.846 42.255 0 74.28-60.431 134.711-134.711 134.711-13.535 0-26.675-2.045-39.029-5.744v86.949c0 4.328 3.541 7.869 7.869 7.869h265.96c4.329 0 7.869-3.541 7.869-7.869V174.211c-.001-13.062-10.545-23.606-23.606-23.606zM118.969 73.866C53.264 73.866 0 127.129 0 192.834s53.264 118.969 118.969 118.969 118.97-53.264 118.97-118.969-53.265-118.968-118.97-118.968zm0 210.864c-50.752 0-91.896-41.143-91.896-91.896s41.144-91.896 91.896-91.896c50.753 0 91.896 41.144 91.896 91.896 0 50.753-41.143 91.896-91.896 91.896zm35.097-72.488c-1.014 0-2.052-.131-3.082-.407L112.641 201.5a11.808 11.808 0 0 1-8.729-11.396v-59.015c0-6.516 5.287-11.803 11.803-11.803 6.516 0 11.803 5.287 11.803 11.803v49.971l29.614 7.983c6.294 1.698 10.02 8.177 8.322 14.469-1.421 5.264-6.185 8.73-11.388 8.73z" fill="#FFF" /> </svg>
-                            <h4><span>3. </span>Delivery or take out</h4> </div>
-                        <!-- end:Step -->
-                    </div>
-                    <!-- end:Steps -->
                 </div>
+                <!--<div class="container" style="background-color: black; opacity:0.5; border-radius:10px; height:100px; width:75%">
+                    <p>hatdog</p>
+
+                </div>-->
             </div>
+            
             <!--end:Hero inner -->
         </div>
+        
         <!-- banner part ends -->
-      
-	  
-	
+        <!--Parallax-->
+        <div class="parallax"></div>
+        <!--Parallax-->
+        <!---->
+    
+        <!--<section id="Menu">-->
+      <div class="container">
+        <hr>
+        <br>
+        <div class="row" style="display: flex;">
+        <div class="column" style="flex: 25%; padding-left: 15px; padding-right: 15px;">
+            <div class="itemBox">
+              <div class="itemBox-img">
+                <img src="./src/tacos2.png">
+              </div>
+              <div class="itemBox-head">Tacos</div>
+              <div class="itemBox-sub-text">A taco is a traditional Mexican dish consisting of a 
+                small hand-sized corn or wheat tortilla topped with a 
+                filling. The tortilla is then folded around the filling 
+                and eaten by hand.
+              </div>
+              <button class="itemBox-btn" type="submit">Order Now</button>
+            </div>
+          </div>
+
+          <div class="column" style="flex: 25%; padding-left: 15px; padding-right: 15px;">
+            <div class="itemBox">
+              <div class="itemBox-img">
+                <img src="./src/quesadilla2.png">
+              </div>
+              <div class="itemBox-head">Quesadilla</div>
+              <div class="itemBox-sub-text">A quesadilla is a Mexican dish consisting of a tortilla 
+                that is filled primarily with cheese, and sometimes meats, 
+                spices, and other fillings, and then cooked on a griddle 
+                or stove.
+              </div>
+              <button class="itemBox-btn" type="submit">Order Now</button>
+            </div>
+          </div>
+
+          <div class="column" style="flex: 25%; padding-left: 15px; padding-right: 15px;">
+            <div class="itemBox">
+              <div class="itemBox-img">
+                <img src="./src/burger2.png">
+              </div>
+              <div class="itemBox-head">Quesadilla Burger</div>
+              <div class="itemBox-sub-text">Quesadilla burger is a 2-in-1 snack combination of burger and quesadilla 
+                filled with triple cheese, triple sauce, beef patty, lettuce, 
+                tomato, cucumber.
+              </div>
+              <button class="itemBox-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="column" style="flex: 25%; padding-left: 15px; padding-right: 15px;">
+            <div class="itemBox">
+              <div class="itemBox-img">
+               <img src="./src/tachos2.png">
+              </div>
+              <div class="itemBox-head">Tachos</div>
+              <div class="itemBox-sub-text">Tachos is like a nachos but with the use of taco strips 
+                that make it more delicious and satisfying to eat with seven layers of meat, cheese, and veggies.
+              </div>
+              <button class="itemBox-btn">Order Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <!--</section>-->
+
+        <!---->
         <!-- Popular block starts -->
         <section class="popular">
             <div class="container">
@@ -222,6 +182,12 @@ include_once 'product-action.php'; //including controller
 						<?php 
 						// fetch records from database to display popular first 3 dishes from table
 						$query_res= mysqli_query($db,"select * from dishes LIMIT 3"); 
+                        
+                            // displaying total sales of Burgerdilla
+                            $query_res123= mysqli_query($db,"select SUM(quantity) as sum from users_orders where title='Burgerdilla' AND status='closed'");
+                            $val = $query_res123 -> fetch_array();
+                            $rws = $val['sum'];
+
 									      while($r=mysqli_fetch_array($query_res))
 										  {
 													
@@ -230,12 +196,12 @@ include_once 'product-action.php'; //including controller
 															<div class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/'.$r['img'].'">
 																<div class="distance"><i class="fa fa-pin"></i>1240m</div>
 																<div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-																<div class="review pull-right"><a href="#">198 reviews</a> </div>
+																<div class="review pull-right"><a style="color: Orange; font-weight:Bold"href="#">Total Sales: '.$rws.'</a> </div>
 															</div>
 															<div class="content">
 																<h5><a href="dishes.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
 																<div class="product-name">'.$r['slogan'].'</div>
-																<div class="price-btn-block"> <span class="price">P'.$r['price'].'</span> <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+																<div class="price-btn-block"> <span class="price">P'.$r['price'].'</span> <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Add to cart</a> </div>
 															</div>
 															
 														</div>
@@ -245,81 +211,12 @@ include_once 'product-action.php'; //including controller
 						
 						
 						?>
-				
-				
-				
-				
-                  
-					
-					
-					
-					
-					
-					
-                 
                 </div>
             </div>
         </section>
         <!-- Popular block ends -->
-        <!-- How it works block starts -->
-        <section class="how-it-works">
-            <div class="container">
-                <div class="text-xs-center">
-                    <h2>Easy 3 Step Order</h2>
-                    <!-- 3 block sections starts -->
-                    <div class="row how-it-works-solution">
-                        <div class="col-xs-12 col-sm-12 col-md-4 how-it-works-steps white-txt col1">
-                            <div class="how-it-works-wrap">
-                                <div class="step step-1">
-                                    <div class="icon" data-step="1">
-                                    <div><img src="src/choice.png" alt="" style="margin-left:10px"></div>
-                                       <!-- <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 483 483" width="512" height="512">
-                                            <g fill="#FFF">
-                                                <path d="M467.006 177.92c-.055-1.573-.469-3.321-1.233-4.755L407.006 62.877V10.5c0-5.799-4.701-10.5-10.5-10.5h-310c-5.799 0-10.5 4.701-10.5 10.5v52.375L17.228 173.164a10.476 10.476 0 0 0-1.22 4.938h-.014V472.5c0 5.799 4.701 10.5 10.5 10.5h430.012c5.799 0 10.5-4.701 10.5-10.5V177.92zM282.379 76l18.007 91.602H182.583L200.445 76h81.934zm19.391 112.602c-4.964 29.003-30.096 51.143-60.281 51.143-30.173 0-55.295-22.139-60.258-51.143H301.77zm143.331 0c-4.96 29.003-30.075 51.143-60.237 51.143-30.185 0-55.317-22.139-60.281-51.143h120.518zm-123.314-21L303.78 76h86.423l48.81 91.602H321.787zM97.006 55V21h289v34h-289zm-4.198 21h86.243l-17.863 91.602h-117.2L92.808 76zm65.582 112.602c-5.028 28.475-30.113 50.19-60.229 50.19s-55.201-21.715-60.23-50.19H158.39zM300 462H183V306h117v156zm21 0V295.5c0-5.799-4.701-10.5-10.5-10.5h-138c-5.799 0-10.5 4.701-10.5 10.5V462H36.994V232.743a82.558 82.558 0 0 0 3.101 3.255c15.485 15.344 36.106 23.794 58.065 23.794s42.58-8.45 58.065-23.794a81.625 81.625 0 0 0 13.525-17.672c14.067 25.281 40.944 42.418 71.737 42.418 30.752 0 57.597-17.081 71.688-42.294 14.091 25.213 40.936 42.294 71.688 42.294 24.262 0 46.092-10.645 61.143-27.528V462H321z" />
-                                                <path d="M202.494 386h22c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5h-22c-5.799 0-10.5 4.701-10.5 10.5s4.701 10.5 10.5 10.5z" /> </g>
-                                        </svg>
-                                        -->
-                                    </div>
-                                    <h3>Choose your order</h3>
-                                    <p>Select the food you like and add it to cart.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 how-it-works-steps white-txt col2">
-                            <div class="step step-2">
-                                <div class="icon" data-step="2">
-                                <div><img src="src/checkout.png" alt="" style="margin-left:-4px"></div>
-                                    <!--<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewbox="0 0 380.721 380.721">
-                                        <g fill="#FFF">
-                                            <path d="M58.727 281.236c.32-5.217.657-10.457 1.319-15.709 1.261-12.525 3.974-25.05 6.733-37.296a543.51 543.51 0 0 1 5.449-17.997c2.463-5.729 4.868-11.433 7.25-17.01 5.438-10.898 11.491-21.07 18.724-29.593 1.737-2.19 3.427-4.328 5.095-6.46 1.912-1.894 3.805-3.747 5.676-5.588 3.863-3.509 7.221-7.273 11.107-10.091 7.686-5.711 14.529-11.137 21.477-14.506 6.698-3.724 12.455-6.982 17.631-8.812 10.125-4.084 15.883-6.141 15.883-6.141s-4.915 3.893-13.502 10.207c-4.449 2.917-9.114 7.488-14.721 12.147-5.803 4.461-11.107 10.84-17.358 16.992-3.149 3.114-5.588 7.064-8.551 10.684-1.452 1.83-2.928 3.712-4.427 5.6a1225.858 1225.858 0 0 1-3.84 6.286c-5.537 8.208-9.673 17.858-13.995 27.664-1.748 5.1-3.566 10.283-5.391 15.534a371.593 371.593 0 0 1-4.16 16.476c-2.266 11.271-4.502 22.761-5.438 34.612-.68 4.287-1.022 8.633-1.383 12.979 94 .023 166.775.069 268.589.069.337-4.462.534-8.97.534-13.536 0-85.746-62.509-156.352-142.875-165.705 5.17-4.869 8.436-11.758 8.436-19.433-.023-14.692-11.921-26.612-26.631-26.612-14.715 0-26.652 11.92-26.652 26.642 0 7.668 3.265 14.558 8.464 19.426-80.396 9.353-142.869 79.96-142.869 165.706 0 4.543.168 9.027.5 13.467 9.935-.002 19.526-.002 28.926-.002zM0 291.135h380.721v33.59H0z" /> </g>
-                                    </svg>
-                                        -->
-                                </div>
-                                <h3>Checkout your order</h3>
-                                <p>Hassle free transaction that takes 2-3 minutes.</p>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 how-it-works-steps white-txt col3">
-                            <div class="step step-3">
-                                <div class="icon" data-step="3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewbox="0 0 612.001 612">
-                                        <path d="M604.131 440.17h-19.12V333.237c0-12.512-3.776-24.787-10.78-35.173l-47.92-70.975a62.99 62.99 0 0 0-52.169-27.698h-74.28c-8.734 0-15.737 7.082-15.737 15.738v225.043h-121.65c11.567 9.992 19.514 23.92 21.796 39.658H412.53c4.563-31.238 31.475-55.396 63.972-55.396 32.498 0 59.33 24.158 63.895 55.396h63.735c4.328 0 7.869-3.541 7.869-7.869V448.04c-.001-4.327-3.541-7.87-7.87-7.87zM525.76 312.227h-98.044a7.842 7.842 0 0 1-7.868-7.869v-54.372c0-4.328 3.541-7.869 7.868-7.869h59.724c2.597 0 4.957 1.259 6.452 3.305l38.32 54.451c3.619 5.194-.079 12.354-6.452 12.354zM476.502 440.17c-27.068 0-48.943 21.953-48.943 49.021 0 26.99 21.875 48.943 48.943 48.943 26.989 0 48.943-21.953 48.943-48.943 0-27.066-21.954-49.021-48.943-49.021zm0 73.495c-13.535 0-24.472-11.016-24.472-24.471 0-13.535 10.937-24.473 24.472-24.473 13.533 0 24.472 10.938 24.472 24.473 0 13.455-10.938 24.471-24.472 24.471zM68.434 440.17c-4.328 0-7.869 3.543-7.869 7.869v23.922c0 4.328 3.541 7.869 7.869 7.869h87.971c2.282-15.738 10.229-29.666 21.718-39.658H68.434v-.002zm151.864 0c-26.989 0-48.943 21.953-48.943 49.021 0 26.99 21.954 48.943 48.943 48.943 27.068 0 48.943-21.953 48.943-48.943.001-27.066-21.874-49.021-48.943-49.021zm0 73.495c-13.534 0-24.471-11.016-24.471-24.471 0-13.535 10.937-24.473 24.471-24.473s24.472 10.938 24.472 24.473c0 13.455-10.938 24.471-24.472 24.471zm117.716-363.06h-91.198c4.485 13.298 6.846 27.54 6.846 42.255 0 74.28-60.431 134.711-134.711 134.711-13.535 0-26.675-2.045-39.029-5.744v86.949c0 4.328 3.541 7.869 7.869 7.869h265.96c4.329 0 7.869-3.541 7.869-7.869V174.211c-.001-13.062-10.545-23.606-23.606-23.606zM118.969 73.866C53.264 73.866 0 127.129 0 192.834s53.264 118.969 118.969 118.969 118.97-53.264 118.97-118.969-53.265-118.968-118.97-118.968zm0 210.864c-50.752 0-91.896-41.143-91.896-91.896s41.144-91.896 91.896-91.896c50.753 0 91.896 41.144 91.896 91.896 0 50.753-41.143 91.896-91.896 91.896zm35.097-72.488c-1.014 0-2.052-.131-3.082-.407L112.641 201.5a11.808 11.808 0 0 1-8.729-11.396v-59.015c0-6.516 5.287-11.803 11.803-11.803 6.516 0 11.803 5.287 11.803 11.803v49.971l29.614 7.983c6.294 1.698 10.02 8.177 8.322 14.469-1.421 5.264-6.185 8.73-11.388 8.73z" fill="#FFF" /> </svg>
-                                </div>
-                                <h3>Pick up or Delivery</h3>
-                                <p>Get your food delivered! And enjoy your meal!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3 block sections ends -->
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <p class="pay-info">Pay by Cash on delivery</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- How it works block ends -->
+        <div class="parallax"></div>
+        
         <!--
         <section class="app-section">
             <div class="app-wrap">
@@ -349,6 +246,29 @@ include_once 'product-action.php'; //including controller
             </div>
         </section>
                                         -->
+
+        <!--About uS-->
+            <div class="about">
+                <div class="sectionHead">About Us</div>
+                <hr>
+                <br>
+                <p class="aboutContent">
+                    Bite into the cheesier side of life with these deliciously sinful 
+                    Mexican treats brought to you by Zinnovare Enterprise.
+                    Tired of your usual chips? Well, these are NACHO average merienda. 
+                    Try Zinnovare’s Ta-Chos for cheesier barkada moments.
+                    Munch into layers of ground beef, veggies, sauce, and cheese – crunchy 
+                    goodness in between fried spec-TACO-lar shells.
+                    Indulge with their quesadilla filled with stretchy mozzarella and 
+                    chunks of flavored chicken. 
+                    This flavorful shell-ebration’s the taco’f the town! 
+                </p>
+                <br>
+            </div>
+        <!--End About-->
+        <!--Feedback-->
+        
+        <!--Feedback-->
         <!-- start: FOOTER -->
         <footer class="footer">
             <div class="container">
@@ -356,50 +276,7 @@ include_once 'product-action.php'; //including controller
                 <div class="row top-footer">
                     <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
                         <a href="index.php"> <img src="src/logo6.png" class="footer-logo" alt="Footer logo" width="150px" height="45px" style= "margin-bottom:-5px"> </a> <span>Order Delivery &amp; Take-Out </span> </div>
-                    <div class="col-xs-12 col-sm-2 about color-gray">
-                        <h5>About Us</h5>
-                        <ul>
-                            <li><a href="#">About us</a> </li>
-                            <li><a href="#">History</a> </li>
-                            <li><a href="#">Our Team</a> </li>
-                            <li><a href="#">We are hiring</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                        <h5>How it Works</h5>
-                        <ul>
-                            <li><a href="#">Enter your location</a> </li>
-                            <li><a href="#">Choose restaurant</a> </li>
-                            <li><a href="#">Choose meal</a> </li>
-                            <li><a href="#">Pay via credit card</a> </li>
-                            <li><a href="#">Wait for delivery</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 pages color-gray">
-                        <h5>Pages</h5>
-                        <ul>
-                            <li><a href="#">Search results page</a> </li>
-                            <li><a href="#">User Sing Up Page</a> </li>
-                            <li><a href="#">Pricing page</a> </li>
-                            <li><a href="#">Make order</a> </li>
-                            <li><a href="#">Add to cart</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                        <h5>Popular locations</h5>
-                        <ul>
-                            <li><a href="#">Sarajevo</a> </li>
-                            <li><a href="#">Split</a> </li>
-                            <li><a href="#">Tuzla</a> </li>
-                            <li><a href="#">Sibenik</a> </li>
-                            <li><a href="#">Zagreb</a> </li>
-                            <li><a href="#">Brcko</a> </li>
-                            <li><a href="#">Beograd</a> </li>
-                            <li><a href="#">New York</a> </li>
-                            <li><a href="#">Gradacac</a> </li>
-                            <li><a href="#">Los Angeles</a> </li>
-                        </ul>
-                    </div>
+                    
                 </div>
                 <!-- top footer ends -->
                 <!-- bottom footer statrs -->
@@ -450,6 +327,7 @@ include_once 'product-action.php'; //including controller
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
+    <script src="js/header.js"></script>
 </body>
 
 </html>

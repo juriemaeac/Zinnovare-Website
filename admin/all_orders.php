@@ -69,6 +69,19 @@ if(isset($_POST["create_pdf"]))
       $obj_pdf->Output('sample.pdf', 'I');  
  } 
 
+ if(isset($_POST['update']))
+  {
+$id=$_GET['o_id'];
+$status=$_POST['status'];
+$remark=$_POST['remark'];
+$query=mysqli_query($db,"insert into remark(frm_id,status,remark) values('$id','$status','$remark')");
+$sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$id'");
+
+echo "<script>alert('form details updated successfully');</script>";
+
+  }
+
+ ?>
 ?>
 <head>
     <meta charset="utf-8">
@@ -236,6 +249,7 @@ if(isset($_POST["create_pdf"]))
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
+                                            <th>ID</th>
                                                 <th>Username</th>		
                                                 <th>Title</th>
                                                 <th>Quantity</th>
@@ -267,6 +281,7 @@ if(isset($_POST["create_pdf"]))
 																				?>
 																				<?php
 																					echo ' <tr>
+                                                                                    <td>'.$rows['o_id'].'</td>
 																					           <td>'.$rows['username'].'</td>
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
@@ -306,7 +321,7 @@ if(isset($_POST["create_pdf"]))
 																							echo '	<td>'.$rows['date'].'</td>';
 																							?>
 																									 <td>
-																									 <a href="delete_orders.php?order_del=<?php echo $rows['o_id'];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+                                                                                                     <a href="delete_orders.php?order_del=<?php echo $rows['o_id'];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 																								<?php
 																								echo '<a href="view_order.php?user_upd='.$rows['o_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
 																									</td>
@@ -374,6 +389,8 @@ if(isset($_POST["create_pdf"]))
     <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script>
+        </script>
     <script src="js/lib/datatables/datatables-init.js"></script>
 </body>
 

@@ -164,14 +164,14 @@
         );
         </script>
         <!--header starts-->
-        <header id="header" class="header-scroll top-header headrom">
+        <header id="header" class="header-scroll top-header headrom" >
             <!-- .navbar -->
-            <nav class="navbar navbar-dark">
+            <nav class="navbar navbar-dark" style="background: black;">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
                     <a class="navbar-brand" href="index.html"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav" >
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
                             <?php
@@ -321,15 +321,14 @@
                                                                     if($status=="closed")
                                                                     {
                                                                 ?>
-                                                                    <p> <a type="button" class="btn btn-success" data-target="#myModal" data-toggle="modal" href="#myModal" value="<?php echo $fields+1 ?>" >
-                                                                        <span  class="fa fa-check-circle" aria-hidden="true"> Order Received</a><p>
+                                                                <input type="button" class="btn btn-warning" onclick="change()"value="Order Received" id="myButton1" data-target="#myModal" data-toggle="modal" href="#myModal" value="<?php echo $fields+1 ?>"><span class="fa fa-check-circle" aria-hidden="true" ></span></button>
+                                                                    
                                                                             <!--FEEDBACK-->
                                                                             <div id="myModal" class="modal fade" role="dialog">                                                                                
                                                                                 <div class="modal-dialog">
                                                                                     <!-- Modal content-->
                                                                                     <div class="modal-content">
                                                                                         <div class="modal-header">
-                                                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                                             <h4 class="modal-title">Feedback</h4>
                                                                                         </div>
                                                                                         <div class="widget widget-cart">
@@ -346,18 +345,18 @@
                                                                                             <div class="widget-body">
                                                                                                 <div class="price-wrap text-xs-center">
                                                                                                     <textarea name="remark" cols="50" rows="10" required="required"></textarea>
-                                                                                                    <a href=""  class="btn theme-btn btn-lg">Send</a>
-                                                                                                    <?php $status= "Received"?>
+                                                                                                    <a type="button" id="FeedbackBtn" href="" class="btn theme-btn btn-lg">Send</a>
+                                                                                                    <?php $status= "Received"?> 
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                    <!--end modal content -->
+                                                                                        <!--end modal content -->
                                                                                     
                                                                                     </div>
                                                                                             
                                                                                         <!--end modal -->
                                                                                         
-                                                                                    </div>
+                                                                                </div>
                                                             
                                                                         </div>
                                                                     </div>
@@ -408,12 +407,22 @@
         <script src="js/headroom.js"></script>
         <script src="js/foodpicky.min.js"></script>
         <script>
-            function deleteOrder(id) {
-                if (confirm("Are you sure you want to cancel this order?")) {
-                window.location.href = 'delete_orders.php?order_del=<?php echo $row['o_id'];?>';
-                }
+        $(window).scroll(function() {
+        if ($(window).scrollTop() >= 200) {
+            $('.navbar').css('background', 'black');
+        } else {
+            $('.navbar').css('background', 'black');
+        }
+        });
+
+        function change()
+            {
+                document.getElementById("myButton1").value="Received"; 
+                document.getElementById('myButton1').onclick = function () {
+    this.disabled = true;
+}
             }
-        </script>
+    </script>
     </body>
 
 </html>
