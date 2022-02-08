@@ -51,7 +51,7 @@
             </nav>
             <!-- /.navbar -->
         </header>
-        <div id="myModal" class="modal fade" role="dialog" style="opacity: 0.85;">
+        <div id="myModal" class="modal fade" role="dialog" style="opacity: 0.9;">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
