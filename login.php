@@ -95,8 +95,6 @@
 					</form>
 					<div class="cta">Not registered?<a href="registration.php" style="color:#f30;"> Create an account</a></div>
 				</div>
-  
-  
 			</div>
 			<span style="color:green;"><?php echo $message; ?></span>
 		</div>
@@ -105,7 +103,7 @@
 			<div class="row">
 
 				<div class="column">
-					<img src="admin/images/logo6.png" alt="Zinnovare" width="150px" height="40px"/>
+					<a href="index.php"><img src="admin/images/logo6.png" alt="Zinnovare" width="150px" height="40px"/></a>
 				</div>
 
 				<div class="column">

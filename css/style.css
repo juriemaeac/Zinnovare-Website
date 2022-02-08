@@ -253,8 +253,9 @@ hr {
 
 .quan{
     display: inline-block;
-    margin-left: 48px;
-    width: 50px;
+    margin-left: 16px;
+    width: 47px;
+    border: none;
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button {  
 
@@ -313,6 +314,178 @@ background-color: #f0ecec;
     width: 30%;
     float: right;
 }
+
+.abc{
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    display: inline-block;
+    width: 30%;
+    height: 300px;
+    margin: 1% 0% 1% 2.3%;
+}
+
+.headerPic {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('src/header.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: 1;
+}
+
+/* This is for the Menu Section */
+.menu{
+    width: 23%;
+    height: 67%;
+}
+
+.itemBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    box-shadow: 9px 6px 13px rgba(0, 0, 0, 0.32);
+    transition: all 0.2s;
+}
+
+
+.itemBox .btn{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.itemBox .btn:hover {
+    background-color: black;
+  }
+
+.itemBox:hover {
+    transform: scale(1.2);
+}
+
+.itemBox .itemBox-img {
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+}
+
+.itemBox .itemBox-img>img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+.itemBox-head {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    padding: 18px;
+    margin-left: 21px;
+    padding-left: 0;
+    font-size: xx-large;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.itemBox .itemBox-sub-text {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    line-height: 1;
+    margin: 52px 8px;
+    margin-left: 21px;
+    width: 80%;
+    font-style: italic;
+    font-size: 18px;
+    color: #e6e6e6;
+}
+
+.itemBox .itemBox-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 105px 8px;
+    margin-left: 22px;
+    font-size: 14px;
+    padding: 5px 18px;
+    color: #fff;
+    background-color: #e47618;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.itemBox .itemBox-btn:hover {
+    background-color: #333;
+}
+
+.rowMenu {
+    display: flex;
+}
+  
+.columnMenu {
+flex: 25%;
+padding-left: 15px;
+padding-right: 15px;
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+/* This is used in About Section */
+.sectionHead {
+    font-size: 20px;
+    padding: 25px 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+    color:#e47618 ;
+    text-align: center;
+}
+.about{
+    text-align: justify;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: large;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+}
+
+.aboutContent{
+    padding-left: 12%;
+    padding-right: 12%;
+}
+/*----------------------------------------------------------------------*/
+/*-------------------------------------
+/* This is used in Jobs Section */
+
+.about{
+    text-align: justify;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: large;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+}
+
+.aboutContent{
+    padding-left: 12%;
+    padding-right: 12%;
+}
+/*----------------------------------------------------------------------*/
 
 
 /* ==========================
@@ -446,8 +619,14 @@ background-color: #f0ecec;
     z-index: 10;
 }
 
+.navbar-none {
+    padding: .95rem 1rem;
+    border-radius: 0;
+}
+
 .navbar {
-    background-image: url("../images/menu-bg.jpg");
+    background-image: none;
+    opacity: 0.75;
     padding: .95rem 1rem;
     border-radius: 0;
 }
@@ -576,7 +755,7 @@ background-color: #f0ecec;
 }
 
 .hero h1 {
-    font-family: "Roboto", cursive;
+    font-family: "Arial";
     color: #fff;
     font-size: 3.7em;
     font-weight: 700;
@@ -591,12 +770,13 @@ background-color: #f0ecec;
     left: 0;
     width: 100%;
     z-index: 1;
-    background-color: rgba(7, 6, 29, 0.37);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .hero .hero-inner {
     position: relative;
-    z-index: 1
+    z-index: 1;
+    text-align: left;
 }
 
 
@@ -2003,56 +2183,61 @@ a.more-link {
 }
 
 .menu-widget .food-item {
-    padding: 15px
+    padding: 15px;
 }
 
-.menu-widget .food-item:first-of-type {
-    border-bottom: none
+.menu-btn{
+    margin-right: 16px;
+    padding: 4px;
+    
 }
 
 .menu-widget .food-item .restaurant-logo {
-    max-width: 100px;
-    height: auto;
-    display: block;
+    width: 100%;
+    height: 180px;
+    display: inline-block;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: -15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .menu-widget .food-item .restaurant-logo img {
     max-width: 100%;
-    display: block
-}
-
-.menu-widget .food-item:first-of-type {
-    border-top: 1px solid #eaebeb;
-}
-
-.menu-widget .food-item:last-of-type {
-    border-bottom: transparent
+    display: block;
 }
 
 .menu-widget .food-item.white {
-    background-color: #fff
+    background-color: #fff;
 }
 
-.menu-widget .food-item .rest-descr {
-    padding-left: 115px;
-    padding-top: 0;
-}
-
-.menu-widget .food-item .rest-descr h6 a {
+.menu-widget .food-item .rest-descr a {
     color: #25282b;
     font-size: 18px;
     font-weight: 600;
+    margin-left: 16px;
 }
 
 .menu-widget .food-item .item-cart-info {
-    padding-top: 20px
+    width: 100%;
+    padding-left: 15px;
+    padding-bottom: -10px;
+    height: 50px;
+}
+
+.menu-widget .food-item .item-cart-info2 {
+    padding-right: 16px;
+    width: 100%;
+    display: inline;
+    margin-left: 16px;
+    
 }
 
 .menu-widget .food-item .price {
+    margin-right: 16px;
     font-weight: 600;
     color: #000;
-    position: relative;
-    margin-top: 6px;
 }
 
 .order-row .form-control {
