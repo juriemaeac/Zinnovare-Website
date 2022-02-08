@@ -27,16 +27,17 @@ include_once 'product-action.php'; //including controller
     <style>
         .parallax {
         /* The image used */
-        background-image: url("src/bg.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("src/bg.jpg");
 
         /* Set a specific height */
-        min-height: 250px;
+        min-height: 350px;
 
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        
         }
     </style>
 </head>
@@ -95,10 +96,6 @@ include_once 'product-action.php'; //including controller
             <!--end:Hero inner -->
         </div>
         
-        <!-- banner part ends -->
-        <!--Parallax-->
-        <div class="parallax"></div>
-        <!--Parallax-->
         <!---->
     
         <!--<section id="Menu">-->
@@ -215,7 +212,45 @@ include_once 'product-action.php'; //including controller
             </div>
         </section>
         <!-- Popular block ends -->
-        <div class="parallax"></div>
+        <div class="parallax">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="container">
+                <div class="row" style="display: flex;">
+                    <div class="column" style="display: flex;" >
+                        <center>
+                        <img src="src/smile.png" style="height: 50px; width: 50px"> 
+                        <h2 style="color:orange; text-align:center">
+                            <?php $sql="select * from users";
+                                $result=mysqli_query($db,$sql); 
+                                $rws=mysqli_num_rows($result);
+                                echo $rws;?></h2>
+                                <p class="m-b-0" style="color: white">Happy Customers</p>   
+                        </center>
+                    </div>
+                    <div class="column" style="display: flex;">
+                        <center>
+                            <img src="src/enchilada.png" style="height: 50px; width: 50px">      
+                            <h2 style="color:orange; text-align:center">
+                                <?php 
+                                    $sql="select * from users_orders";
+                                    $result=mysqli_query($db,$sql); 
+                                    $rws=mysqli_num_rows($result);
+                                    echo $rws;
+                                ?>
+                            </h2>
+                            <p style="color: white" class="m-b-0">Dish Served</p>     
+                        <center>  
+                    </div>
+                
+                </div>
+                <div class="row" style="display: flex;">
+                <h4 style="color:white">Try Zinnovare’s Mexican Treats for cheesier barkada moments.</h4>
+                </div>
+            </div>
+        </div>
         
         <!--
         <section class="app-section">
@@ -247,7 +282,7 @@ include_once 'product-action.php'; //including controller
         </section>
                                         -->
 
-        <!--About uS-->
+        <!--About uS
             <div class="about">
                 <div class="sectionHead">About Us</div>
                 <hr>
@@ -264,10 +299,78 @@ include_once 'product-action.php'; //including controller
                     This flavorful shell-ebration’s the taco’f the town! 
                 </p>
                 <br>
-            </div>
+            </div>-->
         <!--End About-->
         <!--Feedback-->
-        
+        <br>
+        <br>
+        <div>
+            <h2 style="color: orange; font-weight: bold; text-align:center">OUR HAPPY CUSTOMERS</h2>
+        </div>
+        <hr>
+        <div class="sectionHead">
+            <img src="src/quo.png" style="height: 30px; width:30px"/>
+        </div>
+        <div class="feedback">
+    
+            <div class="slider">
+                <div class="slides">
+                    <!--radio buttons start-->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <!--radio buttons end-->
+                    <!--slide images start-->
+                        <div class="slide first">
+                            <center>
+                                <h3 class="feedbackContent">Awesome Food.</h3>
+                                <h6 style="color: gray">Pedro Penduko</h6>
+                            </center>
+                        </div>
+                        <div class="slide">
+                            <center>
+                                <h3 class="feedbackContent">Good Service.</h3>
+                                <h6 style="color: gray">Juan Dela Cruz</h6>
+                            </center>
+                        </div>
+                        <div class="slide">
+                            <center>
+                                <h3 class="feedbackContent">Hatdog.</h3>
+                                <h6 style="color: gray">Jose Santos</h6>
+                            </center>
+                        </div>
+                        <div class="slide">
+                            <center>
+                                <h3 class="feedbackContent">Hatdog 1.</h3>
+                                <h6 style="color: gray">Maria Dela Cruz</h6>
+                            </center>
+                        </div>
+                        <!--slide images end-->
+                        <!--automatic navigation start-->
+                        <div class="navigation-auto">
+                            <div  class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+                        <!--automatic navigation end-->
+                    </div>
+                    <!--manual navigation start-->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+                    <!--manual navigation end-->
+                </div>
+                <!--image slider end-->
+
+            </div>
+        </div>      
+        <br>
+        <br>  
         <!--Feedback-->
         <!-- start: FOOTER -->
         <footer class="footer">
@@ -328,6 +431,16 @@ include_once 'product-action.php'; //including controller
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
     <script src="js/header.js"></script>
+    <script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+      document.getElementById('radio' + counter).checked = true;
+      counter++;
+      if(counter > 4){
+        counter = 1;
+      }
+    }, 5000);
+    </script>
 </body>
 
 </html>

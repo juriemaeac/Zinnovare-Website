@@ -336,6 +336,193 @@ background-color: #f0ecec;
     z-index: 1;
 }
 
+/*--------------------------------*/
+/*feedback pop up*/
+.feedback-popup {
+    height:auto;
+     width:545px;
+     background:#FFFFFF;
+     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     padding:0;
+     position:absolute;
+     z-index:999;
+     cursor:default;     
+  display: none;
+  top: 10px;
+  left: 50%;
+  }
+  
+  /* Add styles to the form container */
+  .feedback-container {
+    padding: 20px;
+    background-color: white;
+  }
+
+  .feedback-text{
+      padding: 10px;
+      width: 100%;
+      height: 200px;
+      border-style: none;
+      box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.19) inset;
+  }
+  
+  /* Full-width input fields */
+  .feedback-container input[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .feedback-container input[type=text]:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .feedback-container .btn {
+    background-color: #FF9F00;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+
+    margin:5px 5px 10px 5px;
+    opacity: 0.8;
+  }
+  
+  /* Add some hover effects to buttons */
+  .feedback-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+/*----------feedback home-------------*/
+
+.feedback{
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .feedbackContent{
+      font-weight: bold;
+  }
+  
+  .slider{
+    width: 800px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 150px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }
+  
+  .slide img{
+    width: 800px;
+    height: 150px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    background: gray;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 7px;
+  }
+
+  .heading_space{
+	margin-bottom:50px;
+}
+  
+  .manual-btn:hover{
+    background: orange;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto div{
+      background-color: orange;
+    border: 2px solid orange;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 7px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: orange;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: orange;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: orange;
+  }
+  
+  #radio4:checked ~ .navigation-auto .auto-btn4{
+    background: orange;
+  }
+/*---------------------------------*/
 /* This is for the Menu Section */
 .menu{
     width: 23%;
