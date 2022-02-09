@@ -202,14 +202,6 @@ echo "<script>alert('form details updated successfully');</script>";
                                
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Store</span></a>
-                            <ul aria-expanded="false" class="collapse">
-								<li><a href="allrestraunt.php">All Stores</a></li>
-								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restraunt.php">Add Restaurant</a></li>
-                                
-                            </ul>
-                        </li>
                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
@@ -285,8 +277,8 @@ echo "<script>alert('form details updated successfully');</script>";
 																					           <td>'.$rows['username'].'</td>
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
-																								<td>$'.$rows['price'].'</td>
-                                                                                                <td>$'.$rows['price']*$rows['quantity'].'</td>
+																								<td>Php '.$rows['price'].'</td>
+                                                                                                <td>Php '.$rows['price']*$rows['quantity'].'</td>
 																								<td>'.$rows['address'].'</td>';
 																								?>
 																								<?php 
@@ -360,7 +352,7 @@ echo "<script>alert('form details updated successfully');</script>";
 			
 			
             <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
+            <footer class="footer"> © Zinnovare 2022. All rights reserved.</footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->

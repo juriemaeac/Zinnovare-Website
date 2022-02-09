@@ -124,14 +124,6 @@ session_start();
                                
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Store</span></a>
-                            <ul aria-expanded="false" class="collapse">
-								<li><a href="allrestraunt.php">All Stores</a></li>
-								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restraunt.php">Add Restaurant</a></li>
-                                
-                            </ul>
-                        </li>
                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
@@ -170,7 +162,7 @@ session_start();
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-											 <th>Restaurant</th>
+											 <!--<th>Restaurant</th>-->
                                                 <th>Dish-Name</th>
                                                 <th>Slogan</th>
                                                 <th>Price</th>
@@ -181,12 +173,12 @@ session_start();
                                         </thead>
                                         <tfoot>
                                             <tr>
-											 <th>Restaurant</th>
+											 <!--<th>Restaurant</th>
                                                 <th>Dish-Name</th>
                                                 <th>Slogan</th>
                                                 <th>Price</th>
                                                 <th>Image</th>
-                                               <th>Action</th>
+                                               <th>Action</th>-->
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -208,12 +200,12 @@ session_start();
 																				$newquery=mysqli_query($db,$mql);
 																				$fetch=mysqli_fetch_array($newquery);
 																				
-																				
-																					echo '<tr><td>'.$fetch['title'].'</td>
+																				//<td>'.$fetch['title'].'</td>
+																					echo '<tr> 
 																					
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['slogan'].'</td>
-																								<td>$'.$rows['price'].'</td>
+																								<td>Php '.$rows['price'].'</td>
 																								
 																								
 																								<td><div class="col-md-3 col-lg-8 m-b-10">

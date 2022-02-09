@@ -201,21 +201,21 @@ include_once 'product-action.php'; //including controller
             <br>
             <div class="container">
                 <div class="row">
-                <center><div class="column parallax-icon">
-                        
-                        <img src="src/smile.png" style="height: 50px; width: 50px"> 
-                        <h2 style="color:orange; text-align:center">
-                            <?php $sql="select * from users";
-                                $result=mysqli_query($db,$sql); 
-                                $rws=mysqli_num_rows($result);
-                                echo $rws;?></h2>
-                                <p class="m-b-0" style="color: white">Happy Customers</p>   
-                        
-                    </div>
-                    <div class="column parallax-icon">
-                        
+                    <center>
+                        <div class="column parallax-icon">
+                            <img src="src/smile.png" style="height: 50px; width: 50px"> 
+                            <h2 style="color:orange; text-align:center;padding-top:8px; font-weight:bold">
+                                <?php $sql="select * from users";
+                                    $result=mysqli_query($db,$sql); 
+                                    $rws=mysqli_num_rows($result);
+                                    echo $rws;
+                                ?>
+                            </h2>
+                            <p style="color: white">Happy Customers</p>   
+                        </div>
+                        <div class="column parallax-icon">
                             <img src="src/enchilada.png" style="height: 50px; width: 50px">      
-                            <h2 style="color:orange; text-align:center">
+                            <h2 style="color:orange; text-align:center;padding-top:8px; font-weight:bold">
                                 <?php 
                                     $sql="select * from users_orders";
                                     $result=mysqli_query($db,$sql); 
@@ -223,17 +223,21 @@ include_once 'product-action.php'; //including controller
                                     echo $rws;
                                 ?>
                             </h2>
-                            <p style="color: white" class="m-b-0">Dish Served</p>     
-                                          
-                    </div>
+                            <p style="color: white">Dish Served</p>     
+                        </div>
                     </center>
-                </div>
-                <div class="row">
-                <center> <h4 style="color:white">Try Zinnovare’s Mexican Treats for cheesier barkada moments.</h4></center> 
-                </div>
+                </div>  
+                                        
             </div>
+            <center> 
+                <table width="100%">
+                    <td><hr /></td>
+                    <td style="width:1px; padding: 0 10px; color:white;  white-space: nowrap;">Checkout Zinnovare’s Mexican Treats for more cheesy barkada moments.</td>
+                    <td><hr /></td>
+                </table>
+            </center> 
         </div>
-        
+
         <!--
         <section class="app-section">
             <div class="app-wrap">
@@ -389,8 +393,8 @@ include_once 'product-action.php'; //including controller
                         </div>
                         <div class="col-xs-12 col-sm-4 address color-gray">
                             <h5>Address</h5>
-                            <p>Concept design of oline food order and deliveye,planned as restaurant directory</p>
-                            <h5>Phone: <a href="tel:+080000012222">080 000012 222</a></h5> </div>
+                            <p>Bucal 4A, Maragondon, Cavite, 4112</p>
+                            <h5>Contact Us @ <a href="">0921 728 8016</a></h5> </div>
                         <div class="col-xs-12 col-sm-5 additional-info color-gray">
                             <h5>Addition informations</h5>
                             <p>Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>

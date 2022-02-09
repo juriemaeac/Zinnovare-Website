@@ -90,28 +90,28 @@ else*/
                                             <a href="#">
                                                 <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                    <h5>Notification Title 1</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:30 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                                    <h5>Notification Title 2</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:10 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                                    <h5>Notification Title 3</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:08 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                    <h5>Notification Title 4</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:02 AM</span>
                                                 </div>
                                             </a>
                                         </div>
@@ -137,36 +137,36 @@ else*/
                                         <div class="message-center">
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/5.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                                    <h5>Juan Dela Cruz</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:30 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                                    <h5>Pedro Penduko</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:10 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                                    <h5>Hatdog 123</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:08 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                    <h5>Hatdog 12345</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:02 AM</span>
                                                 </div>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all Messages</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -209,14 +209,6 @@ else*/
 								<li><a href="add_users.php">Add Users</a></li>
 								
                                
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Store</span></a>
-                            <ul aria-expanded="false" class="collapse">
-								<li><a href="allrestraunt.php">All Stores</a></li>
-								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restraunt.php">Add Restaurant</a></li>
-                                
                             </ul>
                         </li>
                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
@@ -425,7 +417,7 @@ else*/
                                                         <tr style="font-size: 13px;margin-top: 0;padding: top 0;">
                                                             <th>Username</th>		
                                                             <th>Orders</th>
-                                                            <th>Quantity</th>
+                                                            <th>Qty</th>
                                                             <th>price</th>
                                                             <th>total</th>
                                                             <th>Address</th>
@@ -455,8 +447,8 @@ else*/
                                                                             <td>'.$rows['username'].'</td>
                                                                             <td>'.$rows['title'].'</td>
                                                                             <td>'.$rows['quantity'].'</td>
-                                                                            <td>$'.$rows['price'].'</td>
-                                                                            <td>$'.$rows['price']*$rows['quantity'].'</td>
+                                                                            <td>Php '.$rows['price'].'</td>
+                                                                            <td>Php '.$rows['price']*$rows['quantity'].'.00</td>
                                                                             <td>'.$rows['address'].'</td>';
                                                                         ?>
                                                                         <?php 
@@ -556,7 +548,7 @@ else*/
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. </footer>
+            <footer class="footer"> © Zinnovare 2022. All rights reserved. </footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
