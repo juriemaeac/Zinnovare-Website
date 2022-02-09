@@ -336,6 +336,29 @@ background-color: #f0ecec;
     z-index: 1;
 }
 
+.parallax {
+    /* The image used */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("../src/bg.jpg");
+
+    /* Set a specific height */
+    min-height: 350px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    }
+
+.parallax-icon{
+    display: inline-block;
+    align-items: center;
+    margin: 30px;
+    width: 150px;
+    height: 150px;
+}
+
 /*--------------------------------*/
 /*feedback pop up*/
 .feedback-popup {

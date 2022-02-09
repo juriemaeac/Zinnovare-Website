@@ -24,22 +24,6 @@ include_once 'product-action.php'; //including controller
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"> 
-    <style>
-        .parallax {
-        /* The image used */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("src/bg.jpg");
-
-        /* Set a specific height */
-        min-height: 350px;
-
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-        }
-    </style>
 </head>
 
 <body class="home">
@@ -215,12 +199,10 @@ include_once 'product-action.php'; //including controller
         <div class="parallax">
             <br>
             <br>
-            <br>
-            <br>
             <div class="container">
-                <div class="row" style="display: flex;">
-                    <div class="column" style="display: flex;" >
-                        <center>
+                <div class="row">
+                <center><div class="column parallax-icon">
+                        
                         <img src="src/smile.png" style="height: 50px; width: 50px"> 
                         <h2 style="color:orange; text-align:center">
                             <?php $sql="select * from users";
@@ -228,10 +210,10 @@ include_once 'product-action.php'; //including controller
                                 $rws=mysqli_num_rows($result);
                                 echo $rws;?></h2>
                                 <p class="m-b-0" style="color: white">Happy Customers</p>   
-                        </center>
+                        
                     </div>
-                    <div class="column" style="display: flex;">
-                        <center>
+                    <div class="column parallax-icon">
+                        
                             <img src="src/enchilada.png" style="height: 50px; width: 50px">      
                             <h2 style="color:orange; text-align:center">
                                 <?php 
@@ -242,12 +224,12 @@ include_once 'product-action.php'; //including controller
                                 ?>
                             </h2>
                             <p style="color: white" class="m-b-0">Dish Served</p>     
-                        <center>  
+                                          
                     </div>
-                
+                    </center>
                 </div>
-                <div class="row" style="display: flex;">
-                <h4 style="color:white">Try Zinnovare’s Mexican Treats for cheesier barkada moments.</h4>
+                <div class="row">
+                <center> <h4 style="color:white">Try Zinnovare’s Mexican Treats for cheesier barkada moments.</h4></center> 
                 </div>
             </div>
         </div>
