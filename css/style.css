@@ -315,14 +315,7 @@ background-color: #f0ecec;
     float: right;
 }
 
-.abc{
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
-    display: inline-block;
-    width: 30%;
-    height: 300px;
-    margin: 1% 0% 1% 2.3%;
-}
+
 
 .headerPic {
     height: 100vh;
@@ -367,12 +360,11 @@ background-color: #f0ecec;
      background:#FFFFFF;
      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      padding:0;
-     position:absolute;
+     position:fixed;
      z-index:999;
      cursor:default;     
   display: none;
-  top: 10px;
-  left: 50%;
+  top: 25%;
   }
   
   /* Add styles to the form container */
@@ -2390,6 +2382,38 @@ a.more-link {
     content: "\f05d";
     color: #7ab55c;
     font-size: 18px;
+}
+.menu-food{
+    width: 75%;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.abc{
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    display: inline-block;
+    width: 30%;
+    height: 300px;
+    margin: 1% 0% 1% 2.3%;
+}
+
+.menu-right{
+    display: inline-block;
+    width: 24%;
+    border: 1px solid black;
+    height: 100vh;
+    vertical-align: top;
+    text-align: center;
+}
+
+.menu-right-content{
+    border: 1px solid blue;
+    width: 94%;
+    height: 40vh;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 12px 0px;
 }
 
 .menu-widget .food-item {

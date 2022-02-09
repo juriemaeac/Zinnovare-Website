@@ -152,7 +152,7 @@ include_once 'product-action.php'; //including controller
 										  ?>
             <div class="container m-t-30">
                 <div class="row">
-                    <div class="">
+                    <div class="menu-food">
                         <div class="menu-widget" id="2">
                             <div class="collapse in" id="popular2">
 						        <?php  // display values and item of food/dishes
@@ -200,7 +200,16 @@ include_once 'product-action.php'; //including controller
                         </div>
                         <!-- end:Widget menu -->
                     </div>
-                    <!-- end:Bar -->
+                    <!-- end:menu-food -->
+                    <div class="menu-right">
+                        <div class="menu-right-content">
+
+                        </div>
+                        <div class="menu-right-content">
+
+                        </div>
+                    </div>
+                     <!-- end:menu-food -->
                 </div>
                 <!-- end:row -->
             </div>
