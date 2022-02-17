@@ -67,7 +67,7 @@ include_once 'product-action.php'; //including controller
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I would like to eat...."> </div>
                             </div>-->
-                            <button onclick="location.href='dishes.php?res_id=48'" type="button" class="btn " style="background:orange; color:white">Order Now</button>
+                            <button onclick="location.href='menu.php?res_id=48'" type="button" class="btn " style="background:orange; color:white">Order Now</button>
                         </form>
                     </div>
                 </div>
@@ -175,14 +175,14 @@ include_once 'product-action.php'; //including controller
 						                       echo '  <div class="col-xs-12 col-sm-6 col-md-4 food-item">
 														<div class="food-item-wrap">
 															<div class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/'.$r['img'].'">
-																<div class="distance"><i class="fa fa-pin"></i>1240m</div>
+																<div class="distance"><i class="fa fa-pin"></i>BEST SELLER</div>
 																<div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
 																<div class="review pull-right"><a style="color: Orange; font-weight:Bold"href="#">Total Sales: '.$rws.'</a> </div>
 															</div>
 															<div class="content">
-																<h5><a href="dishes.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
+																<h5><a href="menu.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
 																<div class="product-name">'.$r['slogan'].'</div>
-																<div class="price-btn-block"> <span class="price">P'.$r['price'].'</span> <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Add to cart</a> </div>
+																<div class="price-btn-block"> <span class="price">P'.$r['price'].'</span> <a href="menu.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Add to cart</a> </div>
 															</div>
 															
 														</div>
@@ -309,9 +309,18 @@ include_once 'product-action.php'; //including controller
                     <!--radio buttons end-->
                     <!--slide images start-->
                         <div class="slide first">
+                            <?php 
+                                $result = mysqli_query($db,"SELECT * FROM feedback WHERE o_id = '56'"); 
+                                $details = mysqli_fetch_assoc($result);
+                                                //same dapat ung o_id ng feedback at users_orders
+                                                //same dapat ung u_id ng feedback at users_orders
+                                                //from u_id nung nasa taas, kukunin ung username sa users table
+                                $result1 = mysqli_query($db,"SELECT feedback.*, users.* FROM feedback INNER JOIN users ON feedback.u_id=users.u_id");
+                                 $userdetails = mysqli_fetch_assoc($result1);
+                            ?>
                             <center>
-                                <h3 class="feedbackContent">Awesome Food.</h3>
-                                <h6 style="color: gray">Pedro Penduko</h6>
+                                <h3 class="feedbackContent"><?php echo $details['feed'] ?></h3>
+                                <h6 style="color: gray"><?php echo $userdetails['username'] ?></h6>
                             </center>
                         </div>
                         <div class="slide">

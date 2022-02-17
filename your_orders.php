@@ -172,7 +172,7 @@
                                 else
                                 {
                                     //if user is login
-                                    echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
+                                    echo  '<li class="nav-item"><a href="order_history.php" class="nav-link active">Orders</a> </li>';
                                     echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
                                 }
                             ?>
@@ -396,9 +396,25 @@
                                                                     if($status=="closed")
                                                                     {
                                                                 ?>
-                                                                <input type="button" class="open-button btn btn-warning" onclick="openForm()" value="Delivered" id="myButton1">
+                                                                <a type="button" class="open-button btn btn-warning" href="feedback.php?o_id=<?php echo $row['o_id'];?>" value="Delivered" id="myButton1">
+                                                                <button type="button" class="btn btn-primary">Delivered</button></a>
                                                                 
-                                                                
+                                                                        <?php 
+                                                                            if($_POST['submit'])
+                                                                            {
+                                                                                
+                                                                                $SQL="INSERT INTO feedback ( 
+                                                                                    o_id, 
+                                                                                    u_id) 
+                                                                              SELECT o_id, 
+                                                                                     u_id,'1'
+                                                                              FROM users_orders";
+                                                                                mysqli_query($db,$SQL);
+                                                                                
+                                                                                $success = "Thankyou! Your Order Placed successfully!";
+                                                                                header("Location: order_history.php");
+                                                                            }
+                                                                        ?>
                                                                     
                                                                             <!--FEEDBACK-->
                                                                             <div class="feedback-popup" id="myForm">
@@ -409,7 +425,7 @@
                                                                                 <button type="submit" class="btn pull-right" onclick="change()">Submit</button>
                                                                                 
                                                                             </form>
-                                                                            </div></button>
+                                                                            </div>
                                                                     <!--END FEEDBACK-->
                                                                 <?php 
                                                                 } 

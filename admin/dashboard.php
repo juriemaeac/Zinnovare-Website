@@ -514,7 +514,7 @@ else*/
                                 <span><i><img src="images/icons/sales.png" alt="user" width="60px" height="60px"/></i></span>
                             </div>
                             <div style="padding-left: 25px;" class="">
-                                <h3><p style="color:gray">Sales</p></h3>
+                                <h3><p style="color:gray">Profit</p></h3>
                             </div>
                             <span><i><img src="images/chart.png" alt="user" width="180px" height="180px"/></i></span>
                         </div>

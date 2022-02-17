@@ -241,6 +241,34 @@ INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `total
 (37, 31, 'jklmno', 5, '17.99', '89.95', 'closed', '2018-04-18 19:51:50'),
 (38, 31, 'Red Robins Chick on a Stick', 2, '34.99', '69.98', '', '2018-04-18 19:52:34');
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `f_id` int(222) NOT NULL AUTO_INCREMENT,
+  `o_id` int(222) NOT NULL,
+  `u_id` int(222) NOT NULL,
+  `feed` varchar(222) NOT NULL,
+  `rating` varchar(222) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`f_id`, `o_id`, `u_id`, `feed`, `rating`, `date`) VALUES
+(5, 56, 34, 'awesome food', 'excellent', '2022-04-18 19:51:50'),
+(6, 57, 34, 'good food', 'excellent', '2022-04-18 19:52:34');
+
+-- --------------------------------------------------------
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -51,7 +51,7 @@ include_once 'product-action.php'; //including controller
                                 else
                                 {
                                     //if user is login
-                                    echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
+                                    echo  '<li class="nav-item"><a href="order_history.php" class="nav-link active">Orders</a> </li>';
                                     echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
                                 }
                             ?>
@@ -75,7 +75,6 @@ include_once 'product-action.php'; //including controller
         </header>
         <div id="myModal" class="modal fade" role="dialog" style="opacity: 0.9;">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -87,29 +86,23 @@ include_once 'product-action.php'; //including controller
                         <div class="order-row bg-white">
                             <div class="widget-body">
                                 <?php
-
                                     $item_total = 0;
-
                                     foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into session ID
                                     {
-                                        ?>									
-                                    
-                                        <div class="title-row">
-                                            <?php echo $item["title"]; ?><a href="?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
-                                            <i class="fa fa-trash pull-right"></i></a>
-                                        </div>
-                                        
-                                        <div class="form-group row no-gutter">
-                                            <div class="col-xs-8">
+                                        ?>		
+                                            <div class="title-row">
+                                                <?php echo $item["title"]; ?><a href="?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
+                                                <i class="fa fa-trash pull-right"></i></a>
+                                            </div>
+                                            
+                                            <div class="form-group row no-gutter">
+                                                <div class="col-xs-8">
                                                     <input type="text" class="form-control b-r-0" value=<?php echo "$".$item["price"]; ?> readonly id="exampleSelect1">
-                                                    
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> 
+                                                </div>
                                             </div>
-                                            <div class="col-xs-4">
-                                                <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> 
-                                            </div>
-                                        
-                                        </div>
-                                        
                                         <?php
                                         $item_total += ($item["price"]*$item["quantity"]); // calculating current price into cart
                                     }
@@ -119,79 +112,78 @@ include_once 'product-action.php'; //including controller
                         
                                 <!-- end:Order row -->
                              
-                                <div class="widget-body">
-                                    <div class="price-wrap text-xs-center">
-                                        <p>TOTAL</p>
-                                        <h3 class="value"><strong><?php echo "$".$item_total; ?></strong></h3>
-                                        <p>Free Shipping</p>
-                                        <?php if($item_total != 0): ?>
-                                        <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg">Checkout</a>
-                                        <?php elseif ($item_total == 0): ?>
-                                            <a href="dishes.php?res_id=48" onclick="return confirm('Cart is Empty. Go to Menu?');" class="btn theme-btn btn-lg">Checkout</a>
-                                        <?php endif; ?>                           
-                                    </div>
-                                </div>
+                        <div class="widget-body">
+                            <div class="price-wrap text-xs-center">
+                                <p>TOTAL</p>
+                                <h3 class="value"><strong><?php echo "$".$item_total; ?></strong></h3>
+                                <p>Free Shipping</p>
+                                <?php if($item_total != 0): ?>
+                                <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg">Checkout</a>
+                                <?php elseif ($item_total == 0): ?>
+                                <a href="dishes.php?res_id=48" onclick="return confirm('Cart is Empty. Go to Menu?');" class="btn theme-btn btn-lg">Checkout</a>
+                                <?php endif; ?>                           
                             </div>
+                        </div>
+                                    <!--</div> may sobra??-->
                         <!--end modal content -->
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
-                        
+                    </div>
                     <!--end modal -->
-                    
                 </div>
-
             </div>
         </div>
 
-        <div class="page-wrapper">
+        <div class="page-wrapper" style="border: 1px solid pink">
 		    <?php $ress= mysqli_query($db,"select * from restaurant where rs_id='$_GET[res_id]'");
-									     $rows=mysqli_fetch_array($ress);
-										  
-										  ?>
-            <div class="container m-t-30">
-                <div class="row">
-                    <div class="menu-food">
-                        <div class="menu-widget" id="2">
-                            <div class="collapse in" id="popular2">
+                $rows=mysqli_fetch_array($ress);
+            ?>
+            <div class="container m-t-30" style="border: 1px solid red">
+                <div class="row" style=" border: 1px solid yellow">
+                    <div class="menu-food" style="border: 1px solid green">
+                        <div class="menu-widget" id="2" style="border: 1px solid blue">
+                            <div class="collapse in" id="popular2" style="border: 1px solid purple">
 						        <?php  // display values and item of food/dishes
 									$stmt = $db->prepare("select * from dishes where rs_id='$_GET[res_id]'");
 									$stmt->execute();
 									$products = $stmt->get_result();
-									if (!empty($products)) {
-									    foreach($products as $product){
+									if (!empty($products)) 
+                                    {
+									    foreach($products as $product)
+                                        {
 						                    ?>
-                                            <div class="abc">
-                                            <div class="food-item">
-                                                <div class="row">
-                                                    <div class="">
-										            <form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id'];?>&action=add&id=<?php echo $product['d_id']; ?>'>
-                                                        <div>
-                                                            <a class="restaurant-logo" href="#"><?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?></a>
-                                                            <div class="rest-descr">
-                                                                <a href="#"><?php echo $product['title']; ?></a>
-                                                                <span class="price pull-right" >₱<?php echo $product['price']; ?></span> 
-                                                            </div>
+                                                <div class="abc">
+                                                    <div class="food-item">
+                                                        <div class="row">
+                                                            <div class="">
+                                                            <form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id'];?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                                                <div>
+                                                                    <a class="restaurant-logo" href="#"><?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?></a>
+                                                                    <div class="rest-descr">
+                                                                        <a href="#"><?php echo $product['title']; ?></a>
+                                                                        <span class="price pull-right" >₱<?php echo $product['price']; ?></span> 
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end:Logo -->
+                                                                </div><!--sobra?-->
+                                                                <div class="item-cart-info "> 
+                                                                    <p> <?php echo $product['slogan']; ?></p>
+                                                                </div>
+                                                                <div class="item-cart-info2">
+                                                                    <label for="quan">Qty:</label><input id="quan" type="number" class="quan" name="quantity" value="1" size="2"/>
+                                            
+                                                                    <!--<input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2"/>-->
+                                                                    <input type="submit" class="menu-btn btn theme-btn pull-right" value="Add to Cart" />
+                                                                </div>
+                                                            </form>
                                                         </div>
-                                                        <!-- end:Logo -->
+                                                        <!-- end:row -->
                                                     </div>
-                                                    <div class="item-cart-info "> 
-                                                        <p> <?php echo $product['slogan']; ?></p>
-										            </div>
-                                                    <div class="item-cart-info2">
-                                                    <label for="quan">Qty:</label><input id="quan" type="number" class="quan" name="quantity" value="1" size="2"/>
-                                
-										                <!--<input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2"/>-->
-										                <input type="submit" class="menu-btn btn theme-btn pull-right" value="Add to Cart" />
-                                                    </div>
-										            </form>
+                                                    <!-- end:Food item -->
                                                 </div>
-                                                <!-- end:row -->
-                                            </div>
-                                            <!-- end:Food item -->
-                                            </div>
-								    <?php
+                                                <!-- end:abc -->
+								            <?php
 									    }
 									}
 								?>
@@ -209,7 +201,7 @@ include_once 'product-action.php'; //including controller
 
                         </div>
                     </div>
-                     <!-- end:menu-food -->
+                    <!-- end:menu-food -->
                 </div>
                 <!-- end:row -->
             </div>

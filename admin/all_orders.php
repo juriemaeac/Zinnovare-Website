@@ -14,7 +14,7 @@ $username = "root"; //username
 $password = ""; //password
 $dbname = "online_rest";  //database
       $db = mysqli_connect($servername, $username, $password, $dbname);
-      $sql = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ORDER BY o_id ASC";  
+      $sql = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ORDER BY o_id DESC";  
       $result = mysqli_query($db, $sql);  
       while($rows = mysqli_fetch_array($result))  
       {       
@@ -258,7 +258,7 @@ echo "<script>alert('form details updated successfully');</script>";
                                            
 											
 											<?php
-												$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
+												$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id";
 												$query=mysqli_query($db,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )

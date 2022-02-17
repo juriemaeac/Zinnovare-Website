@@ -111,7 +111,7 @@
             
         </div>
         <div class="container text-center" style="padding-bottom:20px">
-            <center><a href="your_orders.php" class="btn btn-sm btn-warning p-2 inv-button">Back to Orders</a></center>
+            <center><a href="order_history.php" class="btn btn-sm btn-warning p-2 inv-button">Back to Orders</a></center>
         </div>
 
         <!-- Bootstrap core JavaScript

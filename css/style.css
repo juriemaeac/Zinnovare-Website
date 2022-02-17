@@ -115,6 +115,16 @@ hr {
     padding-top: 68px;
     /* Used for inpper pages if navigation fixed to the top */
 }
+.page-wrapper-history {
+    margin-bottom:10px;
+    margin-left:10px;
+    margin-right:10px;
+    padding-top: 100px;
+    /* Used for inpper pages if navigation fixed to the top */
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 30px;
+}
 
 .inner-page {
     margin-top: 30px;
@@ -344,6 +354,23 @@ background-color: #f0ecec;
     
     }
 
+.parallax-menu {
+    /* The image used */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("../src/bg.jpg");
+
+    /* Set a specific height */
+    min-height: 17vw;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
+    padding:0
+    
+    }
+
 .parallax-icon{
     display: inline-block;
     align-items: center;
@@ -412,6 +439,132 @@ background-color: #f0ecec;
   .feedback-container .btn:hover, .open-button:hover {
     opacity: 1;
   }
+/*----------feedback menu-------------*/
+.feedback{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .feedbackContent{
+      font-weight: bold;
+      color:white;
+      font-size:large;
+  }
+  
+  .slider{
+    width: 800px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 50px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }
+  
+  .slide img{
+    width: 800px;
+    height: 50px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    background: gray;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 7px;
+  }
+
+  .heading_space{
+	margin-bottom:50px;
+}
+  
+  .manual-btn:hover{
+    background: orange;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto div{
+      background-color: orange;
+    border: 2px solid orange;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 7px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: orange;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: orange;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: orange;
+  }
+  
+  #radio4:checked ~ .navigation-auto .auto-btn4{
+    background: orange;
+  }
+/*---------------------------------*/
 
 /*----------feedback home-------------*/
 
@@ -425,6 +578,8 @@ background-color: #f0ecec;
   }
   .feedbackContent{
       font-weight: bold;
+      color:black;
+      font-size: x-large;
   }
   
   .slider{
@@ -644,6 +799,59 @@ background-color: #f0ecec;
 flex: 25%;
 padding-left: 15px;
 padding-right: 15px;
+}
+
+.rowHistory {
+    display: flex;
+}
+.columnHistory {
+    flex: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.columnHistory-num-closed {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin:5px;
+    width:120px;
+    height: 40px;
+    border: 1px solid green; 
+    color:green; 
+    border-radius:25px; 
+    margin-left:30px;
+    margin-right:30px; 
+    text-align: center;
+    padding-top:5px
+}
+.columnHistory-num-rejected {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin:5px;
+    width:120px;
+    height: 40px;
+    border: 1px solid red; 
+    color:red; 
+    border-radius:25px; 
+    margin-left:30px;
+    margin-right:30px; 
+    text-align: center;
+    padding-top:5px
+}
+.columnHistory-num-closed:hover{
+    background-color: green;
+    color:white;
+} 
+.columnHistory-num-rejected:hover{
+    background-color: red;
+    color:white;
+}     
+.disable-btn{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 /*----------------------------------------------------------------------*/
 /*----------------------------------------------------------------------*/
@@ -1426,7 +1634,42 @@ button.close span {
     display: block;
 }
 
+.modal.left .modal-dialog,
+	.modal.right .modal-dialog {
+		position: fixed;
+		margin: auto;
+		width: 320px;
+		height: 100%;
+		-webkit-transform: translate3d(0%, 0, 0);
+		    -ms-transform: translate3d(0%, 0, 0);
+		     -o-transform: translate3d(0%, 0, 0);
+		        transform: translate3d(0%, 0, 0);
+	}
 
+	.modal.left .modal-content,
+	.modal.right .modal-content {
+		height: 100%;
+		overflow-y: auto;
+	}
+
+	.modal.left .modal-body,
+	.modal.right .modal-body {
+		padding: 15px 15px 80px;
+	}
+
+/*Left*/
+	.modal.left.fade .modal-dialog{
+		left: -320px;
+		-webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+		   -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+		     -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+		        transition: opacity 0.3s linear, left 0.3s ease-out;
+	}
+	
+
+	.modal.left.fade.in .modal-dialog{
+		left: 0;
+	}
 /*-----------------------------------  
 How it works section
 -----------------------------------*/
@@ -2323,8 +2566,6 @@ a.more-link {
 
 .menu-widget,
 .widget {
-    border: 1px solid #eaebeb;
-    background: #fafaf8;
     border-radius: 2px;
     position: relative;
 }
@@ -2386,7 +2627,10 @@ a.more-link {
 .menu-food{
     width: 75%;
     display: inline-block;
-    border: 1px solid black;
+    padding-right: 20px;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 .abc{
@@ -2398,22 +2642,72 @@ a.more-link {
     margin: 1% 0% 1% 2.3%;
 }
 
-.menu-right{
-    display: inline-block;
-    width: 24%;
-    border: 1px solid black;
-    height: 100vh;
-    vertical-align: top;
-    text-align: center;
+.prev-profile{
+    border-radius: 25px; 
+    background:orange; 
+    color: white; 
+    width:auto; 
+    margin: auto;
 }
+.prev-profile:hover{
+    border: 1px solid orange;
+    background-color: white;
+    color:orange;
+    cursor: pointer;
+}
+
+* {box-sizing: border-box;}
+
+
+.img-comp-container {
+  position: relative;
+  height: 100%; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 4vw;
+  height: 4vw;
+  background-color: orange;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+/*
+.img-overlay{
+    position: absolute;
+    top: 5%;
+    background: url(../src/pizzaburger.png);
+    width: 30%;
+    height: 32%;
+    object-fit:scale-down;
+}*/
 
 .menu-right-content{
     border: 1px solid blue;
+    border-radius: 15px;
     width: 94%;
     height: 40vh;
     display: inline-block;
     vertical-align: middle;
     margin: 12px 0px;
+    padding:20px;
+    color:white;
+    align-items: right;
 }
 
 .menu-widget .food-item {
@@ -2446,6 +2740,7 @@ a.more-link {
     background-color: #fff;
 }
 
+/*product title*/
 .menu-widget .food-item .rest-descr a {
     color: #25282b;
     font-size: 18px;
@@ -2456,8 +2751,10 @@ a.more-link {
 .menu-widget .food-item .item-cart-info {
     width: 100%;
     padding-left: 15px;
+    padding-top: 5px;
     padding-bottom: -10px;
     height: 50px;
+    font-size: 13px;
 }
 
 .menu-widget .food-item .item-cart-info2 {
@@ -2472,8 +2769,64 @@ a.more-link {
     margin-right: 16px;
     font-weight: 600;
     color: #000;
+    font-size: 2vh;
 }
 
+.coming-soon{
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.cover-menu {
+    width: 31vh;
+    height: 23vh;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .cover-menu1 {
+    height:100%; 
+    width:100%;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .cover-menu2 {
+    height:100%; 
+    width:100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .menu-right{
+    display: inline-block;
+    width: 24%;
+    height: 100vh;
+    vertical-align: top;
+    text-align: center;
+}
+
+.menu-right-content1{
+    border-radius: 5px;
+    width: 90%;
+    height: 260px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 50px;
+    padding:3vh;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.menu-right-content2{
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    width: 90%;
+    height: 340px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 20px 0px;
+}
 .order-row .form-control {
     border-radius: 0;
 }
@@ -2536,9 +2889,45 @@ a[aria-expanded=false] .fa-angle-down {
 * Rstaurants 
 *
 ==============================*/
+hr.history-line {
+    border: 0.5px solid orange;
+    margin:0;
+  }
+.rowHistory {
+    display: flex;
+  }
+  
+  .columnHistory {
+    flex: 40%;
+  }
+  .columnHistory .columnHistory-status {
+    flex: 70%;
+  }
+
+  .content{
+    flex: 15%;
+  }
+  .history-container{
+    border-radius:20px; 
+    background:#FFFBF7; 
+    width: 20rem; 
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:20px;
+  }
+
+  .center-history {
+    margin: auto;
+    width: 95%;
+  }
+.history-img{
+    
+    object-fit: cover;
+    width: 50px;
+    height: 100px;
+}
 
 .restaurant-entry {
-    border: 1px solid #eaebeb;
+    border: 1px solid red;
     border-radius: 2px;
     margin-bottom: 20px;
 }
