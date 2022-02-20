@@ -202,7 +202,7 @@ include_once 'product-action.php'; //including controller
 									    foreach($products as $product)
                                         {
 						                    ?>
-                                                <div class="abc" style="inline-size: 330px;">
+                                                <div class="abc">
                                                     <div class="food-item">
                                                         <div class="row">
                                                             <div class="">

@@ -268,6 +268,14 @@ INSERT INTO `feedback` (`f_id`, `o_id`, `u_id`, `feed`, `rating`, `date`) VALUES
 
 -- --------------------------------------------------------
 
+CREATE TABLE IF NOT EXISTS `fb` (
+  `f_id` int(222) NOT NULL AUTO_INCREMENT,
+  `o_id` int(222) NOT NULL,
+  `u_id` int(222) NOT NULL,
+  `feedback` varchar(222) NOT NULL,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

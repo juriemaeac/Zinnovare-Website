@@ -2627,10 +2627,10 @@ a.more-link {
 .menu-food{
     width: 75%;
     display: inline-block;
-    padding-right: 20px;
+    padding-right: 0px;
     padding-left: 40px;
     padding-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 20px;  
 }
 
 .abc{
@@ -2805,6 +2805,8 @@ a.more-link {
     height: 100vh;
     vertical-align: top;
     text-align: center;
+    margin-left: -5px;
+    
 }
 
 .menu-right-content1{
