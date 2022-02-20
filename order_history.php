@@ -542,13 +542,12 @@
                                                             
                                                         <!--FEEDBACK-->
                                                         <div class="feedback-popup" id="myForm">
-                                                            <form action="" class="feedback-container">
-                                                                <h1>FEEDBACK</h1>
-                                                                <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
-                                                                <button type="button" class="btn cancel pull-right" onclick="closeForm()">Close</button>
-                                                                <button type="submit" class="btn pull-right" name="submit-feedback" onclick="change()">Submit</button>
-                                                                
-                                                            </form>
+                                                        <form action="" class="feedback-container" method="post">
+                                                                                <h1>FEEDBACK</h1>
+                                                                                <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
+                                                                                <button type="submit" name="submit" class="btn pull-right" onclick="change()">Submit</button>
+                                                                                <button type="button" class="btn cancel pull-right" onclick="closeForm()">Close</button>                                                                     
+                                                                            </form>
                                                         </div>
                                                         <!--END FEEDBACK-->
                                                         <?php 
@@ -621,4 +620,32 @@ function change()
 </html>
 <?php
 }
+?>
+
+<?php
+$server = "localhost" ;
+$username = "root" ;
+$password = "" ;
+$dbname = "online_rest" ;
+
+$conn = mysqli_connect($server , $username, $password , $dbname) ;
+
+if(isset($_POST['submit'])){
+
+    if(!empty($_POST['feedback'])){
+
+        $feedback = $_POST['feedback'] ;
+        $order_id = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
+        $order = mysqli_fetch_assoc($order_id);
+
+        $query = "insert into fb(o_id,u_id,feedback) values('$order', '".$_SESSION["user_id"]."', '$feedback')" ;
+
+        $run = mysqli_query($conn,$query) or die(mysqli_error());
+    }
+else{
+    echo "all fields required" ;
+    }
+
+}
+
 ?>
