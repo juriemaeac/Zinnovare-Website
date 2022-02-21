@@ -41,7 +41,7 @@
                                 else
                                 {
                                     //if user is login
-                                    echo  '<li class="nav-item"><a href="order_history.php" class="nav-link active">Orders</a> </li>';
+                                    echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Orders</a> </li>';
                                     echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
                                 }
                             ?>
@@ -111,7 +111,7 @@
                                         <div class="form-group row no-gutter">
                                          
                                             <div class="col-xs-8">
-                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "$".$item["price"]; ?> readonly id="exampleSelect1">
+                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "Php".$item["price"]; ?> readonly id="exampleSelect1">
                                                     
                                             </div>
                                             <div class="col-xs-4">

@@ -310,35 +310,41 @@ include_once 'product-action.php'; //including controller
                     <!--slide images start-->
                         <div class="slide first">
                             <?php 
-                                $result = mysqli_query($db,"SELECT * FROM feedback WHERE o_id = '56'"); 
-                                $details = mysqli_fetch_assoc($result);
-                                                //same dapat ung o_id ng feedback at users_orders
-                                                //same dapat ung u_id ng feedback at users_orders
-                                                //from u_id nung nasa taas, kukunin ung username sa users table
-                                $result1 = mysqli_query($db,"SELECT feedback.*, users.* FROM feedback INNER JOIN users ON feedback.u_id=users.u_id");
-                                 $userdetails = mysqli_fetch_assoc($result1);
+                                $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
+                                    JOIN dishes ON dishes.title=users_orders.title 
+                                    JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
+                                $food1 = mysqli_fetch_assoc($result1);
+                                $food2 = mysqli_fetch_assoc($result1);
+                                $food3 = mysqli_fetch_assoc($result1);
+                                $food4 = mysqli_fetch_assoc($result1);
                             ?>
+
                             <center>
-                                <h3 class="feedbackContent"><?php echo $details['feed'] ?></h3>
-                                <h6 style="color: gray"><?php echo $userdetails['username'] ?></h6>
+                                <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food1['username'] ?></h6>
+                            </center>
+                        </div>
+                        
+                        <div class="slide">
+                            <center>
+                                <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food2['username'] ?></h6>
                             </center>
                         </div>
                         <div class="slide">
                             <center>
-                                <h3 class="feedbackContent">Good Service.</h3>
-                                <h6 style="color: gray">Juan Dela Cruz</h6>
+                                <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food3['username'] ?></h6>
                             </center>
                         </div>
                         <div class="slide">
                             <center>
-                                <h3 class="feedbackContent">Hatdog.</h3>
-                                <h6 style="color: gray">Jose Santos</h6>
-                            </center>
-                        </div>
-                        <div class="slide">
-                            <center>
-                                <h3 class="feedbackContent">Hatdog 1.</h3>
-                                <h6 style="color: gray">Maria Dela Cruz</h6>
+                                <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food4['username'] ?></h6>
                             </center>
                         </div>
                         <!--slide images end-->

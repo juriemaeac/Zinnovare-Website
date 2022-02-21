@@ -282,7 +282,7 @@
                                                     
                                                     <td class="cotable2" width="96px">
                                                         <div>
-                                                        <center><?php echo "$".$item["price"]; ?></center>
+                                                        <center><?php echo "Php ".$item["price"]; ?></center>
                                                         </div>
                                                     </td>
                                                     <td class="cotable2" width="96px">
@@ -292,7 +292,7 @@
                                                     </td>
                                                     <td class="cotable2" width="96px">
                                                         <div>
-                                                        <center><?php echo "$".$item["price"]*$item["quantity"]; ?> </center>  
+                                                        <center><?php echo "Php ".$item["price"]*$item["quantity"]; ?> </center>  
                                                         </div>
                                                     </td>
                                     
@@ -329,7 +329,7 @@
                                           
                                                     <tr>
                                                         <td>Cart Subtotal</td>
-                                                        <td> <?php echo "$".$item_total; ?></td>
+                                                        <td> <?php echo "Php ".$item_total; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Shipping &amp; Handling</td>
@@ -337,7 +337,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td class="text-color"><strong>Total</strong></td>
-                                                        <td class="text-color"><strong> <?php echo "$".$item_total; ?></strong></td>
+                                                        <td class="text-color"><strong> <?php echo "Php ".$item_total; ?></strong></td>
                                                     </tr>
                                                 </tbody>
                                             </table>

@@ -212,8 +212,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `password`, `address`, `status`, `date`) VALUES
-(31, 'navjot789', 'navjot', 'singh', 'ns949405@gmail.com', '9041240385', '6d0361d5777656072438f6e314a852bc', 'badri col phase 2', 1, '2018-04-18 10:05:03'),
-(32, 'navjot890', 'nav', 'singh', 'nds949405@gmail.com', '6232125458', '6d0361d5777656072438f6e314a852bc', 'badri col phase 1', 1, '2018-04-18 09:50:56');
+(31, 'jurie123', 'jurie', 'mae', 'juriemae@gmail.com', '9041240385', '6d0361d5777656072438f6e314a852bc', 'badri col phase 2', 1, '2022-04-18 10:05:03'),
+(32, 'lance123', 'lance', 'philip', 'lancephilip@gmail.com', '6232125458', '6d0361d5777656072438f6e314a852bc', 'badri col phase 1', 1, '2022-04-18 09:50:56');
 
 -- --------------------------------------------------------
 
@@ -238,8 +238,8 @@ CREATE TABLE IF NOT EXISTS `users_orders` (
 --
 
 INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `total`, `status`, `date`) VALUES
-(37, 31, 'jklmno', 5, '17.99', '89.95', 'closed', '2018-04-18 19:51:50'),
-(38, 31, 'Red Robins Chick on a Stick', 2, '34.99', '69.98', '', '2018-04-18 19:52:34');
+(37, 31, 'chicken', 5, '17.99', '89.95', 'closed', '2022-04-18 19:51:50'),
+(38, 31, 'burgerdilla', 2, '34.99', '69.98', '', '2022-04-18 19:52:34');
 
 
 -- --------------------------------------------------------

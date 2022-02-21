@@ -132,7 +132,7 @@ include_once 'product-action.php'; //including controller
                                         <div class="form-group row no-gutter">
                                          
                                             <div class="col-xs-8">
-                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "$".$item["price"]; ?> readonly id="exampleSelect1">
+                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "Php ".$item["price"]; ?> readonly id="exampleSelect1">
                                                     
                                             </div>
                                             <div class="col-xs-4">

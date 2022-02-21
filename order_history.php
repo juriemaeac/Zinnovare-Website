@@ -252,7 +252,7 @@
                                         <div class="form-group row no-gutter">
                                          
                                             <div class="col-xs-8">
-                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "$".$item["price"]; ?> readonly id="exampleSelect1">
+                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "Php".$item["price"]; ?> readonly id="exampleSelect1">
                                                     
                                             </div>
                                             <div class="col-xs-4">
@@ -474,7 +474,7 @@
                         {
                             ?>
                             <div class="col-xs-12 col-sm-6 col-md-3 food-item" style="inline-size: 350px;">
-                                <div class="history-container">
+                                <div id="<?php echo $row['o_id'];?>" class="history-container">
                                     <!--<div class="media-top meida media-middle">
                                         <span><i><img src="src/user.png" alt="user" width="60px" height="60px"/></i></span>
                                     </div>-->
@@ -531,7 +531,8 @@
                                                         ?>
                                                         <div class="rowHistory">
                                                             <div class="columnHistory-status">
-                                                                <input type="button" class="btn btn-success"  style="margin-left: 10px; padding:6px; border-radius:4px; font-size:small" onclick="openForm()" value="Order Received" id="myButton1">
+                                                            <a href="fb.php?o_id=<?php echo $row['o_id'];?>">order received</a>
+                                                                
                                                             </div>
                                                             <div class="columnHistory-status" style="padding-left: 10px;">
                                                                 <a href="invoice.php?o_id=<?php echo $row['o_id'];?>">
@@ -544,6 +545,7 @@
                                                         <div class="feedback-popup" id="myForm">
                                                         <form action="" class="feedback-container" method="post">
                                                                                 <h1>FEEDBACK</h1>
+                                                                                <?php echo $row['o_id'];?>
                                                                                 <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
                                                                                 <button type="submit" name="submit" class="btn pull-right" onclick="change()">Submit</button>
                                                                                 <button type="button" class="btn cancel pull-right" onclick="closeForm()">Close</button>                                                                     
@@ -589,6 +591,7 @@
         <script src="js/jquery.isotope.min.js"></script>
         <script src="js/headroom.js"></script>
         <script src="js/foodpicky.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script>
         $(window).scroll(function() {
         if ($(window).scrollTop() >= 200) {
@@ -635,12 +638,13 @@ if(isset($_POST['submit'])){
     if(!empty($_POST['feedback'])){
 
         $feedback = $_POST['feedback'] ;
-        $order_id = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
+        $order_id = mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."' AND status='closed'");
         $order = mysqli_fetch_assoc($order_id);
+        $idd = $order['o_id'];
 
-        $query = "insert into fb(o_id,u_id,feedback) values('$order', '".$_SESSION["user_id"]."', '$feedback')" ;
+        $query = "insert into fb(o_id,u_id,feedback) values('$idd', '".$_SESSION["user_id"]."', '$feedback')" ;
 
-        $run = mysqli_query($conn,$query) or die(mysqli_error());
+        $run = mysqli_query($conn,$query) or die(mysqli_error($conn));
     }
 else{
     echo "all fields required" ;
