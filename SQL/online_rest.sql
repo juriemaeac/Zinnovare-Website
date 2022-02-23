@@ -273,6 +273,7 @@ CREATE TABLE IF NOT EXISTS `fb` (
   `o_id` int(222) NOT NULL,
   `u_id` int(222) NOT NULL,
   `feedback` varchar(222) NOT NULL,
+  `rating` int(222) NOT NULL,
   PRIMARY KEY (`f_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

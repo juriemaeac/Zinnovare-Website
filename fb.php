@@ -20,8 +20,10 @@ if(isset($_POST['submit'])){
         $result = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
                 $details = mysqli_fetch_assoc($result);
         $idd = $details['o_id'];
+        $rating = $_POST['rating'] ;
+        $query = "insert into fb(o_id,u_id,feedback,rating) values('$idd', '".$_SESSION["user_id"]."', '$feedback', '$rating')" ;
 
-        $query = "insert into fb(o_id,u_id,feedback) values('$idd', '".$_SESSION["user_id"]."', '$feedback')" ;
+        
 
         $run = mysqli_query($conn,$query) or die(mysqli_error($conn));
         header('location:order_history.php');
@@ -48,80 +50,66 @@ else{
         <link href="css/animate.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
 
-<!--FEEDBACK-->
+
 <?php
                 $result = mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.title=users_orders.title WHERE o_id = '".$_GET['o_id']."'");
                 $details = mysqli_fetch_assoc($result);
+                $result1 = mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
+                $userdetails = mysqli_fetch_assoc($result1);
+                
             ?>
+            
 <div id="feedback123">
-<div class="history-container">
-                                    <!--<div class="media-top meida media-middle">
-                                        <span><i><img src="src/user.png" alt="user" width="60px" height="60px"/></i></span>
-                                    </div>-->
-                                    <div style="font-weight:bold">
-                                        Order #<?php echo $details['o_id']; ?><br>
-                                    </div>
-                                    <div style="font-size: small;color:gray">
-                                        <?php echo $details['date']; ?>
-                                    </div>
-                                    <div >
-                                        <div class="rowHistory">
-                                            <div class="columnHistory" style="padding-top: 10px;">
-                                                <a><?php echo "<img class='history-img' src='src/".$details['img']."' style='width:70px; height:70px; border-radius:25px'";?></a>
-                                            </div>
-                                            <div class="columnHistory">
-                                                <div class="rowHistory" style="padding-bottom: 10px;padding-top: 10px;font-weight:bold">
-                                                    <?php echo $details['title']; ?>
-                                                </div>
-                                                <div class="rowHistory" style="font-size: small;color:gray; height:60px;">
-                                                    <?php echo $details['slogan']; ?>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="rowHistory" style="padding-top: 10px;">
-                                            <div class="columnHistory">
-                                                Php <?php echo $details['price']; ?>
-                                            </div>
-                                            <div class="columnHistory">
-                                                <p style="text-align: right;"> Qty: <?php echo $details['quantity']; ?> </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr class="history-line">              
-                                    <div>
-                                        <div style="padding-top: 10px; padding-bottom: 10px;">
-                                            <center>
-                                                <span style="font-weight: bold;">
-                                                    Total:
-                                                </span>
-                                                <span style="font-weight: bold; font-size:15px">
-                                                    Php <?php echo $details['price']*$details['quantity'] ; ?>
-                                                </span>
-                                                
-                                            </center>
-                                        </div>
-                                    </div>
 
-</div>
-<div class="" id="myForm">
-    <form action="" class="feedback-container" method="post">
-                            <h1>FEEDBACK</h1>
-                            
-                            <p class="mb-0"><b>Order Number:</b> <?php echo "#".$details['o_id']; ?></p>
-                            <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
-                            <button type="submit" name="submit" class="btn pull-right" onclick="change()">Submit</button>                                                                   
-                        </form>
+    <div class="feedback-left pull-left">
+        <div class="feedback-img-container">
+            <a><?php echo "<img class='feedback-img' src='src/".$details['img']."' '";?></a>
+        </div>
     </div>
-    <!--END FEEDBACK-->
-
-
-
-
-
+    <div class="feedback-right">
+        <!--<div class="media-top meida media-middle">
+            <span><i><img src="src/user.png" alt="user" width="60px" height="60px"/></i></span>
+        </div>-->
+        <div class="feedback-right-content">
+            <div class="feedback-upper">
+                <div class="feedback-orderTitle">
+                    <?php echo $details['title']; ?>
+                </div>
+                <div class="feedback-orderNum">
+                    Order #<?php echo $details['o_id']; ?><br>
+                </div>
+            </div>
+            <div class="feedback-user">
+                    <p class="feedback-username"><?php echo $userdetails['username']?></p>
+            </div>
+            <div class="feedback-form" id="myForm">
+            <form action="" class="feedback-container" method="post">
+                <p>&ensp;How was your experience with <?php echo $details['title']; ?> ?</p>
+                <div class="rating">
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                </div>
+                <div class="rating__result" style="border:1px solid red; display:none"></div><!--PANG CHECK LANG-->
+                <input name="rating" id="example" type="hidden">
+                <br>
+                <h4>Add a review</h4>
+                <p>Your email address will not be published. Required fields are marked *</p>
+                <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
+                <a class="btn pull-right" href="order_history.php">Cancel</a>
+                <button type="submit" name="submit" class="btn pull-right" onclick="order_history.php">Submit</button>                                                                   
+            </form>
+            </div>   
+        </div>          
+    </div>
 </div>
+
 <script src="js/jquery.min.js"></script>
         <script src="js/tether.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -147,6 +135,40 @@ function change()
     this.disabled = true;
 }
             }
+
+            //feedback rating
+            const ratingStars = [...document.getElementsByClassName("rating__star")];
+            const ratingResult = document.querySelector(".rating__result");
+
+            printRatingResult(ratingResult);
+
+            function executeRating(stars, result) {
+                const starClassActive = "rating__star fas fa-star";
+                const starClassUnactive = "rating__star far fa-star";
+                const starsLength = stars.length;
+                let i;
+                stars.map((star) => {
+                    star.onclick = () => {
+                        i = stars.indexOf(star);
+
+                        if (star.className.indexOf(starClassUnactive) !== -1) {
+                            printRatingResult(result, i + 1);
+                            for (i; i >= 0; --i) stars[i].className = starClassActive;
+                        } else {
+                            printRatingResult(result, i);
+                            for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+                        }
+                    };
+                });
+            }
+
+            function printRatingResult(result, num = 0) {
+                result.textContent = `${num}`;
+                document.getElementById("example").setAttribute('value', result.textContent);
+            }
+
+            executeRating(ratingStars, ratingResult);
+        //end feedbakc
 
 
     </script>

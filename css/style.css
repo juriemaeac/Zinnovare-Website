@@ -325,8 +325,102 @@ background-color: #f0ecec;
     float: right;
 }
 
+#feedback123{
+    width: 80%;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
+.feedback-left, .feedback-img-container{
+    background: #e5e5e5;
+            /* Old browsers */
+            background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
+            /* Chrome,Safari4+ */
+            background: -webkit-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            /* Opera 12+ */
+            background: -ms-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            /* IE10+ */
+            background: radial-gradient(ellipse at center, #e5e5e5 0%, #ffffff 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+            font: 600 15px "Open Sans", Arial, sans-serif;
+}
 
+.feedback-left{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+
+}
+
+.feedback-right{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+
+    position: relative;
+}
+
+.feedback-right-content, .feedback-img-container{
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+}
+
+.feedback-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.feedback-orderTitle{
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.feedback-orderNum{
+    font-size: 24px;
+    font-weight: 550;
+}
+
+.feedback-username{
+    font-size: 1.2rem;
+    margin-left: 24px;
+    font-weight: 650;
+    margin-top: 10px;
+}
+
+.feedback-form{
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+}
+.feedback-upper{
+    padding-left: 16px;
+    display: inline-block;
+}
+#feedback-close{
+    position: absolute;
+    background: red;
+    color: white;
+    top: -10px;
+    right: -10px;
+}
 .headerPic {
     height: 100vh;
     width: 100vw;
@@ -338,6 +432,69 @@ background-color: #f0ecec;
     background-size: cover;
     z-index: 1;
 }
+
+/*rating*/
+.rating {
+    position: relative;
+    width: 180px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 2px #b3acac;
+ }
+ 
+ .rating__result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-10px) translateX(-5px);
+    z-index: -9;
+    font: 3em Arial, Helvetica, sans-serif;
+    color: red;
+    pointer-events: none;
+ }
+ 
+ .rating__star {
+    font-size: 1.3em;
+    cursor: pointer;
+    color: #dabd18b2;
+    transition: filter linear .3s;
+ }
+ 
+ .rating__star:hover {
+    filter: drop-shadow(1px 1px 4px gold);
+ } 
+
+/*end rating*/
+
+/*menu img comparison*/
+
+.img-comparison{
+        position: relative;
+        text-align: center;
+        background-color: white;
+}
+
+.text-caption {
+    position: absolute;
+    bottom: 38px;
+    COLOR:orange;
+    font-weight: bold;
+    font-size: large;
+    background-color: black;
+    text-align:center;
+    padding-top:5%;
+    padding-bottom:5%;
+    width: 100%;
+    opacity: 0.7;
+  }
+
+/*---------------*/
 
 .parallax {
     /* The image used */
@@ -403,7 +560,7 @@ background-color: #f0ecec;
   .feedback-text{
       padding: 10px;
       width: 100%;
-      height: 200px;
+      height: 140px;
       border-style: none;
       box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.19) inset;
   }
@@ -2926,7 +3083,6 @@ hr.history-line {
     width: 95%;
   }
 .history-img{
-    
     object-fit: cover;
     width: 50px;
     height: 100px;
