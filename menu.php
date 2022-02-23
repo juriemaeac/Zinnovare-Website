@@ -248,8 +248,10 @@ include_once 'product-action.php'; //including controller
                                 // displaying current session user login orders 
                                 $query_res= mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
                                 $row=mysqli_fetch_array($query_res);
-                            ?>
-                            <img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
+
+                                if(!empty($_SESSION["user_id"])){
+?>
+                                    <img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
                             <h6>
                                 <span><?php echo $row['f_name']; ?></span>
                                 <span><?php echo $row['l_name']; ?></span>
@@ -274,16 +276,49 @@ include_once 'product-action.php'; //including controller
                                 </div>
                             </div>
 
+                            <?php
+                                }
+                                else{
+                                ?>
+
+<img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
+                            <h6>
+                                <span><?php echo $row['f_name']; ?></span>
+                                <span><?php echo $row['l_name']; ?></span>
+                            </h6>
+                            <div class="prev-profile" onclick="location.href='order_history.php';">
+                                
+                                <?php $sql="select * from users_orders WHERE u_id='".$_SESSION['user_id']."'";
+                                    $result=mysqli_query($db,$sql); 
+                                    $rws=mysqli_num_rows($result);
+                                    echo 'Total Orders: '.$rws;
+                                ?>
+                            </div>
+                            <br>
+                            <div style="text-align:left; padding-top:10px; text-align:center;">
+                                <a href="login.php">Welcome, Please Login.</a>
+                            </div>
+
+                                <?php
+                                
+                                }
+                            
+                            ?>
                         </div>
                         <div class="menu-right-content2">
-                        <div class="img-comp-container">
+                            <div class="img-comp-container">
                                 <div class="img-comp-img">
                                     <img class="cover-menu2" src="src/bg.jpg" >
+                                    
                                 </div>
                                 <div class="img-comp-img img-comp-overlay">
                                     <img class="cover-menu1" src="src/bg3.jpg" >
                                 </div>
+                                
                             </div>
+                            <div class="img-comparison">   
+                                    <div class="text-caption">Coming Soon!</div>
+                                </div>
 
                         </div>
                     </div>
@@ -294,6 +329,7 @@ include_once 'product-action.php'; //including controller
             <!-- end:Container -->
         </div>
         <!-- end:page wrapper -->
+        
     
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -306,6 +342,11 @@ include_once 'product-action.php'; //including controller
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
     <script>
+
+        //maps
+
+    
+        //end maps
         $(window).scroll(function() {
 if ($(window).scrollTop() >= 100) {
     $('.navbar').css('background', 'black');

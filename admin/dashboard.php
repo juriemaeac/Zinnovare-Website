@@ -513,29 +513,130 @@ else*/
                             <div class="media-left meida media-middle"> 
                                 <span><i><img src="images/icons/sales.png" alt="user" width="60px" height="60px"/></i></span>
                             </div>
-                            <div style="padding-left: 25px;" class="">
-                                <h3><p style="color:gray">Profit</p></h3>
+                            <div style="padding-left: 25px;width:100% " class="">
+                            <div class="media-body media-text-right" style="border:1px solid red; width:100% ">
+                                <h2><?php 
+                                $sql="select SUM(total) from users_orders WHERE status='closed'";
+
+                                $result = mysqli_query($db,$sql);
+
+                                while($row = mysqli_fetch_array($result)){
+                                    $sum = $row['SUM(total)'];
+                                    $percent = $sum * 0.2;
+                                }
+                                echo $percent;
+
+                                
+												?>
+                                                </h2>
+                                <p class="m-b-0">Profit</p>
+                                
                             </div>
-                            <span><i><img src="images/chart.png" alt="user" width="180px" height="180px"/></i></span>
+                            
+                            </div>
+                            
+                            <!---->
                         </div>
+                        <div id="chartContainer" style="height: 130px; width: 100%;"></div>
                     </div>
                     <div class="col-md-15">
-                    <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                        <div class="media">
-                            <div class="media-left meida media-middle"> 
-                                <span><i><img src="images/icons/feedback1.png" alt="user" width="60px" height="60px"/></i></span>
+                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i><img src="images/icons/feedback1.png" alt="user" width="60px" height="60px"/></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php $sql="select * from fb";
+                                                $result=mysqli_query($db,$sql); 
+                                                    $rws=mysqli_num_rows($result);
+                                                    
+                                                    echo $rws;?></h2>
+                                    <p class="m-b-0">Feedback</p>
+                                </div>
                             </div>
-                            <div class="media-body media-text-right">
-                                <h2><?php $sql="select * from users_orders";
-                                            $result=mysqli_query($db,$sql); 
-                                                $rws=mysqli_num_rows($result);
-                                                
-                                                echo $rws;?></h2>
-                                <p class="m-b-0">Feedback</p>
-                            </div>
+                            <!--Feedback-->
+        
+        <div class="sectionHead">
+            <img src="../src/quo.png" style="height: x0px; width:30px"/>
+        </div>
+        <div class="feedback">
+    
+            <div class="slider">
+                <div class="slides">
+                    <!--radio buttons start-->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <!--radio buttons end-->
+                    <!--slide images start-->
+                        <div class="slide first">
+                            <?php 
+                                $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
+                                    JOIN dishes ON dishes.title=users_orders.title 
+                                    JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
+                                $food1 = mysqli_fetch_assoc($result1);
+                                $food2 = mysqli_fetch_assoc($result1);
+                                $food3 = mysqli_fetch_assoc($result1);
+                                $food4 = mysqli_fetch_assoc($result1);
+                            ?>
+
+                            <center>
+                                <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food1['username'] ?></h6>
+                            </center>
                         </div>
+                        
+                        <div class="slide">
+                            <center>
+                                <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food2['username'] ?></h6>
+                            </center>
+                        </div>
+                        <div class="slide">
+                            <center>
+                                <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food3['username'] ?></h6>
+                            </center>
+                        </div>
+                        <div class="slide">
+                            <center>
+                                <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
+                                <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
+                                <h6 style="color: gray"><?php echo $food4['username'] ?></h6>
+                            </center>
+                        </div>
+                        <!--slide images end-->
+                        <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        </div>
+                        <!--automatic navigation start-->
+                        <div class="navigation-auto">
+                            <div  class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+                        <!--automatic navigation end-->
                     </div>
+                    <!--manual navigation start-->
+                    
+                    <!--manual navigation end-->
                 </div>
+                <!--image slider end-->
+
+            </div>
+        </div>     
+        <!--Feedback-->
+                        </div>
+                        
+                    </div>
                 </div>
                 
             </div>
@@ -568,6 +669,17 @@ else*/
     <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
+        
+<script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+      document.getElementById('radio' + counter).checked = true;
+      counter++;
+      if(counter > 4){
+        counter = 1;
+      }
+    }, 5000);
+    </script>
 
 </body>
 
