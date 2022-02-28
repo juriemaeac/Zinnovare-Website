@@ -233,7 +233,7 @@ include_once 'product-action.php'; //including controller
                             ?>
                             <img src="src/star.png" style="height: 50px; width: 50px">      
                             <h2 style="color:orange; text-align:center;padding-top:8px; font-weight:bold">
-                                <?php echo $percentage.'%';?>
+                                <?php echo round($percentage, 2).'%'?>
                             </h2>
                             <?php
                                 if ($percentage >= 75){
@@ -418,16 +418,14 @@ include_once 'product-action.php'; //including controller
                         <div class="column-footer">
                             <h5 style="color:white;padding-bottom:5px">Payment Options</h5>
                             <img alt="gcash" src="src/gcash.png" width="37" height="28" style="border-radius: 5px;">
-                            <img alt="paymaya" src="src/paymaya.png" width="37" height="28" style="border-radius: 5px;">
                             <img alt="coinsph" src="src/coinsph.png" width="37" height="28" style="border-radius: 5px;">
-                            <img alt="paypal" src="images/paypal.png" width="37" height="28" style="border-radius: 5px;">
-                        </div>
-                        <div class="column-footer">
-                            <img alt="bdo" src="src/bdo.png" width="37" height="28" style="border-radius: 5px;">
                             <img alt="bpi" src="src/bpi.png" width="37" height="28" style="border-radius: 5px;">
-                            <img alt="landbank" src="src/landbank.png" width="37" height="28" style="border-radius: 5px;">
                             <img alt="cod" src="src/cod.png" width="37" height="28" style="border-radius: 5px;">
                         </div>
+                        <div style="color:white; font-weight:100;" href="#">
+                            <a style="text-decoration:none;" data-target="#myModal-terms" data-toggle="modal" href="#myModal-terms">Terms and Condition</a>
+                        </div>
+                            
                         <h6 style="color:white; font-weight:100; padding-top:10px">
                             Copyright © 2017-2022
                             <span class="copyright-footer" style="font-weight:400">
@@ -438,7 +436,95 @@ include_once 'product-action.php'; //including controller
 
                 </div>
             </div>
-        </div>    
+        </div> 
+        <div id="myModal-terms" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 30%; height:70%;overflow:inherit;">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: orange;">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <p class="modal-title" style="text-align: center;font-weight:bold">POLICIES</p>
+                    </div>
+                    <div class="widget widget-cart">
+                        <div class="order-row bg-white">
+                            <div class="widget-body" style="padding-bottom: 0;margin-bottom:0">
+                            <center><strong>Terms and Conditions ("Terms")</strong></center><br><br>
+
+                                Last updated: February 28, 2022<br><br>
+                            <p style=" text-align: justify;">
+                                Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the Zinnovare website. Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service. By using or accessing Zinnovare, regardless of you whether have registered to use any of the services offered on the application, you signify that you have read and understood these Terms and Conditions and agree to be bound by the same. <br><br>
+
+                                By accessing or using Zinnovare Website, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access Zinnovare Website.<br><br>
+
+                                <strong>Eligibility</strong><br><br>
+
+                                Persons under the age of 13 are not permitted to use this application. Admin has the right to reject the use of the application when the information regarding the information of the user is proved to be untrue. <br><br>
+
+                                <strong>Restrictions on Use</strong><br><br>
+
+                                You agree to abide by all applicable terms and conditions, law and regulations in your use of the website. In addition, you agree that you will not do any of the following:<br><br>
+
+                                •	register for more than one account, or register for an account on behalf of an individual other than yourself or on behalf of any group or entity;<br>
+                                •	take any action on the website, that may constitute libel or slander or that infringes or violates someone else’s rights or is protected by any copyright or trademark, or otherwise violates the law;<br>
+                                •	use the information or content on the website to send unwanted messages to any other user;<br>
+                                •	impersonate any person or entity, or falsely state or otherwise misrepresent yourself, your age or your affiliation with any person or entity;<br>
+                                •	use the website or our products and services in any manner that could damage, disable, overburden or impair the website;<br>
+                                •	harvest or collect email addresses or other contact information of other users from the website by electronic or other means, including the use of automated scripts; or<br>
+                                •	post or otherwise make available any material that contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment.<br><br>
+
+
+                                <strong>Registration and Application</strong><br><br>
+
+                                In creating your account, you agree to provide the true, current, complete, and accurate information in the registration or application form which is necessary for purposes of using our website. If any information you provide is untrue, inaccurate, not current, or incomplete, we reserve the right to cancel your registration, and restrict your future use of this website. Admin also reserves the right to reject any registration, deny access to the website in violation of these Terms and Conditions.<br><br>
+
+                                <strong>Collection and use of Personal Information</strong><br><br>
+
+                                It is important for you to know that the website can only be used if you agree to disclose relevant personal information which may verified by Tech Intellect, on your behalf, from all relevant sources.<br><br>
+
+                                <strong>Links To Other Web Sites</strong><br><br>
+
+                                Our Service may contain links to third-party web sites or services that are not owned or controlled by Admin.<br><br>
+
+                                Admin has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party web sites or services. You further acknowledge and agree that Zinnovare shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.<br><br>
+
+                                <strong>Changes</strong><br><br>
+
+                                We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 10 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.<br><br>
+
+                                <strong>Contact Us</strong><br><br>
+
+                                If you have any questions about these Terms, please contact us through email.
+                                Email Address: academia_care@gmail.com<br><br>
+
+                                <strong>Acceptance</strong><br><br>
+
+                                <strong>YOU CONFIRM HAVING READ AND UNDERSTOOD AND AGREE TO THE FOREGOING TERMS AND CONDITIONS. BY ACCEPTING THESE TERMS AND CONDITIONS, AND THE PRIVACY POLICY, YOU SIGNIFY YOUR EXPRESS CONSENT IN ACCORDANCE WITH REPUBLIC ACT NO. 10173, OTHERWISE REFERRED TO AS THE DATA PRIVACY ACT OF 2012 AND ITS IMPLEMENTING RULES AND REGULATIONS AS WELL AS OTHER APPLICABLE CONFIDENTIALITY AND DATA PRIVACY LAWS OF THE PHILIPPINES. YOU AGREE TO HOLD THE COMPANY, ITS OFFICERS, DIRECTORS AND STOCKHOLDERS, FREE AND HARMLESS FROM ANY AND ALL LIABILITIES, DAMAGES, ACTIONS, CLAIMS, AND SUITS IN CONNECTION WITH THE IMPLEMENTATION OR PROCESSING OF PERSONAL INFORMATION IN RELATION TO YOUR CONSENT OR AUTHORIZATION UNDER THESE TERMS AND CONDITIONS.</strong>
+                            </p>
+                            </div>
+                        </div>
+                        
+                                <!-- end:Order row -->
+                            
+                        <div class="widget-body" style="padding-bottom: 0;margin-bottom:0;">
+                            <div><center>
+                                <input type="checkbox" require="required">
+                                <label> I agree to the Terms and Conditions.<label>    
+                            </center>             
+                            </div>
+                        </div>
+                            </div>
+                            <center>
+                            <a href="#"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:10px 15px;margin-bottom:20px">I Agree</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:small; width: 30%; padding:10px 15px; margin-bottom:20px">Close</button>
+                        
+                    </div>
+                        
+                    <!--end modal -->
+                    
+                </div>
+
+            </div>
+        </div>   
         <!--Feedback-->
         <!-- start: FOOTER -->
         
