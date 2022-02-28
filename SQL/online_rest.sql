@@ -84,20 +84,20 @@ CREATE TABLE IF NOT EXISTS `dishes` (
   `price` decimal(10,2) NOT NULL,
   `img` varchar(222) NOT NULL,
   PRIMARY KEY (`d_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `dishes`
 --
 
 INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
-(1, 48, 'Burgerdilla', 'A hybrid of a burger and a quesadilla', '160', 'dish1.png'),
-(2, 48, 'Tacos', '3 Fried tortilla filled with ground beef, sauce, cheese, and veggies', '150', 'dish2.png'),
-(3, 48, 'Tuna Quesadilla', '8” tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'dish3.png'),
-(4, 48, 'Icecream', 'Fresh icecream available in different flavors', '100', 'dish4.png'),
-(5, 48, 'Tachos', '2 layer taco strips with ground beef, sauce, cheese, and veggies', '130', 'dish5.png'),
-(6, 48, 'Chicken', 'Fried chicken filled with ground beef, sauce, cheese, and veggies', '120', 'dish6.png'),
-(7, 48, 'Decker', '2 deck of soft tortilla filled with beef strips, sauce, cheese, and veggies', '160', 'dish7.png');
+(11, 48, 'Burgerdilla', 'A hybrid of a burger and a quesadilla', '160', 'dish1.png'),
+(12, 48, 'Tacos', '3 Fried tortilla filled with ground beef, sauce, cheese, and veggies', '150', 'dish2.png'),
+(13, 48, 'Tuna Quesadilla', '8” tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'dish3.png'),
+(14, 48, 'Icecream', 'Fresh icecream available in different flavors', '100', 'dish4.png'),
+(15, 48, 'Tachos', '2 layer taco strips with ground beef, sauce, cheese, and veggies', '130', 'dish5.png'),
+(16, 48, 'Chicken', 'Fried chicken filled with ground beef, sauce, cheese, and veggies', '120', 'dish6.png'),
+(17, 48, 'Decker', '2 deck of soft tortilla filled with beef strips, sauce, cheese, and veggies', '160', 'dish7.png');
 
 -- --------------------------------------------------------
 
@@ -112,12 +112,22 @@ CREATE TABLE IF NOT EXISTS `remark` (
   `remark` mediumtext NOT NULL,
   `remarkDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=71 ;
 
 --
 -- Dumping data for table `remark`
 --
 
+INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
+(62, 32, 'in process', 'hi', '2018-04-18 17:35:52'),
+(63, 32, 'closed', 'cc', '2018-04-18 17:36:46'),
+(64, 32, 'in process', 'fff', '2018-04-18 18:01:37'),
+(65, 32, 'closed', 'its delv', '2018-04-18 18:08:55'),
+(66, 34, 'in process', 'on a way', '2018-04-18 18:56:32'),
+(67, 35, 'closed', 'ok', '2018-04-18 18:59:08'),
+(68, 37, 'in process', 'on the way!', '2018-04-18 19:50:06'),
+(69, 37, 'rejected', 'if admin cancel for any reason this box is for remark only for buter perposes', '2018-04-18 19:51:19'),
+(70, 37, 'closed', 'delivered success', '2018-04-18 19:51:50');
 
 -- --------------------------------------------------------
 
@@ -139,15 +149,19 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `image` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`rs_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data for table `restaurant`
 --
 
 INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
-(48, 5, 'Zinnovare', 'Zinnovare.enterprise@gmail.com', ' 09239418939', 'Zinnovare.com', '7am', '4pm', 'mon-tue', 'Maragondon', 'logo1.png', '2022-04-18 13:49:23'),
-
+(48, 5, 'Hari Burger', 'HariBurger@gmail.com', ' 090412 64676', 'HariBurger.com', '7am', '4pm', 'mon-tue', ' Palace,   natwar jalandhar', '5ad74ce37c383.jpg', '2018-04-18 13:49:23'),
+(49, 5, 'The Great Kabab Factory', 'kwbab@gmail.com', '011 2677 9070', 'kwbab.com', '6am', '5pm', 'mon-fri', 'Radisson Blu Plaza Hotel, Delhi Airport, NH-8, New Delhi, 110037', '5ad74de005016.jpg', '2018-04-18 13:53:36'),
+(50, 6, 'Aarkay Vaishno Dhaba', 'Vaishno@gmail.com', '090410 35147', 'Vaishno.com', '6am', '6pm', 'mon-sat', 'Bhargav Nagar, Jalandhar - Nakodar Rd, Jalandhar, Punjab 144003', '5ad74e5310ae4.jpg', '2018-04-18 13:55:31'),
+(51, 7, 'Martini', 'martin@gmail.com', '3454345654', 'martin.com', '8am', '4pm', 'mon-thu', '399 L Near Apple Showroom, Model Town,', '5ad74ebf1d103.jpg', '2018-04-18 13:57:19'),
+(52, 8, 'hudson', 'hud@gmail.com', '2345434567', 'hudson.com', '6am', '7pm', 'mon-fri', 'Opposite Lovely Sweets, Nakodar Road, Jalandhar, Punjab 144001', '5ad756f1429e3.jpg', '2018-04-18 14:32:17'),
+(53, 9, 'kriyana store', 'kari@gmail.com', '4512545784', 'kari.com', '7am', '7pm', 'mon-sat', 'near kalu gali hotel india what everrrr.', '5ad79e7d01c5a.jpg', '2018-04-18 19:37:33');
 
 -- --------------------------------------------------------
 
@@ -222,13 +236,31 @@ CREATE TABLE IF NOT EXISTS `users_orders` (
 --
 
 
+
+
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `f_id` int(222) NOT NULL AUTO_INCREMENT,
+  `o_id` int(222) NOT NULL,
+  `u_id` int(222) NOT NULL,
+  `feed` varchar(222) NOT NULL,
+  `rating` varchar(222) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `feedback`
 --
+
+INSERT INTO `feedback` (`f_id`, `o_id`, `u_id`, `feed`, `rating`, `date`) VALUES
+(5, 56, 34, 'awesome food', 'excellent', '2022-04-18 19:51:50'),
+(6, 57, 34, 'good food', 'excellent', '2022-04-18 19:52:34');
 
 -- --------------------------------------------------------
 
