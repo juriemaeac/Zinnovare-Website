@@ -128,11 +128,11 @@ if(isset($_POST["create_pdf"]))
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
 
-                        <!-- Search -->
+                        <!-- Search
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
+                        </li> -->
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                            
@@ -152,7 +152,7 @@ if(isset($_POST["create_pdf"]))
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -211,9 +211,9 @@ if(isset($_POST["create_pdf"]))
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper">
+        <div class="page-wrapper" style="padding-bottom:0;">
             <!-- Container fluid  -->
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-bottom:0;">
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-12">
@@ -224,7 +224,7 @@ if(isset($_POST["create_pdf"]))
                                 <h4 class="card-title">All Registered users</h4>
                              
                                 <div class="table-responsive m-t-40">
-                                    <table id="myTable" class="table table-bordered table-striped">
+                                    <table id="myTable" class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>Username</th>
@@ -246,31 +246,28 @@ if(isset($_POST["create_pdf"]))
 												$query=mysqli_query($db,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
-														{
-															echo '<td colspan="7"><center>No User-Data!</center></td>';
-														}
+                                                    {
+                                                        echo '<td colspan="7"><center>No User-Data!</center></td>';
+                                                    }
 													else
-														{				
-																	while($rows=mysqli_fetch_array($query))
-																		{
-																					
-																				
-																				
-																					echo ' <tr><td>'.$rows['username'].'</td>
-																								<td>'.$rows['f_name'].'</td>
-																								<td>'.$rows['l_name'].'</td>
-																								<td>'.$rows['email'].'</td>
-																								<td>'.$rows['phone'].'</td>
-																								<td>'.$rows['address'].'</td>																								
-																								<td>'.$rows['date'].'</td>
-																									 <td><a href="delete_users.php?user_del='.$rows['u_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_users.php?user_upd='.$rows['u_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
-																									</td></tr>';
-																					 
-																						
-																						
-																		}	
-														}
+                                                    {				
+                                                        while($rows=mysqli_fetch_array($query))
+                                                        {
+                                                                    
+                                                                
+                                                                
+                                                        echo ' <tr><td>'.$rows['username'].'</td>
+                                                                    <td>'.$rows['f_name'].'</td>
+                                                                    <td>'.$rows['l_name'].'</td>
+                                                                    <td>'.$rows['email'].'</td>
+                                                                    <td>'.$rows['phone'].'</td>
+                                                                    <td>'.$rows['address'].'</td>																								
+                                                                    <td>'.$rows['date'].'</td>
+                                                                            <td><a style="background:red" href="delete_users.php?user_del='.$rows['u_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px;"></i></a> 
+                                                                            <a href="update_users.php?user_upd='.$rows['u_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+                                                                        </td></tr>';  
+                                                        }	
+                                                    }
 												
 											
 											?>
@@ -280,9 +277,9 @@ if(isset($_POST["create_pdf"]))
                                         </tbody>
                                     </table>
                                     <br />  
-                     <form method="post">  
-                          <input type="submit" name="create_pdf" class="btn btn-danger" value="Download Report" />  
-                     </form> 
+                                    <form method="post">  
+                                        <input type="submit" name="create_pdf" class="btn btn-danger" style= "background:orange;border:none"value="Download Report" />  
+                                    </form> 
                                 </div>
                             </div>
                         </div>
@@ -290,7 +287,12 @@ if(isset($_POST["create_pdf"]))
                       
                             </div>
                         </div>
+                        
                     </div>
+                    <!-- footer -->
+    <footer class="footer"> © Zinnovare 2022. All rights reserved. </footer>
+            <!-- End footer -->
+                    
                 </div>
                 <!-- End PAge Content -->
             </div>
@@ -299,13 +301,13 @@ if(isset($_POST["create_pdf"]))
 			
 			
 			
-            <!-- footer -->
-            <footer class="footer"> © Zinnovare 2022. All rights reserved. </footer>
-            <!-- End footer -->
+            
         </div>
         <!-- End Page wrapper  -->
+        
     </div>
     <!-- End Wrapper -->
+    
     <!-- All Jquery -->
     <script src="js/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->

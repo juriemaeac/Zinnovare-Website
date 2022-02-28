@@ -140,11 +140,11 @@ if(isset($_POST['submit'] ))
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
 
-                        <!-- Search -->
+                        <!-- Search
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
+                        </li> -->
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                            
@@ -164,7 +164,7 @@ if(isset($_POST['submit'] ))
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -223,9 +223,9 @@ if(isset($_POST['submit'] ))
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:1200px;">
+        <div class="page-wrapper" style="padding-bottom: 0;">
             <!-- Container fluid  -->
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-bottom: 0;">
                 <!-- Start Page Content -->
                      <div class="row">
                    
@@ -252,28 +252,28 @@ if(isset($_POST['submit'] ))
                                     <div class="form-body">
                                        
                                         <hr>
-                                        <div class="row p-t-20">
+                                        <div class="row p-t-5">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Username</label>
-                                                    <input type="text" name="uname" class="form-control" placeholder="username">
+                                                    <input type="text" name="uname" class="form-control" placeholder="Username">
                                                    </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
-                                                    <label class="control-label">First-Name</label>
-                                                    <input type="text" name="fname" class="form-control form-control-danger" placeholder="jon">
+                                                    <label class="control-label">First Name</label>
+                                                    <input type="text" name="fname" class="form-control form-control-danger" placeholder="Ex. Juan">
                                                     </div>
                                             </div>
                                             <!--/span-->
                                         </div>
                                         <!--/row-->
-                                        <div class="row p-t-20">
+                                        <div class="row p-t-5">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Last-Name </label>
-                                                    <input type="text" name="lname" class="form-control" placeholder="doe">
+                                                    <label class="control-label">Last Name </label>
+                                                    <input type="text" name="lname" class="form-control" placeholder="Ex. Dela Cruz">
                                                    </div>
                                             </div>
                                             <!--/span-->
@@ -286,23 +286,23 @@ if(isset($_POST['submit'] ))
                                             <!--/span-->
                                         </div>
                                         <!--/row-->
-										 <div class="row">
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Password</label>
-                                                    <input type="text" name="password" class="form-control form-control-danger" placeholder="password">
-                                                    </div>
+                                                    <input type="text" name="password" class="form-control form-control-danger" placeholder="Password">
                                                 </div>
-                                        
+                                            </div>
+                                    
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Phone</label>
-                                                    <input type="text" name="phone" class="form-control form-control-danger" placeholder="phone">
-                                                    </div>
+                                                    <input type="text" name="phone" class="form-control form-control-danger" placeholder="Phone Number">
                                                 </div>
                                             </div>
-                                            <!--/span-->
-                                            <h3 class="box-title m-t-40"> Address</h3>
+                                        </div>
+                                        <!--/span-->
+                                        <h3 class="box-title m-t-5" > Address</h3>
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-12 ">
@@ -341,9 +341,9 @@ if(isset($_POST['submit'] ))
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
-            <!-- footer -->
+            <!-- footer 
             <footer class="footer"> © Zinnovare 2022 All rights reserved. </footer>
-            <!-- End footer -->
+            End footer -->
         </div>
         <!-- End Page wrapper  -->
     </div>

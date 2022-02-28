@@ -20,7 +20,7 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="#">
+        <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
         <title>Starter Template for Bootstrap</title>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -204,7 +204,7 @@
             </nav>
             <!-- /.navbar -->
         </header>
-        <div id="myModalEmpty" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModalEmpty" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->
@@ -223,7 +223,7 @@
                 </div>
             </div>
         </div>
-        <div id="myModal" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->
@@ -312,7 +312,7 @@
             <div class="row" style="margin: auto;">
                 <?php 
                         // displaying current session user login orders 
-                    $query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."' AND status IN ('closed', 'rejected') ORDER by o_id DESC LIMIT 0,10");
+                    $query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."' AND status IN ('closed', 'rejected') ORDER by date DESC LIMIT 0,10");
                     while($row=mysqli_fetch_array($query_res))
                         {
                             ?><div class="col-xs-12 col-sm-6 col-md-1 food-item" style="inline-size: 125px;">
@@ -346,20 +346,19 @@
             <div>
                 <h1>Recent Orders</h1>
             </div>
-            <div class="row">
+            <div class="row full">
                 <?php 
                     // displaying current session user login orders 
-                    $query_res= mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.title=users_orders.title where u_id='".$_SESSION['user_id']."' AND status IN ('in process', '')");
+                    $query_res= mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.title=users_orders.title where u_id='".$_SESSION['user_id']."' AND status IN ('in process', '') ORDER BY date DESC");
                     if(!mysqli_num_rows($query_res) > 0 )
                     {
                         echo '<hr><center>You have no orders placed yet. </center><hr>';
                     }
                     else
                     {			      
-                
                         while($row=mysqli_fetch_array($query_res))
                         {
-                            ?>  <div class="col-xs-12 col-sm-6 col-md-3 food-item" style="inline-size: 350px;">
+                            ?>  <div class="oh-container">
                                     <div class="history-container">
                                         <!--<div class="media-top meida media-middle">
                                             <span><i><img src="src/user.png" alt="user" width="60px" height="60px"/></i></span>
@@ -446,23 +445,22 @@
                                             </div>             
                                         </div>
                                     </div>
-                                <br>
+                                    <br>
                                 </div>
                             <?php 
                         }
                     } 
                 ?>	
             </div>
-            <br> <!--pang space lang-->
 
             <div>
                 <h1>Completed Orders</h1>
             </div>
-            <div class="row">
+            <div class="row full">
                 
                 <?php 
                     // displaying current session user login orders 
-                    $query_res= mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.title=users_orders.title where u_id='".$_SESSION['user_id']."' AND status IN ('closed', 'rejected')");
+                    $query_res= mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.title=users_orders.title where u_id='".$_SESSION['user_id']."' AND status IN ('closed', 'rejected') ORDER BY date DESC");
                             
                     if(!mysqli_num_rows($query_res) > 0 )
                     {
@@ -473,7 +471,7 @@
                         while($row=mysqli_fetch_array($query_res))
                         {
                             ?>
-                            <div class="col-xs-12 col-sm-6 col-md-3 food-item" style="inline-size: 350px;">
+                            <div class="oh-container">
                                 <div id="<?php echo $row['o_id'];?>" class="history-container">
                                     <!--<div class="media-top meida media-middle">
                                         <span><i><img src="src/user.png" alt="user" width="60px" height="60px"/></i></span>
@@ -525,15 +523,37 @@
                                         <div class="rowHistory">
                                                 Status: 
                                                 <?php 
-                                                    $status=$row['status'];
+                                                $status=$row['status'];
+                                                $o_id = $row['o_id'];
+                                                
+                                                $query_res_fb= mysqli_query($db,"SELECT * from fb where o_id = $o_id");
+                                                $row_fb=mysqli_fetch_array($query_res_fb);
+                                                $o_id_fb = $row_fb['o_id'];
+
                                                     if($status=="closed")
                                                     {
                                                         ?>
                                                         <div class="rowHistory">
-                                                            <div class="columnHistory-status">
-                                                            <a href="fb.php?o_id=<?php echo $row['o_id'];?>">order received</a>
-                                                                
-                                                            </div>
+                                                            <?php
+                                                            if($o_id_fb == null){
+                                                                ?>
+                                                                <div class="columnHistory-status">
+                                                                        <a href="fb.php?o_id=<?php echo $row['o_id'];?>" type="button" class="btn btn-warning" style="background:orange; margin-left: 10px; padding:6px; border-radius:4px; font-size:small">
+                                                                        <i class="fa fa-check"></i> Order Received</a>
+                                                                    </div>
+                                                                <?php
+                                                            }
+                                                            elseif ($o_id_fb != null){
+                                                                ?>
+                                                                <div class="columnHistory-status">
+                                                                        <a type="button" class="disable-btn-received" style="background:#00CC00; color:white; margin-left: 10px; padding:6px; border-radius:4px; font-size:small">
+                                                                        <i class="fa fa-check"></i> Received</a>
+                                                                    </div>
+                                                                    <?php
+                                                            }
+                                                            ?>
+                                                            
+
                                                             <div class="columnHistory-status" style="padding-left: 10px;">
                                                                 <a href="invoice.php?o_id=<?php echo $row['o_id'];?>">
                                                                     <img src="src/invoice.png" alt="invoice" width="30px" height="30px"/> 
@@ -543,23 +563,24 @@
                                                             
                                                         <!--FEEDBACK-->
                                                         <div class="feedback-popup" id="myForm">
-                                                        <form action="" class="feedback-container" method="post">
-                                                                                <h1>FEEDBACK</h1>
-                                                                                <?php echo $row['o_id'];?>
-                                                                                <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
-                                                                                <button type="submit" name="submit" class="btn pull-right" onclick="change()">Submit</button>
-                                                                                <button type="button" class="btn cancel pull-right" onclick="closeForm()">Close</button>                                                                     
-                                                                            </form>
+                                                            <form action="" class="feedback-container" method="post">
+                                                                <h1>FEEDBACK</h1>
+                                                                <?php echo $row['o_id'];?>
+                                                                <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
+                                                                <button type="submit" name="submit" class="btn pull-right" onclick="change()">Submit</button>
+                                                                <button type="button" class="btn cancel pull-right" onclick="closeForm()">Close</button>                                                                     
+                                                            </form>
                                                         </div>
                                                         <!--END FEEDBACK-->
                                                         <?php 
                                                     } 
-                                                    if($status=="rejected")
+                                                    
+                                                    else if($status=="rejected")
                                                     {
                                                         ?>
                                                             <div class="rowHistory">
                                                                 <div class="columnHistory-status">
-                                                                    <button type="button" class="btn btn-danger" style="margin-left: 10px; padding:6px; border-radius:4px; font-size:small"> <i class="fa fa-close"></i> Cancelled</button>
+                                                                    <button type="button" class="btn btn-danger cancel" style="background:red; margin-left: 10px; padding:6px; border-radius:4px; font-size:small"> <i class="fa fa-close"></i> Cancelled</button>
                                                                 </div>
                                                                 <div class="columnHistory-status" style="padding-left: 10px;">
                                                                     <img class="disable-btn" src="src/invoice.png" alt="invoice" width="30px" height="30px"/> 
@@ -571,14 +592,30 @@
                                         </div>             
                                     </div>
                                 </div>
-                                <br>
                             </div>
                             <?php 
                         }
                     } 
                 ?>	
             </div>
+            
         </div>
+        <div class="footerCopyright-footer"style="background-color: black; opacity: 0.8;padding-bottom:10px">
+                <div class="row-footer">
+
+                    <div class="column-footer">
+                        <a href="index.php"><img src="admin/images/logo6.png" alt="Zinnovare" width="140px" height="40px"/></a>
+                    </div>
+                    
+                    <div class="column-footer">© 2017-2022
+                        <span class="copyright-footer">
+                            Zinnovare Inc.
+                        </span>
+                        All Rights Reserved.
+                    </div>
+
+                </div>
+            </div>
 
     
         <!-- Bootstrap core JavaScript
@@ -611,6 +648,7 @@
 
 function change()
             {
+                
                 document.getElementById("myButton1").value="Received"; 
                 document.getElementById('myButton1').onclick = function () {
     this.disabled = true;

@@ -41,7 +41,7 @@ else{
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="#">
+        <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
         <title>Starter Template for Bootstrap</title>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,63 +52,69 @@ else{
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
-<body>
+<body">
+    <div>
+    <ul class="breadcrumb">
+    <li><a href="index.php">Home</a></li>
+    <li><a href="order_history.php">Orders</a></li>
+    <li>Feedback</li>
+    </ul>
+    </div>
 
-
-<?php
-                $result = mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.title=users_orders.title WHERE o_id = '".$_GET['o_id']."'");
-                $details = mysqli_fetch_assoc($result);
-                $result1 = mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
-                $userdetails = mysqli_fetch_assoc($result1);
+    <?php
+        $result = mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.title=users_orders.title WHERE o_id = '".$_GET['o_id']."'");
+        $details = mysqli_fetch_assoc($result);
+        $result1 = mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
+        $userdetails = mysqli_fetch_assoc($result1);
+    ?>     
+    <div id="feedback123" style="padding-top:2%; margin-top:2%;">
+        <div class="feedback-left pull-left" style="border-radius: 5px;background:#FFF4E4;">
+            <div class="feedback-img-container" style="border-radius: 5px;background:#FFF4E4">
+                <a><?php echo "<img style='border-radius: 5px;' class='feedback-img' src='src/".$details['img']."' '";?></a>
+            </div>
+        </div>
+        <div class="feedback-right">
+            <!--<div class="media-top meida media-middle">
+                <span><i><img src="src/user.png" alt="user" width="60px" height="60px"/></i></span>
+            </div>-->
+            <div class="feedback-right-content">
                 
-            ?>
-            
-<div id="feedback123">
-
-    <div class="feedback-left pull-left">
-        <div class="feedback-img-container">
-            <a><?php echo "<img class='feedback-img' src='src/".$details['img']."' '";?></a>
+                <div class="feedback-form" id="myForm" style="height:100%;">
+                    <div class="feedback-upper">
+                        <div class="feedback-orderTitle">
+                            Order #<?php echo $details['o_id']; ?> ||
+                            <span><?php echo $details['title']; ?></span>
+                            
+                        </div>
+                        <div class="feedback-orderNum" style="font-weight: 200;color:gray;">
+                            <?php $cDate = strtotime($details['date']); ?>
+                            Order Date: <?php echo date('M d, Y',$cDate); ?>
+                        </div>
+                        <p class="feedback-username"><?php echo $userdetails['username']?></p>
+                    </div>
+                    <form action="" class="feedback-container" method="post">
+                        <p>How was your experience with <?php echo $details['title']; ?>?</p>
+                        <div class="rating">
+                            <i class="rating__star far fa-star"></i>
+                            <i class="rating__star far fa-star"></i>
+                            <i class="rating__star far fa-star"></i>
+                            <i class="rating__star far fa-star"></i>
+                            <i class="rating__star far fa-star"></i>
+                        </div>
+                        <div class="rating__result" style="border:1px solid red; display:none"></div><!--PANG CHECK LANG-->
+                        <input name="rating" id="example" type="hidden">
+                        <br>
+                        <h4>Add a review</h4>
+                        <p>Your email address will not be published.</p>
+                        <textarea name="feedback" required cols="30" rows="5" class="feedback-text" placeholder="Enter Feedback"></textarea>
+                        <a class="btn pull-right" style="border-radius: 5px;padding:8px; width:80px; background:gray"  href="order_history.php">Cancel</a>
+                        <button type="submit" name="submit" class="btn pull-right" style="border-radius: 5px;padding:8px; width:80px" onclick="order_history.php">Submit</button>                                                                   
+                    </form>
+                    
+                </div>   
+            </div>          
         </div>
     </div>
-    <div class="feedback-right">
-        <!--<div class="media-top meida media-middle">
-            <span><i><img src="src/user.png" alt="user" width="60px" height="60px"/></i></span>
-        </div>-->
-        <div class="feedback-right-content">
-            <div class="feedback-upper">
-                <div class="feedback-orderTitle">
-                    <?php echo $details['title']; ?>
-                </div>
-                <div class="feedback-orderNum">
-                    Order #<?php echo $details['o_id']; ?><br>
-                </div>
-            </div>
-            <div class="feedback-user">
-                    <p class="feedback-username"><?php echo $userdetails['username']?></p>
-            </div>
-            <div class="feedback-form" id="myForm">
-            <form action="" class="feedback-container" method="post">
-                <p>&ensp;How was your experience with <?php echo $details['title']; ?> ?</p>
-                <div class="rating">
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
-                </div>
-                <div class="rating__result" style="border:1px solid red; display:none"></div><!--PANG CHECK LANG-->
-                <input name="rating" id="example" type="hidden">
-                <br>
-                <h4>Add a review</h4>
-                <p>Your email address will not be published. Required fields are marked *</p>
-                <textarea name="feedback" required cols="30" rows="10" class="feedback-text" placeholder="Enter Feedback"></textarea>
-                <a class="btn pull-right" href="order_history.php">Cancel</a>
-                <button type="submit" name="submit" class="btn pull-right" onclick="order_history.php">Submit</button>                                                                   
-            </form>
-            </div>   
-        </div>          
-    </div>
-</div>
 
 <script src="js/jquery.min.js"></script>
         <script src="js/tether.min.js"></script>
@@ -125,15 +131,15 @@ else{
                 document.getElementById("myForm").style.display = "block";
             }
             function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+                document.getElementById("myForm").style.display = "none";
+            }
 
-function change()
+            function change()
             {
                 document.getElementById("myButton1").value="Received"; 
                 document.getElementById('myButton1').onclick = function () {
-    this.disabled = true;
-}
+                    this.disabled = true;
+                }
             }
 
             //feedback rating

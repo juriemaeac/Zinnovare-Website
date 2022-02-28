@@ -15,7 +15,7 @@ include_once 'product-action.php'; //including controller
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
+    <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
     <title>Zinnovare</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -48,18 +48,17 @@ include_once 'product-action.php'; //including controller
         <!-- banner part starts -->
         <div class="hero bg-image bgfull" data-image-src="src/header.png">
             <div class="hero-inner">
-                <div style="text-align: left; padding-left:200px">
-                    <h1>
+                <div style="text-align: left; margin-left:10%">
+                    <div class="h1">
                         <span> Bite into the </span>
-                        <span style="color: orange;">cheesier</span> 
-                    </h1>
-                        <h1>side of life</h1>
-                        <h5 style="color:white">
-                        <span style="letter-spacing: 1px; word-spacing: 3px"> With </span>
-                        <span style="letter-spacing: 1px; word-spacing: 3px"> deliciously sinful  </span>
-                        <span style="letter-spacing: 1px; word-spacing: 3px"> Mexican treats </span>
-                        </h5>
-                        <h5 style="color:white"></h5>
+                        <span style="color: orange;">cheesier</span> <br>
+                        side of life
+                    </div>
+                    <h5>
+                    <span style="letter-spacing: 1px; word-spacing: 3px"> With </span>
+                    <span style="letter-spacing: 1px; word-spacing: 3px"> deliciously sinful  </span>
+                    <span style="letter-spacing: 1px; word-spacing: 3px"> Mexican treats </span>
+                    </h5>
                     <div class="banner-form">
                         <form class="form-inline">
                             <!--<div class="form-group">
@@ -67,7 +66,7 @@ include_once 'product-action.php'; //including controller
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I would like to eat...."> </div>
                             </div>-->
-                            <button onclick="location.href='menu.php?res_id=48'" type="button" class="btn " style="background:orange; color:white">Order Now</button>
+                            <button onclick="location.href='menu.php?res_id=48'" type="button" class="btn" style="background:orange; color:white">Order Now</button>
                         </form>
                     </div>
                 </div>
@@ -157,40 +156,33 @@ include_once 'product-action.php'; //including controller
                     <p class="lead">The easiest way to your favourite food</p>
                 </div>
                 <div class="row">
-				
-				
-				
 						<?php 
 						// fetch records from database to display popular first 3 dishes from table
 						$query_res= mysqli_query($db,"select * from dishes LIMIT 3"); 
-                        
+                        $query_res123= mysqli_query($db,"SELECT SUM(quantity) as sum from dishes INNER JOIN users_orders ON dishes.title=users_orders.title where status='closed' group by 'title'");
                             // displaying total sales of Burgerdilla
-                            $query_res123= mysqli_query($db,"select SUM(quantity) as sum from users_orders where title='Burgerdilla' AND status='closed'");
+                            //$query_res123= mysqli_query($db,"select SUM(quantity) as sum from users_orders where title='Burgerdilla' AND status='closed'");
                             $val = $query_res123 -> fetch_array();
                             $rws = $val['sum'];
-
-									      while($r=mysqli_fetch_array($query_res))
-										  {
-													
-						                       echo '  <div class="col-xs-12 col-sm-6 col-md-4 food-item">
-														<div class="food-item-wrap">
-															<div class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/'.$r['img'].'">
-																<div class="distance"><i class="fa fa-pin"></i>BEST SELLER</div>
-																<div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-																<div class="review pull-right"><a style="color: Orange; font-weight:Bold"href="#">Total Sales: '.$rws.'</a> </div>
-															</div>
-															<div class="content">
-																<h5><a href="menu.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
-																<div class="product-name">'.$r['slogan'].'</div>
-																<div class="price-btn-block"> <span class="price">P'.$r['price'].'</span> <a href="menu.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Add to cart</a> </div>
-															</div>
-															
-														</div>
-												</div>';
-													
-										  }
-						
-						
+                            while($r=mysqli_fetch_array($query_res))
+                            {   
+                                echo '  
+                                <div class="col-xs-12 col-sm-6 col-md-4 food-item">
+                                        <div class="food-item-wrap">
+                                            <div class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/'.$r['img'].'">
+                                                <div class="distance"><i class="fa fa-pin"></i>BEST SELLER</div>
+                                                <!--<div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>-->
+                                                <!--<div class="review pull-right"><a style="color: Orange; font-weight:Bold"href="#">Total Sales: '.$rws.'</a> </div>-->
+                                            </div>
+                                            <div class="content">
+                                                <h5><a href="menu.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
+                                                <div class="product-name" style=" height:50px">'.$r['slogan'].'</div>
+                                                <div class="price-btn-block"> <span class="price">P'.$r['price'].'</span> <a href="menu.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Add to cart</a> </div>
+                                            </div>
+                                            
+                                        </div>
+                                </div>';
+                            }
 						?>
                 </div>
             </div>
@@ -225,6 +217,52 @@ include_once 'product-action.php'; //including controller
                             </h2>
                             <p style="color: white">Dish Served</p>     
                         </div>
+                        <div class="column parallax-icon">
+                            <?php
+                                $sql="select SUM(rating) from fb";
+                                $result = mysqli_query($db,$sql);
+                                $row = mysqli_fetch_array($result);
+
+                                $sql123="select * from fb";
+                                $result123=mysqli_query($db,$sql123); 
+                                $rws123=mysqli_num_rows($result123);
+
+                                $sum = $row['SUM(rating)'];
+                                $ave = $sum/$rws123;
+                                $percentage = ($ave/5)*100;
+                            ?>
+                            <img src="src/star.png" style="height: 50px; width: 50px">      
+                            <h2 style="color:orange; text-align:center;padding-top:8px; font-weight:bold">
+                                <?php echo $percentage.'%';?>
+                            </h2>
+                            <?php
+                                if ($percentage >= 75){
+                                    ?>
+                                        <p style="color: white"> Excellent Rating</p>   
+                                    <?php
+                                }
+                                else if($percentage >= 50 && $percentage <75){
+                                    ?>
+                                        <p style="color: white"> Good Rating</p> 
+                                    <?php
+                                }
+                                else if($percentage >= 25 && $percentage <50){
+                                    ?>
+                                        <p style="color: white"> Satisfactory Rating</p> 
+                                    <?php
+                                }
+                                else if($percentage >= 1 && $percentage <25){
+                                    ?>
+                                        <p style="color: white"> Bad Rating</p> 
+                                    <?php
+                                }
+                                else{
+                                    ?>
+                                        <p style="color: white"> No ratings yet.</p>
+                                    <?php
+                                }
+                            ?>
+                        </div>
                     </center>
                 </div>  
                                         
@@ -232,42 +270,11 @@ include_once 'product-action.php'; //including controller
             <center> 
                 <table width="100%">
                     <td><hr /></td>
-                    <td style="width:1px; padding: 0 10px; color:white;  white-space: nowrap;">Checkout Zinnovare’s Mexican Treats for more cheesy barkada moments.</td>
+                    <td style="width:1px; padding: 0 10px; color:white;  white-space:nowrap;font-size:80%">Checkout Zinnovare’s Mexican Treats for more cheesy barkada moments.</td>
                     <td><hr /></td>
                 </table>
             </center> 
         </div>
-
-        <!--
-        <section class="app-section">
-            <div class="app-wrap">
-                <div class="container">
-                    <div class="row text-img-block text-xs-left">
-                        <div class="container">
-                            <div class="col-xs-12 col-sm-5 right-image text-center">
-                                <figure> <img src="images/app.png" alt="Right Image" class="img-fluid"> </figure>
-                            </div>
-                            <div class="col-xs-12 col-sm-7 left-text">
-                                <h3>The Best Food Delivery App</h3>
-                                <p>Now you can make food happen pretty much wherever you are thanks to the free easy-to-use Food Delivery &amp; Takeout App.</p>
-                                <div class="social-btns">
-                                    <a href="#" class="app-btn apple-button clearfix">
-                                        <div class="pull-left"><i class="fa fa-apple"></i> </div>
-                                        <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">App Store</span> </div>
-                                    </a>
-                                    <a href="#" class="app-btn android-button clearfix">
-                                        <div class="pull-left"><i class="fa fa-android"></i> </div>
-                                        <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">Play store</span> </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-                                        -->
-
         <!--About uS
             <div class="about">
                 <div class="sectionHead">About Us</div>
@@ -318,7 +325,6 @@ include_once 'product-action.php'; //including controller
                                 $food3 = mysqli_fetch_assoc($result1);
                                 $food4 = mysqli_fetch_assoc($result1);
                             ?>
-
                             <center>
                                 <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
                                 <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
@@ -369,56 +375,73 @@ include_once 'product-action.php'; //including controller
                 <!--image slider end-->
 
             </div>
-        </div>      
-        <br>
-        <br>  
-        <!--Feedback-->
-        <!-- start: FOOTER -->
-        <footer class="footer">
-            <div class="container">
-                <!-- top footer statrs -->
-                <div class="row top-footer">
-                    <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                        <a href="index.php"> <img src="src/logo6.png" class="footer-logo" alt="Footer logo" width="150px" height="45px" style= "margin-bottom:-5px"> </a> <span>Order Delivery &amp; Take-Out </span> </div>
-                    
-                </div>
-                <!-- top footer ends -->
-                <!-- bottom footer statrs -->
-                <div class="bottom-footer">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-3 payment-options color-gray">
-                            <h5>Payment Options</h5>
-                            <ul>
-                                <li>
-                                    <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 address color-gray">
-                            <h5>Address</h5>
-                            <p>Bucal 4A, Maragondon, Cavite, 4112</p>
-                            <h5>Contact Us @ <a href="">0921 728 8016</a></h5> </div>
-                        <div class="col-xs-12 col-sm-5 additional-info color-gray">
-                            <h5>Addition informations</h5>
-                            <p>Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
+            <div class="footerCopyright-footer"style="background-color: black; opacity: 0.9;">
+                <div class="row-footer" style="display: flex; flex-wrap: wrap;">
+                    <div class="column-footer" style="padding-top:5px">
+                        <a href="index.php"><img src="admin/images/logo6.png" alt="Zinnovare" width="150px" height="45px"/></a>
+                        <p style="font-weight:100">Food Order Delivery</p>
+                        <div class="column-footer">
+                            <a class="fa-footer" href="https://www.facebook.com/zinnovare.finest">
+                                <img alt="Facebook" src="admin/images/fb.png" width="30" height="auto">
+                            </a>
+                            <a class="fa-footer" href="https://www.instagram.com/zinnovare">
+                                <img alt="instagram" src="admin/images/ig.png" width="30" height="auto">
+                            </a>
+                            <a class="fa-footer" href="twitter.com">
+                                <img alt="twitter" src="admin/images/twitter.png" width="30" height="30">
+                            </a>
+					        <a class="fa-footer" href="youtube.com">
+                                <img alt="youtube" src="admin/images/yt.png" width="30" height="30">
+                            </a>
+					        <a class="fa-footer" href="linkedin.com">
+                                <img alt="linkedin" src="admin/images/linkedin.png" width="30" height="30">
+                            </a>
                         </div>
                     </div>
+
+                    <div class="column-footer" style="color:white; font-weight:100;padding-top:5px">
+                        <h5 style="color:white;">Contact Us</h5>
+                        <ul style="padding-top: 10px;">
+                            <li>
+                                <a style="color:white" href="https://goo.gl/maps/LQom1z4NPyyDSWjQA"><img src="src/place.png" width="20px" height="20px" alt="location" style="margin-right:10px;"> Bucal 4A, Maragondon, Cavite, 4112</a>
+                            </li>
+                            <li>
+                                <img src="src/phone-call.png" width="20px" height="20px" alt="phone number" style="margin-right:10px"> 0921 728 8016
+                            </li>
+                            <li>
+                                <img src="src/email.png" width="20px" height="20px" alt="email" style="margin-right:10px"> zinnovare.enterprise@gmail.com
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <div class="column-footer" style="padding-top:5px">
+                        <div class="column-footer">
+                            <h5 style="color:white;padding-bottom:5px">Payment Options</h5>
+                            <img alt="gcash" src="src/gcash.png" width="37" height="28" style="border-radius: 5px;">
+                            <img alt="paymaya" src="src/paymaya.png" width="37" height="28" style="border-radius: 5px;">
+                            <img alt="coinsph" src="src/coinsph.png" width="37" height="28" style="border-radius: 5px;">
+                            <img alt="paypal" src="images/paypal.png" width="37" height="28" style="border-radius: 5px;">
+                        </div>
+                        <div class="column-footer">
+                            <img alt="bdo" src="src/bdo.png" width="37" height="28" style="border-radius: 5px;">
+                            <img alt="bpi" src="src/bpi.png" width="37" height="28" style="border-radius: 5px;">
+                            <img alt="landbank" src="src/landbank.png" width="37" height="28" style="border-radius: 5px;">
+                            <img alt="cod" src="src/cod.png" width="37" height="28" style="border-radius: 5px;">
+                        </div>
+                        <h6 style="color:white; font-weight:100; padding-top:10px">
+                            Copyright © 2017-2022
+                            <span class="copyright-footer" style="font-weight:400">
+                                Zinnovare Inc.
+                            </span>
+                        </h6>
+                    </div>
+
                 </div>
-                <!-- bottom footer ends -->
             </div>
-        </footer>
+        </div>    
+        <!--Feedback-->
+        <!-- start: FOOTER -->
+        
         <!-- end:Footer -->
     
     <!-- Bootstrap core JavaScript

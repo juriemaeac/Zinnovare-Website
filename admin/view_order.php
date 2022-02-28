@@ -36,7 +36,7 @@ function popUpWindow(URLStr, left, top, width, height)
 {
 if(!popUpWin.closed) popUpWin.close();
 }
-popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+600+',height='+600+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
+popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+1000+',height='+600+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
 }
 
 </script>
@@ -77,11 +77,11 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
 
-                        <!-- Search -->
+                        <!-- Search
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
+                        </li> -->
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                            
@@ -101,7 +101,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -179,10 +179,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                                            <?php
 											$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id where o_id='".$_GET['user_upd']."'";
 												$query=mysqli_query($db,$sql);
-												$rows=mysqli_fetch_array($query);
-												
-												
-																		
+												$rows=mysqli_fetch_array($query);				
 												?>
 											
 											<tr>
@@ -190,7 +187,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 												    <td><center><?php echo $rows['username']; ?></center></td>
 													   <td><center>
 													   <a href="javascript:void(0);" onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']);?>');" title="Update order">
-															 <button type="button" class="btn btn-primary">Take Action</button></a>
+															 <button type="button" style="font-size:small" class="btn btn-info">Take Action</button></a>
 															 </center>
 											 </td>
 												  
@@ -201,7 +198,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 												    <td><center><?php echo $rows['title']; ?></center></td>
 													    <td><center>
 													   <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']);?>');" title="Update order">
-														<button type="button" class="btn btn-primary">View User Detials</button></a>
+														<button type="button" style="font-size:small" class="btn btn-info">View User Detials</button></a>
 											
 													   </center></td>
 												   																								
@@ -214,13 +211,13 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											</tr>
 											<tr>
 													<td><strong>Price:</strong></td>
-												    <td><center>$<?php echo $rows['price']; ?></center></td>
+												    <td><center>Php <?php echo $rows['price']; ?></center></td>
 													   
 												   																							
 											</tr>
                                             <tr>
 													<td><strong>Total:</strong></td>
-												    <td><center>$<?php echo $rows['total']; ?></center></td>
+												    <td><center>Php <?php echo $rows['total']; ?></center></td>
 													   
 												   																							
 											</tr>
@@ -239,33 +236,65 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											<tr>
 													<td><strong>status:</strong></td>
 													<?php 
-																			$status=$rows['status'];
-																			if($status=="" or $status=="NULL")
-																			{
-																			?>
-																			<td> <center><button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Waiting</button></center></td>
-																		   <?php 
-																			  }
-																			   if($status=="in process")
-																			 { ?>
-																			<td>   <center><button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On a Way!</button></center></td> 
-																			<?php
-																				}
-																			if($status=="closed")
-																				{
-																			?>
-																			<td>  <center><button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></center></td> 
-																			<?php 
-																			} 
-																			?>
-																			<?php
-																			if($status=="rejected")
-																				{
-																			?>
-																			<td>  <center><button type="button" class="btn btn-danger"> <i class="fa fa-close"></i>cancelled</button> </center></td> 
-																			<?php 
-																			} 
-																			?>
+                                                                            $status=$rows['status'];
+                                                                            if($status=="" or $status=="NULL")
+                                                                            {
+                                                                                ?>
+                                                                                    <td> 
+                                                                                        <center>
+                                                                                        <button type="button" class="btn btn-info" style="width: 40%;border: none; background: #5BC0DE;font-size:small">
+                                                                                        <i class="fa fa-hourglass fa-spin"  aria-hidden="true" ></i>
+                                                                                        Pending
+                                                                                        </button>
+                                                                                        </center>
+                                                                                    </td>
+                                                                                <?php 
+                                                                            }
+                                                                            if($status=="in process")
+                                                                    { 
+                                                                        ?>
+                                                                            <td> 
+                                                                            <center>
+                                                                                <button type="button" class="btn btn-warning" style="width: 40%;border: none; background: orange;font-size:small">
+                                                                                    <i class="fa fa-cog fa-spin"  aria-hidden="true" ></i>
+                                                                                    Processing
+                                                                                </button>
+                                                                                </center>
+                                                                            </td> 
+                                                                        <?php
+                                                                        }
+                                                                    if($status=="closed")
+                                                                        {
+                                                                            
+                                                                    ?>
+                                                                    <td> 
+                                                                    <center>
+                                                                        <button type="button" class="btn btn-success" style="width: 40%;border: none; background: #00CC00;font-size:small">
+                                                                            <i  class="fa fa-check" aria-hidden="true"></i>
+                                                                            Delivered
+                                                                        </button>
+                                                                        </center>
+                                                                    </td> 
+                                                                    
+                                                                    
+                                                                    <?php 
+                                                                    } 
+                                                                    ?>
+                                                                    <?php
+                                                                        if($status=="rejected")
+                                                                            {
+                                                                    ?>
+                                                                        <td> 
+                                                                        <center>
+                                                                            <button type="button" class="btn btn-danger" style="width: 40%;border: none; background: Red;font-size:small"> 
+                                                                                <i class="fa fa-close"></i> 
+                                                                                Cancelled
+                                                                            </button>
+                                                                            </center>
+                                                                        </td> 
+                                                                        <?php 
+                                                                        } 
+                                                                        ?>
 													  
 												   																							
 											</tr>

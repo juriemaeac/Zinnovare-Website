@@ -54,17 +54,17 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
 	 //inserting values into db
 	$mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('".$_POST['username']."','".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".$_POST['phone']."','".md5($_POST['password'])."','".$_POST['address']."')";
 	mysqli_query($db, $mql);
-		$success = "Account Created successfully! <p>You will be redirected in <span id='counter'>5</span> second(s).</p>
-														<script type='text/javascript'>
-														function countdown() {
-															var i = document.getElementById('counter');
-															if (parseInt(i.innerHTML)<=0) {
-																location.href = 'login.php';
-															}
-															i.innerHTML = parseInt(i.innerHTML)-1;
-														}
-														setInterval(function(){ countdown(); },1000);
-														</script>'";
+		$success = "Account Created successfully! <h6>You will be redirected in <span id='counter'>5</span> second(s).</h6>
+                  <script type='text/javascript'>
+                  function countdown() {
+                     var i = document.getElementById('counter');
+                     if (parseInt(i.innerHTML)<=0) {
+                        location.href = 'login.php';
+                     }
+                     i.innerHTML = parseInt(i.innerHTML)-1;
+                  }
+                  setInterval(function(){ countdown(); },1000);
+                  </script>";
 		
 		
 		
@@ -86,8 +86,8 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
+    <title>Zinnovare Registration</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -96,35 +96,24 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"> </head>
 <body>
-     
-         <!--header starts-->
-         <header id="header" class="header-scroll top-header headrom">
-            <!-- .navbar -->
-            <nav class="navbar-none navbar-dark">
-               <div class="container">
-                  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                  <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="src/logo2.png" alt="" width="142px" height="35px"> </a>
-               </div>
-            </nav>
-            <!-- /.navbar -->
-         </header>
-         
-            <div class="breadcrumb">
-               <div class="container">
-                  <ul>
-                     <li><a href="#" class="active">
-					         <span style="color:red;"><?php echo $message; ?></span>
-					         <span style="color:green;">
-								<?php echo $success; ?></span>
-					      </a></li>
-                  </ul>
-               </div>
-            </div>
-            <section class="contact-page inner-page">
+   <div class="breadcrumb">
+      <div class="container">
+      <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="src/logo2.png" alt="" width="142px" height="35px"> </a>
+         <ul>
+            <li>
+               <a href="#" class="active">
+                  <span style="color:red;"><?php echo $message; ?></span>
+                  <span style="color:green;"><?php echo $success; ?></span>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </div>
+            <section class="contact-page inner-page" style="margin-bottom:0">
                <div class="container">
                         <!-- REGISTER -->
                      <div>
-                        <div class="widget">
+                        <div class="widget" >
                            <div class="widget-body">
                               <form action="" method="post">
                               <div class="row">
@@ -163,7 +152,7 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
                               </div>
                               <div class="row">
                                  <div class="col-sm-4">
-                                    <p> <input type="submit" value="Register" name="submit" class="btn theme-btn"> </p>
+                                    <p> <input type="submit" value="Register" name="submit" class="btn theme-btn" style="border-radius: 5px;"> </p>
                                     <div class="cta">Already Registered. <u><a href="login.php" style="color:#ff9f00;">Sign In</a></u></div>
                                  </div>
                               </div>

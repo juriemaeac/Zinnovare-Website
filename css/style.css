@@ -61,7 +61,7 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: #ef3b0e
+    color: #ef3b0e;
 }
 
 .lead {
@@ -116,13 +116,10 @@ hr {
     /* Used for inpper pages if navigation fixed to the top */
 }
 .page-wrapper-history {
-    margin-bottom:10px;
-    margin-left:10px;
-    margin-right:10px;
     padding-top: 100px;
-    /* Used for inpper pages if navigation fixed to the top */
-    padding-right: 60px;
-    padding-left: 60px;
+    margin-bottom:10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
     padding-bottom: 30px;
 }
 
@@ -175,7 +172,7 @@ hr {
 }
 
 .custom-control-input:disabled~.custom-control-description {
-    color: #76767
+    color: #767676;
 }
 
 .custom-control {
@@ -224,7 +221,7 @@ hr {
 .theme-btn-dash {
     border: 2px dashed #FF9F00;
     background-color: transparent;
-    color: ##FF9F00;
+    color: #FF9F00;
 }
 
 .theme-btn-dash:hover,
@@ -357,9 +354,10 @@ background-color: #f0ecec;
 
 .feedback-left{
     width: 50%;
-    height: 100%;
+    height: 85%;
     display: inline-block;
     position: relative;
+    margin-top:10px
 
 }
 
@@ -373,7 +371,7 @@ background-color: #f0ecec;
 
 .feedback-right-content, .feedback-img-container{
     width: 100%;
-    height: 85%;
+    height: 100%;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
@@ -389,20 +387,20 @@ background-color: #f0ecec;
 }
 
 .feedback-orderTitle{
-    font-size: 36px;
+    padding-top:10px;
+    font-size: 30px;
     font-weight: bolder;
 }
 
 .feedback-orderNum{
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 550;
 }
 
 .feedback-username{
     font-size: 1.2rem;
-    margin-left: 24px;
     font-weight: 650;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .feedback-form{
@@ -560,7 +558,7 @@ background-color: #f0ecec;
   .feedback-text{
       padding: 10px;
       width: 100%;
-      height: 140px;
+      height: 130px;
       border-style: none;
       box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.19) inset;
   }
@@ -1014,6 +1012,18 @@ padding-right: 15px;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+.disable-btn-received{
+    pointer-events: none;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.cancel{
+    pointer-events: none;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 /*----------------------------------------------------------------------*/
 /*----------------------------------------------------------------------*/
 /* This is used in About Section */
@@ -1103,19 +1113,19 @@ padding-right: 15px;
 }
 
 .b-l {
-    border-left: 1px solid #edeed
+    border-left: 1px solid #edeede;
 }
 
 .b-r {
-    border-left: 1px solid #edeed
+    border-left: 1px solid #edeede;
 }
 
 .b-t {
-    border-top: 1px solid #edeed
+    border-top: 1px solid #edeede;
 }
 
 .b-b {
-    border-bottom: 1px solid #edeed
+    border-bottom: 1px solid #edeede;
 }
 
 .b-b-0 {
@@ -1323,13 +1333,19 @@ padding-right: 15px;
     padding-bottom: 13%;
     text-align: center;
     position: relative;
+    height:100%;
 }
 
-.hero h1 {
+.hero .h1 {
     font-family: "Arial";
     color: #fff;
-    font-size: 3.7em;
+    font-size: 50px;
     font-weight: 700;
+}
+.hero h5 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 200;
 }
 
 .hero:before {
@@ -1348,6 +1364,9 @@ padding-right: 15px;
     position: relative;
     z-index: 1;
     text-align: left;
+    padding-top:6%;
+    height:100%;
+    width:100%
 }
 
 
@@ -1831,6 +1850,33 @@ button.close span {
 	.modal.left.fade.in .modal-dialog{
 		left: 0;
 	}
+/*breadcrumb*/
+ul.breadcrumb {
+    margin-top:25px;
+    padding: 10px 16px;
+    padding-left: 10%;
+    list-style: none;
+    background-color: white;
+  }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: gray;
+    content: "/\00a0";
+  }
+  ul.breadcrumb li a {
+    color: orange;
+    text-decoration: none;
+  }
+  ul.breadcrumb li a:hover {
+    color: rgb(255, 145, 0);
+    text-decoration: underline;
+  }
+
+  /*------------*/
 /*-----------------------------------  
 How it works section
 -----------------------------------*/
@@ -2295,8 +2341,10 @@ App section
 ============================*/
 
 footer {
-    background: url(../images/pattern.png)center repeat;
-    padding: 90px 0;
+    /*background: url(../images/pattern.png)center repeat;*/
+    background-color: black;
+    opacity: 0.9;
+    padding: 0px 0;
     z-index: 1;
     position: relative;
 }
@@ -2885,7 +2933,6 @@ a.more-link {
     width: 100%;
     height: 180px;
     display: inline-block;
-    justify-content: center;
     overflow: hidden;
     margin-top: -15px;
     border-top-left-radius: 5px;
@@ -2894,13 +2941,65 @@ a.more-link {
 
 .menu-widget .food-item .restaurant-logo img {
     max-width: 100%;
-    display: block;
+    margin-top: -65px;
 }
 
 .menu-widget .food-item.white {
     background-color: #fff;
 }
+/*footer*/
+/*footer*/
 
+  
+  .copyright-footer {
+    color:#e47618 ;
+  }
+  
+  .footerCopyright-footer{
+    text-align: center;
+    padding:1%;
+  }
+  
+  .fa-footer {
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #333;
+  }
+  .footer-footer {
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    left: 30%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: left;
+  }
+  .row-footer {
+    display: flex;
+  }
+  .column-footer {
+    flex: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    }
+  
+  /*-------------------------------------*/
+  .map-menu {
+    height:100%; 
+    width:100%;
+    object-fit: cover;
+    border-radius: 5px;
+    background-color: none;
+  }
+  .map-hover:hover{
+    opacity: 0.3;
+  }
+/**/
 /*product title*/
 .menu-widget .food-item .rest-descr a {
     color: #25282b;
@@ -2960,6 +3059,7 @@ a.more-link {
     object-fit: cover;
     border-radius: 5px;
   }
+  
   .menu-right{
     display: inline-block;
     width: 24%;
@@ -2967,6 +3067,7 @@ a.more-link {
     vertical-align: top;
     text-align: center;
     margin-left: -5px;
+    
     
 }
 
@@ -3073,9 +3174,21 @@ hr.history-line {
   .history-container{
     border-radius:20px; 
     background:#FFFBF7; 
-    width: 20rem; 
+    width: 19rem;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding:20px;
+    padding:5%;
+    margin:auto;
+  }
+
+  .full{
+      width:90vw;
+      height: auto;
+  }
+  
+  .oh-container{
+      display: inline-block;
+      width: 318px;
+      margin:10px auto;
   }
 
   .center-history {

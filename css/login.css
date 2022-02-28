@@ -40,6 +40,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   z-index: 1;
+  overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.headerPic::-webkit-scrollbar {
+  display: none;
 }
 
 /* Form Module */
@@ -57,7 +64,6 @@ body {
   position: absolute;
   top: -0;
   right: -0;
-  background: #;
   width: 30px;
   height: 30px;
   margin: -5px 0 0;

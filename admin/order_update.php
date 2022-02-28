@@ -12,9 +12,9 @@ $remark=$_POST['remark'];
 $query=mysqli_query($db,"insert into remark(frm_id,status,remark) values('$form_id','$status','$remark')");
 $sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$form_id'");
 
-echo "<script>alert('form details updated successfully');</script>";
+echo "<script>window.close();</script>";
 
-  }
+}
 
  ?>
 <script language="javascript" type="text/javascript">
@@ -159,16 +159,16 @@ td, th {
 
       <tr >
       <td><b>Remark</b></td>
-      <td><textarea name="remark" cols="50" rows="10" required="required"></textarea></td>
+      <td><textarea name="remark" cols="50" rows="10"></textarea></td>
     </tr>
     
 
 
         <tr>
       <td><b>Action</b></td>
-      <td><input type="submit" name="update"  class="btn btn-primary" value="Submit">
+      <td><input type="submit" name="update" style="background-color: orange;border:1px solid orange" class="btn btn-primary" value="Submit">
 	   
-      <input name="Submit2" type="submit"  class="btn btn-danger"  value="Close this window " onClick="return f2();" style="cursor: pointer;"  /></td>
+      <input name="Submit2" type="submit"  class="btn btn-danger" style="background-color: red;border:1px solid red" value="Close this window " onClick="return f2();" style="cursor: pointer;"  /></td>
     </tr>
 
 

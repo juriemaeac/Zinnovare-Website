@@ -1546,6 +1546,9 @@ textarea {
 .fix-sidebar .left-sidebar {
   position: fixed;
 }
+.copyright {
+  color:#e47618 ;
+}
 .sidebar-footer {
   position: fixed;
   z-index: 10;
@@ -6940,7 +6943,7 @@ tbody tr td:last-child {
 .feedback{
   margin: 0;
   padding: 0;
-  height: 150px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6948,19 +6951,20 @@ tbody tr td:last-child {
 .feedbackContent{
     font-weight: bold;
     color:black;
-    font-size: x-large;
+    font-size: large;
+    padding:0;
 }
 
 .slider{
   width: 800px;
-  height: 150px;
+  height: 100px;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .slides{
   width: 500%;
-  height: 150px;
+  height: 100px;
   display: flex;
 }
 
@@ -6975,7 +6979,7 @@ tbody tr td:last-child {
 
 .slide img{
   width: 800px;
-  height: 150px;
+  height: 100px;
 }
 
 /*css for manual slide navigation*/
@@ -7029,9 +7033,9 @@ margin-bottom:50px;
 .navigation-auto{
   position: absolute;
   display: flex;
-  width: 100%;
+  width: 85%;
+  margin-top: 95px;
   justify-content: center;
-  margin-top: 110px;
 }
 
 .navigation-auto div{

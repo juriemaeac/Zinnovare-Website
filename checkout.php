@@ -38,7 +38,7 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="#">
+        <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
         <title>Starter Template for Bootstrap</title>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -105,7 +105,7 @@
             </nav>
             <!-- /.navbar -->
         </header>
-        <div id="myModalEmpty" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModalEmpty" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </div>
-        <div id="myModal" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->

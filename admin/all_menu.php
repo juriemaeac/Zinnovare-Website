@@ -64,11 +64,11 @@ session_start();
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
 
-                        <!-- Search -->
+                        <!-- Search
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
+                        </li> -->
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                            
@@ -88,7 +88,7 @@ session_start();
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -147,9 +147,9 @@ session_start();
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper">
+        <div class="page-wrapper" style="padding-bottom:0">
             <!-- Container fluid  -->
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-bottom:0">
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-12">
@@ -159,12 +159,12 @@ session_start();
                                 <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
 								
                                 <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <table id="example23" class="display nowrap table table-hover" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
 											 <!--<th>Restaurant</th>-->
-                                                <th>Dish-Name</th>
-                                                <th>Slogan</th>
+                                                <th>Dish Name</th>
+                                                <th>Description</th>
                                                 <th>Price</th>
                                                 <th>Image</th>
                                                <th>Action</th>
@@ -173,63 +173,55 @@ session_start();
                                         </thead>
                                         <tfoot>
                                             <tr>
-											 <!--<th>Restaurant</th>
-                                                <th>Dish-Name</th>
-                                                <th>Slogan</th>
+                                                <th>Dish Name</th>
+                                                <th>Description</th>
                                                 <th>Price</th>
                                                 <th>Image</th>
-                                               <th>Action</th>-->
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-										
-                                           
-                                               	<?php
-												$sql="SELECT * FROM dishes order by d_id desc";
-												$query=mysqli_query($db,$sql);
-												
-													if(!mysqli_num_rows($query) > 0 )
-														{
-															echo '<td colspan="11"><center>No Dish-Data!</center></td>';
-														}
-													else
-														{				
-																	while($rows=mysqli_fetch_array($query))
-																		{
-																				$mql="select * from restaurant where rs_id='".$rows['rs_id']."'";
-																				$newquery=mysqli_query($db,$mql);
-																				$fetch=mysqli_fetch_array($newquery);
-																				
-																				//<td>'.$fetch['title'].'</td>
-																					echo '<tr> 
-																					
-																								<td>'.$rows['title'].'</td>
-																								<td>'.$rows['slogan'].'</td>
-																								<td>Php '.$rows['price'].'</td>
-																								
-																								
-																								<td><div class="col-md-3 col-lg-8 m-b-10">
-																								<center><img src="Res_img/dishes/'.$rows['img'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" /></center>
-																								</div></td>
-																								
-																							
-																									 <td><a href="delete_menu.php?menu_del='.$rows['d_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_menu.php?menu_upd='.$rows['d_id'].'" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
-																									</td></tr>';
-																					 
-																						
-																						
-																		}	
-														}
-												
-											
-											?>
+                                            <?php
+                                                $sql="SELECT * FROM dishes order by d_id desc";
+                                                $query=mysqli_query($db,$sql);
                                             
-                                           
-                                 
+                                                if(!mysqli_num_rows($query) > 0 )
+                                                {
+                                                    echo '<td colspan="11"><center>No Dish-Data!</center></td>';
+                                                }
+                                                else
+                                                {				
+                                                    while($rows=mysqli_fetch_array($query))
+                                                    {
+                                                        $mql="select * from restaurant where rs_id='".$rows['rs_id']."'";
+                                                        $newquery=mysqli_query($db,$mql);
+                                                        $fetch=mysqli_fetch_array($newquery);
                                                         
-                                                            
-                                                           
+                                                        //<td>'.$fetch['title'].'</td>
+                                                        echo '
+                                                        <tr> 
+                                                            <td>'.$rows['title'].'</td>
+                                                            <td>'.$rows['slogan'].'</td>
+                                                            <td>Php '.$rows['price'].'</td>
+                                                            <td>
+                                                                <div class="col-md-3 col-lg-8 m-b-10">
+                                                                    <center>
+                                                                        <img src="Res_img/dishes/'.$rows['img'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" />
+                                                                    </center>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <a style="background:red" href="delete_menu.php?menu_del='.$rows['d_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10">
+                                                                    <i class="fa fa-trash-o" style="font-size:16px"></i>
+                                                                </a> 
+                                                                <a href="update_menu.php?menu_upd='.$rows['d_id'].'" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5">
+                                                                    <i class="ti-settings"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>';			
+                                                    }	
+                                                }
+                                            ?>          
                                         </tbody>
                                     </table>
                                 </div>
@@ -244,6 +236,9 @@ session_start();
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer"  style="margin:0"> © Zinnovare 2022. All rights reserved. </footer>
+            <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
     </div>

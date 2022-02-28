@@ -41,7 +41,7 @@ window.print();
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
     <title>Zinnovare Admin User Profile</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -212,7 +212,7 @@ while($row=mysqli_fetch_array($ret2))
     <tr>
   
       <td colspan="2">   
-      <input name="Submit2" type="submit" class="btn btn-danger" value="Close this window " onClick="return f2();" style="cursor: pointer;"  /></td>
+      <input name="Submit2" type="submit" class="btn btn-danger" style="background-color: red;border:1px solid red" value="Close this window " onClick="return f2();" style="cursor: pointer;"  /></td>
     </tr>
    
     <?php } 

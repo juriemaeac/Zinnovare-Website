@@ -17,7 +17,7 @@ include_once 'product-action.php'; //including controller
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
+    <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
     <title>Zinnovare</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -84,7 +84,7 @@ include_once 'product-action.php'; //including controller
             </nav>
             <!-- /.navbar -->
         </header>
-        <div id="myModalEmpty" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModalEmpty" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->
@@ -94,7 +94,7 @@ include_once 'product-action.php'; //including controller
                         <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
                         <p class="modal-title" style="text-align: center;font-weight:bold;margin-bottom:20px">Cart is Empty</p>
                         <center>
-                    <a href="dishes.php?res_id=48" class="btn theme-btn btn-lg" style="font-size:small; width: 30%;padding:10px;margin-bottom:20px">View Menu</a>
+                    <a href="menu.php?res_id=48" class="btn theme-btn btn-lg" style="font-size:small; width: 30%;padding:10px;margin-bottom:20px">View Menu</a>
                             
                                 <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:small; width: 30%; padding:10px; margin-bottom:20px">Close</button>
                             </center>
@@ -103,7 +103,7 @@ include_once 'product-action.php'; //including controller
                 </div>
             </div>
         </div>
-        <div id="myModal" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->
@@ -132,7 +132,7 @@ include_once 'product-action.php'; //including controller
                                         <div class="form-group row no-gutter">
                                          
                                             <div class="col-xs-8">
-                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "Php ".$item["price"]; ?> readonly id="exampleSelect1">
+                                                <input type="text" class="form-control b-r-0" style="background-color: white;border:none" value=<?php echo "Php".$item["price"]; ?> readonly id="exampleSelect1">
                                                     
                                             </div>
                                             <div class="col-xs-4">
@@ -183,9 +183,9 @@ include_once 'product-action.php'; //including controller
         </div>
 
         <div class="page-wrapper" style="padding-right: 20px;">
-        <!--<div style="margin-top:18px;padding-left:40px;font-size:xx-large;background:orange;">
+            <!--<div style="margin-top:18px;padding-left:40px;font-size:xx-large;background:orange;">
                 Menu
-        </div>-->
+            </div>-->
 		    <?php $ress= mysqli_query($db,"select * from restaurant where rs_id='$_GET[res_id]'");
                 $rows=mysqli_fetch_array($ress);
             ?>
@@ -250,7 +250,7 @@ include_once 'product-action.php'; //including controller
                                 $row=mysqli_fetch_array($query_res);
 
                                 if(!empty($_SESSION["user_id"])){
-?>
+                            ?>
                                     <img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
                             <h6>
                                 <span><?php echo $row['f_name']; ?></span>
@@ -264,7 +264,7 @@ include_once 'product-action.php'; //including controller
                                     echo 'Total Orders: '.$rws;
                                 ?>
                             </div>
-                            <div style="text-align:left; padding-top:10px">
+                            <div style="text-align:left; padding-top:10px;">
                                 <div>
                                     <?php echo $row['email']; ?>
                                 </div>
@@ -281,7 +281,7 @@ include_once 'product-action.php'; //including controller
                                 else{
                                 ?>
 
-<img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
+                                <img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
                             <h6>
                                 <span><?php echo $row['f_name']; ?></span>
                                 <span><?php echo $row['l_name']; ?></span>
@@ -308,11 +308,11 @@ include_once 'product-action.php'; //including controller
                         <div class="menu-right-content2">
                             <div class="img-comp-container">
                                 <div class="img-comp-img">
-                                    <img class="cover-menu2" src="src/bg.jpg" >
+                                    <img class="cover-menu2" src="src/tlayuda.jpg" >
                                     
                                 </div>
                                 <div class="img-comp-img img-comp-overlay">
-                                    <img class="cover-menu1" src="src/bg3.jpg" >
+                                    <img class="cover-menu1" src="src/burrito.jpg" >
                                 </div>
                                 
                             </div>
@@ -327,6 +327,25 @@ include_once 'product-action.php'; //including controller
                 <!-- end:row -->
             </div>
             <!-- end:Container -->
+            <div class="footerCopyright-footer"style="background-color: black; opacity: 0.8;margin-top:10px">
+                <div class="row-footer">
+
+                    <div class="column-footer">
+                        <a href="index.php"><img src="admin/images/logo6.png" alt="Zinnovare" width="140px" height="40px"/></a>
+                    </div>
+                    
+                    <div class="column-footer">© 2017-2022
+                        <span class="copyright-footer">
+                            Zinnovare Inc.
+                        </span>
+                        All Rights Reserved.
+                    </div>
+
+                </div>
+            </div>
+            <div class="map-hover" style="width:100%;height:5%;background:orange">
+                <a href="https://goo.gl/maps/LQom1z4NPyyDSWjQA"><img class="map-menu" src="src/map2.png" ></a>
+            </div>
         </div>
         <!-- end:page wrapper -->
         
@@ -342,11 +361,6 @@ include_once 'product-action.php'; //including controller
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
     <script>
-
-        //maps
-
-    
-        //end maps
         $(window).scroll(function() {
 if ($(window).scrollTop() >= 100) {
     $('.navbar').css('background', 'black');

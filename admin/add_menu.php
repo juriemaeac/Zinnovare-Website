@@ -164,11 +164,11 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
 
-                        <!-- Search -->
+                        <!-- Search 
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
+                        </li>-->
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                            
@@ -188,7 +188,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -247,22 +247,18 @@ if(isset($_POST['submit']))           //if upload btn is pressed
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:1200px;">
+        <div class="page-wrapper">
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                  
-									
-									<?php  echo $error;
-									        echo $success; ?>
-									
-									
-								
-								
+                <?php  
+                    echo $error;
+                    echo $success; 
+                ?>
 					    <div class="col-lg-12">
                         <div class="card card-outline-primary">
                             <div class="card-header">
-                                <h4 class="m-b-0 text-white">Add Menu to Restaurant</h4>
+                                <h4 class="m-b-0 text-white">Add Food to Menu</h4>
                             </div>
                             <div class="card-body">
                                 <form action='' method='post'  enctype="multipart/form-data">
@@ -273,14 +269,14 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Dish Name</label>
-                                                    <input type="text" name="d_name" class="form-control" placeholder="Morzirella">
+                                                    <input type="text" name="d_name" class="form-control" placeholder="Ex. Tacos">
                                                    </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">About</label>
-                                                    <input type="text" name="about" class="form-control form-control-danger" placeholder="slogan">
+                                                    <input type="text" name="about" class="form-control form-control-danger" placeholder="Food Description">
                                                     </div>
                                             </div>
                                             <!--/span-->
@@ -289,7 +285,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                         <div class="row p-t-20">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">price </label>
+                                                    <label class="control-label">Price </label>
                                                     <input type="text" name="price" class="form-control" placeholder="Php">
                                                    </div>
                                             </div>

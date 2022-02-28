@@ -85,6 +85,7 @@
 		<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
 		<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 		<link rel="stylesheet" href="css/login.css">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
 	</head>
 	<body>
 	

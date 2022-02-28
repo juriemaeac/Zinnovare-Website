@@ -48,7 +48,7 @@ else*/
                 <!-- Logo -->
                 <div class="navbar-header" style="background-color: orange; border-radius: 0 0 0 0">
                 
-                <a class="navbar-brand" href="dashboard.php">
+                <a class="navbar-brand" href="../index.php">
                         <!-- Logo icon -->
                         <b><img src="images/logo_Z.png" alt="homepage" class="dark-logo" width="35px" height="35px"/></b>
                         <!--End Logo icon -->
@@ -68,111 +68,6 @@ else*/
                     </ul>
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
-
-                        <!-- Search -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
-                        <!-- Comment -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Notifications</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Notification Title 1</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Notification Title 2</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Notification Title 3</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:08 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Notification Title 4</h5> <span class="mail-desc">Notification Content!</span> <span class="time">9:02 AM</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- End Comment -->
-                        <!-- Messages -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">You have 4 new messages</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Juan Dela Cruz</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Pedro Penduko</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Hatdog 123</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:08 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../src/user.png" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Hatdog 12345</h5> <span class="mail-desc">Test 123456789!</span> <span class="time">9:02 AM</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all Messages</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- End Messages -->
-                      
                         <!-- Profile -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/2.png" alt="user" class="profile-pic" /></a>
@@ -234,18 +129,17 @@ else*/
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:100%; margin-top:20px"> <!--background-->
+        <div class="page-wrapper" style="height:100%; margin-top:10px; padding-bottom:0"> <!--background-->
             <!-- Bread crumb -->
-            <div class="row page-titles" style="background-color: orange;" style="color: white;">
+            <div class="row page-titles" style="background-color: orange;color: white;margin-bottom:10px">
                 <div class="col-md-5 align-self-center">
                    <h3 style="color: white;">Dashboard</h3> </div>
-               
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-bottom:0; margin-top:0;">
                 <!-- Start Page Content -->
-                     <div class="row">
+                     <div class="row" style="padding-bottom:0">
                    
                     <div class="col-md-3">
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
@@ -334,7 +228,7 @@ else*/
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">Pending Orders</p>
+                                    <p class="m-b-0">Pending</p>
                                 </div>
                             </div>
                         </div>
@@ -352,7 +246,7 @@ else*/
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">For Delivery Orders</p>
+                                    <p class="m-b-0">Processing</p>
                                 </div>
                             </div>
                         </div>
@@ -370,7 +264,7 @@ else*/
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">Rejected Orders</p>
+                                    <p class="m-b-0">Rejected</p>
                                 </div>
                             </div>
                         </div>
@@ -407,22 +301,21 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div style="margin-top: 0;">
                                 <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
+                                    <div class="card" style="padding-top:0; padding-bottom:10px">
                                         <div class="card-body">
-                                        <p class="m-b-0" style="margin-bottom: 0;padding: 0;">Recent Orders</p>
+                                        <p class="m-b-0" style="margin-bottom: 0;padding: 0;font-size:x-large">Recent Orders</p>
                                             <div class="table-responsive m-t-30">
                                                 <table id="myTable" class="table table-hover">
                                                     <thead >
-                                                        <tr style="font-size: 13px;margin-top: 0;padding: top 0;">
+                                                        <tr style="font-size: 14px;">
                                                             <th>Username</th>		
                                                             <th>Orders</th>
                                                             <th>Qty</th>
-                                                            <th>price</th>
-                                                            <th>total</th>
+                                                            <th>Price</th>
+                                                            <th>Total</th>
                                                             <th>Address</th>
-                                                            <th>status</th>												
-                                                            <th>Reg-Date</th>
+                                                            <th>Status</th>												
+                                                            <th>Date</th>
                                                             <th>Action</th>
                                                             
                                                         </tr>
@@ -456,20 +349,35 @@ else*/
                                                                             if($status=="" or $status=="NULL")
                                                                             {
                                                                                 ?>
-                                                                                    <td> <button type="button" class="btn btn-info" style="font-weight:bold; border: none; background: Orange">
-                                                                                        <span class="fa fa-bars"  aria-hidden="true" >Waiting</button></td>
+                                                                                    <td> 
+                                                                                        <button type="button" class="btn btn-info" style="width: 100%; border: none; background: #5BC0DE;font-size:x-small">
+                                                                                        <i class="fa fa-hourglass fa-spin"  aria-hidden="true" ></i>
+                                                                                        Pending
+                                                                                        </button>
+                                                                                    </td>
                                                                                 <?php 
                                                                             }
                                                                             if($status=="in process")
-                                                                    { ?>
-                                                                    <td> <button type="button" class="btn btn-warning" style="border: none; background: Blue"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>Delivery</button></td> 
-                                                                    <?php
+                                                                    { 
+                                                                        ?>
+                                                                            <td> 
+                                                                                <button type="button" class="btn btn-warning" style="width: 100%;border: none; background: orange;font-size:x-small">
+                                                                                    <i class="fa fa-cog fa-spin"  aria-hidden="true" ></i>
+                                                                                    Processing
+                                                                                </button>
+                                                                            </td> 
+                                                                        <?php
                                                                         }
                                                                     if($status=="closed")
                                                                         {
                                                                             
                                                                     ?>
-                                                                    <td> <button type="button" class="btn btn-success" style="border: none; background: #00CC00"><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></td> 
+                                                                    <td> 
+                                                                        <button type="button" class="btn btn-success" style="width: 100%;border: none; background: #00CC00;font-size:x-small">
+                                                                            <i  class="fa fa-check" aria-hidden="true"></i>
+                                                                            Delivered
+                                                                        </button>
+                                                                    </td> 
                                                                     
                                                                     
                                                                     <?php 
@@ -479,7 +387,12 @@ else*/
                                                                         if($status=="rejected")
                                                                             {
                                                                     ?>
-                                                                        <td> <button type="button" class="btn btn-danger" style="border: none; background: Red"> <i class="fa fa-close"></i>Cancelled</button></td> 
+                                                                        <td> 
+                                                                            <button type="button" class="btn btn-danger" style="width: 100%;border: none; background: Red;font-size:x-small"> 
+                                                                                <i class="fa fa-close"></i> 
+                                                                                Cancelled
+                                                                            </button>
+                                                                        </td> 
                                                                         <?php 
                                                                         } 
                                                                         ?>
@@ -500,7 +413,6 @@ else*/
                                             </div>
                                         </div>
                                     </div>
-						        </div>
                             </div>
                         </div>
                     </div>
@@ -508,136 +420,160 @@ else*/
                     
                 </div>
                 <div class="col-md-4">
+                <?php 
+                    $sql="select SUM(total) from users_orders WHERE status='closed'";
+
+                    $result = mysqli_query($db,$sql);
+
+                    while($row = mysqli_fetch_array($result)){
+                        $sum = $row['SUM(total)'];
+                        $percent = $sum * 0.2;
+                    }
+                ?>
                     <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                        <div class="media" style="padding-top: 10px;">
-                            <div class="media-left meida media-middle"> 
-                                <span><i><img src="images/icons/sales.png" alt="user" width="60px" height="60px"/></i></span>
+                        <div class="media" style="padding-top: 10px;padding-right:0; ">
+                            <div class="media-left meida media-middle" style="width:50%"> 
+                                <?php
+                                    if ($percent == 0){
+                                        ?>
+                                            <span><i><img src="images/icons/decrease.png" alt="user" width="90%" height="90%"/></i></span>
+                                        <?php
+                                    }
+                                    else{
+                                        ?>
+                                            <span><i><img src="images/icons/sales1.png" alt="user" width="90%" height="90%"/></i></span>
+                                        <?php
+                                    }
+                                ?>
+                                <div class="media-left meida media-middle" style="width:100%; height:100%"> 
+                                    <div class="media-body media-text-right" style="width:100%; padding-right:15px; font-size:100%">
+                                        <?php echo $percent;?>
+                                    </div>
+                                </div>
                             </div>
-                            <div style="padding-left: 25px;width:100% " class="">
-                            <div class="media-body media-text-right" style="border:1px solid red; width:100% ">
-                                <h2><?php 
-                                $sql="select SUM(total) from users_orders WHERE status='closed'";
-
-                                $result = mysqli_query($db,$sql);
-
-                                while($row = mysqli_fetch_array($result)){
-                                    $sum = $row['SUM(total)'];
-                                    $percent = $sum * 0.2;
+                            
+                            <div style="width:100% " class="">
+                                <div class="media-body media-text-right" style="width:100% ">
+                                    <p class="m-b-0">Total Profit</p>
+                                </div>
+                                
+                                <?php
+                                    if ($percent == 0){
+                                        ?>
+                                        <div class="media-body media-text-right" style="width:100%; padding-top:10px; ">
+                                            <p class="m-b-0" style="color: red">0%</p>
+                                            
+                                        </div>
+                                        <div class="media-body media-text-right" > 
+                                            <img src="images/red_line.png" alt="user" width="100%" height="100%"/>
+                                        </div>
+                                <?php
+                                    }
+                                else{
+                                    ?>
+                                    <div class="media-body media-text-right" style="width:100%; padding-top:10px; ">
+                                        <p class="m-b-0" style="color: #08b908">10%</p>
+                                    </div>
+                                    <div class="media-body media-text-right" > 
+                                    <img src="images/green_line.png" alt="user" width="100%" height="100%"/>
+                                </div>
+                                <?php
                                 }
-                                echo $percent;
-
-                                
-												?>
-                                                </h2>
-                                <p class="m-b-0">Profit</p>
-                                
+                                ?>
                             </div>
-                            
-                            </div>
-                            
-                            <!---->
                         </div>
-                        <div id="chartContainer" style="height: 130px; width: 100%;"></div>
                     </div>
                     <div class="col-md-15">
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
-                                <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/feedback1.png" alt="user" width="60px" height="60px"/></i></span>
+                                <div class="media-left meida media-middle" style="width:50%"> 
+                                    <span><i><img src="images/icons/feedback.png" alt="user" width="60%" height="60%"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from fb";
-                                                $result=mysqli_query($db,$sql); 
-                                                    $rws=mysqli_num_rows($result);
-                                                    
-                                                    echo $rws;?></h2>
+                                    <h2>
+                                        <?php $sql="select * from fb";
+                                            $result=mysqli_query($db,$sql); 
+                                            $rws=mysqli_num_rows($result);
+                                            
+                                            echo $rws;
+                                        ?>
+                                    </h2>
                                     <p class="m-b-0">Feedback</p>
+                                    <div class="sectionHead">
+                                <img src="../src/quotation.png" style="width:30px;float:right"/>
+                            </div>
                                 </div>
                             </div>
                             <!--Feedback-->
         
-        <div class="sectionHead">
-            <img src="../src/quo.png" style="height: x0px; width:30px"/>
-        </div>
-        <div class="feedback">
-    
-            <div class="slider">
-                <div class="slides">
-                    <!--radio buttons start-->
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    <input type="radio" name="radio-btn" id="radio4">
-                    <!--radio buttons end-->
-                    <!--slide images start-->
-                        <div class="slide first">
-                            <?php 
-                                $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
-                                    JOIN dishes ON dishes.title=users_orders.title 
-                                    JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
-                                $food1 = mysqli_fetch_assoc($result1);
-                                $food2 = mysqli_fetch_assoc($result1);
-                                $food3 = mysqli_fetch_assoc($result1);
-                                $food4 = mysqli_fetch_assoc($result1);
-                            ?>
-
-                            <center>
-                                <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
-                                <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
-                                <h6 style="color: gray"><?php echo $food1['username'] ?></h6>
-                            </center>
-                        </div>
+                            
+                            <div class="feedback">
                         
-                        <div class="slide">
-                            <center>
-                                <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
-                                <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
-                                <h6 style="color: gray"><?php echo $food2['username'] ?></h6>
-                            </center>
-                        </div>
-                        <div class="slide">
-                            <center>
-                                <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
-                                <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
-                                <h6 style="color: gray"><?php echo $food3['username'] ?></h6>
-                            </center>
-                        </div>
-                        <div class="slide">
-                            <center>
-                                <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
-                                <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
-                                <h6 style="color: gray"><?php echo $food4['username'] ?></h6>
-                            </center>
-                        </div>
-                        <!--slide images end-->
-                        <div class="navigation-manual">
-                        <label for="radio1" class="manual-btn"></label>
-                        <label for="radio2" class="manual-btn"></label>
-                        <label for="radio3" class="manual-btn"></label>
-                        <label for="radio4" class="manual-btn"></label>
-                        </div>
-                        <!--automatic navigation start-->
-                        <div class="navigation-auto">
-                            <div  class="auto-btn1"></div>
-                            <div class="auto-btn2"></div>
-                            <div class="auto-btn3"></div>
-                            <div class="auto-btn4"></div>
-                        </div>
-                        <!--automatic navigation end-->
-                    </div>
-                    <!--manual navigation start-->
-                    
-                    <!--manual navigation end-->
-                </div>
-                <!--image slider end-->
+                                <div class="slider">
+                                    <div class="slides">
+                                        <!--radio buttons start-->
+                                        <input type="radio" name="radio-btn" id="radio1">
+                                        <input type="radio" name="radio-btn" id="radio2">
+                                        <input type="radio" name="radio-btn" id="radio3">
+                                        <input type="radio" name="radio-btn" id="radio4">
+                                        <!--radio buttons end-->
+                                        <!--slide images start-->
+                                            <div class="slide first">
+                                                <?php 
+                                                    $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
+                                                        JOIN dishes ON dishes.title=users_orders.title 
+                                                        JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
+                                                    $food1 = mysqli_fetch_assoc($result1);
+                                                    $food2 = mysqli_fetch_assoc($result1);
+                                                    $food3 = mysqli_fetch_assoc($result1);
+                                                    $food4 = mysqli_fetch_assoc($result1);
+                                                ?>
 
-            </div>
-        </div>     
-        <!--Feedback-->
+                                                <center>
+                                                    <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                                    <h6 style="color: gray;padding:0;"><?php echo $food1['title'] ?></h6>
+                                                    <h6 style="color: gray;padding:0;margin:0"><?php echo $food1['username'] ?></h6>
+                                                </center>
+                                            </div>
+                                            
+                                            <div class="slide">
+                                                <center>
+                                                    <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                                    <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                                    <h6 style="color: gray"><?php echo $food2['username'] ?></h6>
+                                                </center>
+                                            </div>
+                                            <div class="slide">
+                                                <center>
+                                                    <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
+                                                    <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
+                                                    <h6 style="color: gray"><?php echo $food3['username'] ?></h6>
+                                                </center>
+                                            </div>
+                                            <div class="slide">
+                                                <center>
+                                                    <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
+                                                    <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
+                                                    <h6 style="color: gray"><?php echo $food4['username'] ?></h6>
+                                                </center>
+                                            </div>
+                                            <!--automatic navigation start-->
+                                            <div class="navigation-auto">
+                                                <div  class="auto-btn1"></div>
+                                                <div class="auto-btn2"></div>
+                                                <div class="auto-btn3"></div>
+                                                <div class="auto-btn4"></div>
+                                            </div>
+                                            <!--automatic navigation end-->
+                                    </div>
+                                    <!--image slider end-->
+                                </div>
+                            </div>  
+                            <!--Feedback-->
                         </div>
-                        
                     </div>
                 </div>
+                <!--end profit and feedback-->
                 
             </div>
         </div>
@@ -649,7 +585,13 @@ else*/
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"> © Zinnovare 2022. All rights reserved. </footer>
+            <footer class="footer"  style="margin:0; padding-bottom:15px"> © 2017-2022.
+					<span class="copyright">
+						Zinnovare Inc.
+					</span>
+                    All Rights Reserved.
+            </footer>
+            
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->

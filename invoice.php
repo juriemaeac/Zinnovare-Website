@@ -66,7 +66,8 @@
                     <br>
                     <br>
                     <div class="col-12">
-                    <hr>
+                    <br>
+                    <br>
                         <table class="table responsive">
                             <thead class="bg-dark text-white" style="background-color: black;">
                                 <tr>

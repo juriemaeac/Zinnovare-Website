@@ -41,7 +41,7 @@
                                 else
                                 {
                                     //if user is login
-                                    echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Orders</a> </li>';
+                                    echo  '<li class="nav-item"><a href="order_history.php" class="nav-link active">Orders</a> </li>';
                                     echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
                                 }
                             ?>
@@ -63,7 +63,7 @@
             </nav>
             <!-- /.navbar -->
         </header>
-        <div id="myModalEmpty" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModalEmpty" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->
@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div id="myModal" class="modal fade" role="dialog" style="opacity: 0.9;">
+        <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog" style="width: 400px; height:300px;">
 
                 <!-- Modal content-->
