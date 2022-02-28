@@ -209,7 +209,7 @@ include_once 'product-action.php'; //including controller
                             <img src="src/enchilada.png" style="height: 50px; width: 50px">      
                             <h2 style="color:orange; text-align:center;padding-top:8px; font-weight:bold">
                                 <?php 
-                                    $sql="select * from users_orders";
+                                    $sql="SELECT * from users_orders where status='closed'";
                                     $result=mysqli_query($db,$sql); 
                                     $rws=mysqli_num_rows($result);
                                     echo $rws;
