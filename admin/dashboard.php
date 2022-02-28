@@ -285,7 +285,12 @@ else*/
                                 while($row = mysqli_fetch_array($result)){
                                     $sum = $row['SUM(total)'];
                                 }
+                                if($sum == 0){
+                                    echo '0';
+                                }
+                                else{
                                 echo $sum;
+                                }
 												?></h2>
 
                                 
@@ -500,76 +505,86 @@ else*/
                                     </h2>
                                     <p class="m-b-0">Feedback</p>
                                     <div class="sectionHead">
-                                <img src="../src/quotation.png" style="width:30px;float:right"/>
-                            </div>
+                                        <img src="../src/quotation.png" style="width:30px;float:right"/>
+                                    </div>
                                 </div>
                             </div>
                             <!--Feedback-->
         
-                            
-                            <div class="feedback">
+                            <?php
+                                if ($rws == 0){
+                                    echo '<center>No feedback yet.</center>';
+                                }
+                                else{
+                                    ?>
+                                    <div class="feedback">
                         
-                                <div class="slider">
-                                    <div class="slides">
-                                        <!--radio buttons start-->
-                                        <input type="radio" name="radio-btn" id="radio1">
-                                        <input type="radio" name="radio-btn" id="radio2">
-                                        <input type="radio" name="radio-btn" id="radio3">
-                                        <input type="radio" name="radio-btn" id="radio4">
-                                        <!--radio buttons end-->
-                                        <!--slide images start-->
-                                            <div class="slide first">
-                                                <?php 
-                                                    $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
-                                                        JOIN dishes ON dishes.title=users_orders.title 
-                                                        JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
-                                                    $food1 = mysqli_fetch_assoc($result1);
-                                                    $food2 = mysqli_fetch_assoc($result1);
-                                                    $food3 = mysqli_fetch_assoc($result1);
-                                                    $food4 = mysqli_fetch_assoc($result1);
-                                                ?>
+                                        <div class="slider">
+                                            <div class="slides">
+                                                <!--radio buttons start-->
+                                                <input type="radio" name="radio-btn" id="radio1">
+                                                <input type="radio" name="radio-btn" id="radio2">
+                                                <input type="radio" name="radio-btn" id="radio3">
+                                                <input type="radio" name="radio-btn" id="radio4">
+                                                <!--radio buttons end-->
+                                                <!--slide images start-->
+                                                    <div class="slide first">
+                                                        <?php 
+                                                            $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
+                                                                JOIN dishes ON dishes.title=users_orders.title 
+                                                                JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
+                                                            $food1 = mysqli_fetch_assoc($result1);
+                                                            $food2 = mysqli_fetch_assoc($result1);
+                                                            $food3 = mysqli_fetch_assoc($result1);
+                                                            $food4 = mysqli_fetch_assoc($result1);
+                                                        ?>
 
-                                                <center>
-                                                    <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
-                                                    <h6 style="color: gray;padding:0;"><?php echo $food1['title'] ?></h6>
-                                                    <h6 style="color: gray;padding:0;margin:0"><?php echo $food1['username'] ?></h6>
-                                                </center>
+                                                        <center>
+                                                            <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                                            <h6 style="color: gray;padding:0;"><?php echo $food1['title'] ?></h6>
+                                                            <h6 style="color: gray;padding:0;margin:0"><?php echo $food1['username'] ?></h6>
+                                                        </center>
+                                                    </div>
+                                                    
+                                                    <div class="slide">
+                                                        <center>
+                                                            <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                                            <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                                            <h6 style="color: gray"><?php echo $food2['username'] ?></h6>
+                                                        </center>
+                                                    </div>
+                                                    <div class="slide">
+                                                        <center>
+                                                            <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
+                                                            <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
+                                                            <h6 style="color: gray"><?php echo $food3['username'] ?></h6>
+                                                        </center>
+                                                    </div>
+                                                    <div class="slide">
+                                                        <center>
+                                                            <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
+                                                            <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
+                                                            <h6 style="color: gray"><?php echo $food4['username'] ?></h6>
+                                                        </center>
+                                                    </div>
+                                                    <!--automatic navigation start-->
+                                                    <div class="navigation-auto">
+                                                        <div  class="auto-btn1"></div>
+                                                        <div class="auto-btn2"></div>
+                                                        <div class="auto-btn3"></div>
+                                                        <div class="auto-btn4"></div>
+                                                    </div>
+                                                    <!--automatic navigation end-->
                                             </div>
-                                            
-                                            <div class="slide">
-                                                <center>
-                                                    <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
-                                                    <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
-                                                    <h6 style="color: gray"><?php echo $food2['username'] ?></h6>
-                                                </center>
-                                            </div>
-                                            <div class="slide">
-                                                <center>
-                                                    <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
-                                                    <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
-                                                    <h6 style="color: gray"><?php echo $food3['username'] ?></h6>
-                                                </center>
-                                            </div>
-                                            <div class="slide">
-                                                <center>
-                                                    <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
-                                                    <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
-                                                    <h6 style="color: gray"><?php echo $food4['username'] ?></h6>
-                                                </center>
-                                            </div>
-                                            <!--automatic navigation start-->
-                                            <div class="navigation-auto">
-                                                <div  class="auto-btn1"></div>
-                                                <div class="auto-btn2"></div>
-                                                <div class="auto-btn3"></div>
-                                                <div class="auto-btn4"></div>
-                                            </div>
-                                            <!--automatic navigation end-->
-                                    </div>
-                                    <!--image slider end-->
-                                </div>
-                            </div>  
-                            <!--Feedback-->
+                                            <!--image slider end-->
+                                        </div>
+                                    </div>  
+                                    <!--Feedback-->
+
+                                    <?php
+                                }
+                            ?>
+                            
                         </div>
                     </div>
                 </div>
