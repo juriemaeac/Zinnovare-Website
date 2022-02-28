@@ -126,13 +126,13 @@ session_start();
                         </li>
                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+								<li><a href="all_menu.php">Menu</a></li>
+								<li><a href="add_menu.php">Add Dish</a></li>
                               
                                 
                             </ul>
                         </li>
-						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
+						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_orders.php">All Orders</a></li>
 								  
@@ -237,7 +237,13 @@ session_start();
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"  style="margin:0"> © Zinnovare 2022. All rights reserved. </footer>
+            <footer class="footer"  style="margin:0; padding-bottom:15px"> © 2017-2022.
+					<span class="copyright">
+						Zinnovare Inc.
+					</span>
+                    All Rights Reserved.
+            </footer>
+            
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->

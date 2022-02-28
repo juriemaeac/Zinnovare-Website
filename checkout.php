@@ -39,7 +39,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
-        <title>Starter Template for Bootstrap</title>
+        <title>Zinnovare Checkout</title>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -397,7 +397,7 @@
                                             </li>
                                             <li>
                                                 <label class="custom-control custom-radio  m-b-10">
-                                                    <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span> </label>
+                                                    <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Online Payment<br><img src="src/payment.png" style="margin-top:4px;" alt="" width="95"></span> </label>
                                             </li>
                                         </ul>
                                         <p class="text-xs-center"><input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn theme-btn btn-lg" value="Order now"></p>

@@ -21,7 +21,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" type="image/png" sizes="16x16" href="admin/images/logo1.png">
-        <title>Starter Template for Bootstrap</title>
+        <title>Zinnovare Order History</title>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">

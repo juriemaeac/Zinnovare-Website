@@ -108,13 +108,13 @@ else*/
                         </li>
                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+								<li><a href="all_menu.php">Menu</a></li>
+								<li><a href="add_menu.php">Add Dish</a></li>
                               
                                 
                             </ul>
                         </li>
-						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
+						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_orders.php">All Orders</a></li>
 								  
@@ -322,7 +322,7 @@ else*/
                                                     </thead>
                                                     <tbody>
                                                         <?php
-                                                            $sql="SELECT users.*, users_orders.* FROM users INNER JOIN (SELECT * FROM users_orders ORDER BY date DESC LIMIT 0,3) users_orders ON users.u_id=users_orders.u_id" ;
+                                                            $sql="SELECT users.*, users_orders.* FROM users INNER JOIN (SELECT * FROM users_orders ORDER BY users_orders.date DESC LIMIT 0,3) users_orders ON users.u_id=users_orders.u_id" ;
                                                             $query=mysqli_query($db,$sql);
                                                             
                                                             if(!mysqli_num_rows($query) > 0 )

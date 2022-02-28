@@ -11,17 +11,11 @@ session_start();
 if(isset($_POST['submit']))           //if upload btn is pressed
 {
 	
-			
-		
-			
-		  
-		
-		
-		if(empty($_POST['d_name'])||empty($_POST['about'])||$_POST['price']==''||$_POST['res_name']=='')
+		if(empty($_POST['d_name'])||empty($_POST['about'])||empty($_POST['price']))
 		{	
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Must be Fillup!</strong>
+											$error = 	'<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+																<button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<strong>All fields must be filled up!</strong>
 															</div>';
 									
 		
@@ -45,8 +39,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 										{
 		
 		
-												$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												$error = 	'<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+																<button type="button" style="color:#fff; opacity:100%;" class="close" style="background-color:red; color:#fff; border:red" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Max Image Size is 1024kb!</strong> Try different Image.
 															</div>';
 	   
@@ -58,13 +52,13 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 												
 												
 				                                 
-												$sql = "INSERT INTO dishes(rs_id,title,slogan,price,img) VALUE('".$_POST['res_name']."','".$_POST['d_name']."','".$_POST['about']."','".$_POST['price']."','".$fnew."')";  // store the submited data ino the database :images
+												$sql = "INSERT INTO dishes(rs_id,title,slogan,price,img) VALUE('48','".$_POST['d_name']."','".$_POST['about']."','".$_POST['price']."','".$fnew."')";  // store the submited data ino the database :images
 												mysqli_query($db, $sql); 
 												move_uploaded_file($temp, $store);
 			  
-													$success = 	'<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Congrass!</strong> New Dish Added Successfully.
+													$success = 	'<div class="alert alert-success alert-dismissible fade show" style="background-color:#00CC00; color:#fff; border:#00CC00">
+																<button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<strong>Congrats!</strong> New Dish Added Successfully.
 															</div>';
                 
 	
@@ -72,16 +66,16 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 					}
 					elseif($extension == '')
 					{
-						$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						$error = 	'<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+																<button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>select image</strong>
 															</div>';
 					}
 					else{
 					
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
+											$error = 	'<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+																<button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<strong>Invalid extension!</strong> png, jpg, gif are accepted.
 															</div>';
 						
 	   
@@ -226,13 +220,13 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                         </li>
                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+								<li><a href="all_menu.php">Menu</a></li>
+								<li><a href="add_menu.php">Add Dish</a></li>
                               
                                 
                             </ul>
                         </li>
-						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
+						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_orders.php">All Orders</a></li>
 								  
@@ -332,7 +326,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                         </div>
                                     </div>
                                     <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-success" value="save"> 
+                                        <input type="submit" name="submit" class="btn btn-success" value="Save"> 
                                         <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
                                     </div>
                                 </form>
