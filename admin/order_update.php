@@ -12,7 +12,7 @@ $remark=$_POST['remark'];
 $query=mysqli_query($db,"insert into remark(frm_id,status,remark) values('$form_id','$status','$remark')");
 $sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$form_id'");
 
-echo "<script>window.close();</script>";
+echo "<script>window.opener.location.reload(true);window.close();</script>";
 
 }
 
