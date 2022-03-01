@@ -163,7 +163,7 @@ include_once 'product-action.php'; //including controller
                             // displaying total sales of Burgerdilla
                             //$query_res123= mysqli_query($db,"select SUM(quantity) as sum from users_orders where title='Burgerdilla' AND status='closed'");
                             $val = $query_res123 -> fetch_array();
-                            $rws = $val['sum'];
+                            $rws = $val['sum'] ?? null;
                             while($r=mysqli_fetch_array($query_res))
                             {   
                                 echo '  

@@ -245,12 +245,13 @@ include_once 'product-action.php'; //including controller
                     <div class="menu-right">
                         <div class="menu-right-content1">
                         <?php 
+                            if(!empty($_SESSION["user_id"])){
+                                
                                 // displaying current session user login orders 
                                 $query_res= mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
                                 $row=mysqli_fetch_array($query_res);
-
-                                if(!empty($_SESSION["user_id"])){
-                            ?>
+                                ?>
+                            
                                     <img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
                             <h6>
                                 <span><?php echo $row['f_name']; ?></span>
@@ -278,29 +279,15 @@ include_once 'product-action.php'; //including controller
 
                             <?php
                                 }
-                                else{
-                                ?>
+                                else
+                                {
+                                    ?>  <br>
+                                        <img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
+                                        <div style="text-align:left; padding-top:10px; text-align:center;">
+                                            <a href="login.php">Welcome, Please Login.</a>
+                                        </div>
 
-                                <img class="coming-soon"src="src/user.png" alt="user" style="width:80px; height:80px;margin-bottom:10px">
-                            <h6>
-                                <span><?php echo $row['f_name']; ?></span>
-                                <span><?php echo $row['l_name']; ?></span>
-                            </h6>
-                            <div class="prev-profile" onclick="location.href='order_history.php';">
-                                
-                                <?php $sql="select * from users_orders WHERE u_id='".$_SESSION['user_id']."'";
-                                    $result=mysqli_query($db,$sql); 
-                                    $rws=mysqli_num_rows($result);
-                                    echo 'Total Orders: '.$rws;
-                                ?>
-                            </div>
-                            <br>
-                            <div style="text-align:left; padding-top:10px; text-align:center;">
-                                <a href="login.php">Welcome, Please Login.</a>
-                            </div>
-
-                                <?php
-                                
+                                    <?php
                                 }
                             
                             ?>
