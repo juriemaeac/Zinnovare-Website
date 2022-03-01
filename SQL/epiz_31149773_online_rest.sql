@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `dishes` (
 INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
 (11, 48, 'Burgerdilla', 'A hybrid of a burger and a quesadilla', '160', 'dish1.png'),
 (12, 48, 'Tacos', '3 Fried tortilla filled with ground beef, sauce, cheese, and veggies', '150', 'dish2.png'),
-(13, 48, 'Tuna Quesadilla', '8” tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'dish3.png'),
+(13, 48, 'Tuna Quesadilla', '8in tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'dish3.png'),
 (14, 48, 'Icecream', 'Fresh icecream available in different flavors', '100', 'dish4.png'),
 (15, 48, 'Tachos', '2 layer taco strips with ground beef, sauce, cheese, and veggies', '130', 'dish5.png'),
 (16, 48, 'Chicken', 'Fried chicken filled with ground beef, sauce, cheese, and veggies', '120', 'dish6.png'),
@@ -205,14 +205,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   `status` int(222) NOT NULL DEFAULT '1',
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `users`
 --
-INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `password`, `address`, `status`, `date`) VALUES
-(1, 'jurie123', 'jurie', 'mae', 'juriemae@gmail.com', '9041240385', '6d0361d5777656072438f6e314a852bc', 'badri col phase 2', 1, '2022-04-18 10:05:03'),
-(2, 'lance123', 'lance', 'philip', 'lancephilip@gmail.com', '6232125458', '6d0361d5777656072438f6e314a852bc', 'badri col phase 1', 1, '2022-04-18 09:50:56');
+
 
 
 -- --------------------------------------------------------
@@ -228,17 +226,15 @@ CREATE TABLE IF NOT EXISTS `users_orders` (
   `quantity` int(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `total` decimal(10,2) NOT NULL,
-  `status` varchar(222) NOT NULL,
+  `status` varchar(222) DEFAULT '' NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`o_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `users_orders`
 --
-INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `total`, `status`, `date`) VALUES
-(1, 1, 'chicken', 5, '17.99', '89.95', 'closed', '2022-04-18 19:51:50'),
-(2, 2, 'burgerdilla', 2, '34.99', '69.98', '', '2022-04-18 19:52:34');
+
 
 
 
