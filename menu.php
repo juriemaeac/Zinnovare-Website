@@ -125,7 +125,7 @@ include_once 'product-action.php'; //including controller
                                         ?>									
                                     
                                         <div class="title-row" style="font-weight: bold;">
-                                            <?php echo $item["title"]; ?><a href="?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
+                                            <?php echo $item["title"]; ?><a href="?res_id=48&action=remove&id=<?php echo $item["d_id"]; ?>" >
                                             <i class="fa fa-trash pull-right"></i></a>
                                         </div>
                                         

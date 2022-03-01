@@ -4,7 +4,9 @@
 
 
 session_start();
-error_reporting(0);
+error_reporting(E_ALL);
+$error="";
+$success="";
 include("../connection/connect.php");
 
 if(isset($_POST['submit'] ))

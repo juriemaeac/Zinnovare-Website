@@ -17,13 +17,11 @@
 
                 $item_total = ($item["price"]*$item["quantity"]);
             
-                if($_POST['submit'])
+                if(isset($_POST['submit']))
                 {
                     $SQL="insert into users_orders(u_id,title,quantity,price, total) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','".$item["price"]*$item["quantity"]."')";
 
                     mysqli_query($db,$SQL);
-                    
-                    $success = "Thankyou! Your Order Placed successfully!";
                     header("Location: order_history.php");
                     unset($_SESSION["cart_item"]);
                 }
@@ -146,7 +144,7 @@
                                             ?>									
                                         
                                             <div class="title-row" style="font-weight: bold;">
-                                                <?php echo $item["title"]; ?><a href="?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
+                                                <?php echo $item["title"]; ?><a href="?res_id=48&action=remove&id=<?php echo $item["d_id"]; ?>" >
                                                 <i class="fa fa-trash pull-right"></i></a>
                                             </div>
                                             
@@ -181,10 +179,10 @@
                                     </div>
                                 </div>
                                 <center>
-                                <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:15px;margin-bottom:20px">Checkout</a>
+                                <a href="checkout.php?res_id=48&action=check"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:15px;margin-bottom:20px">Checkout</a>
                                 <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:small; width: 30%; padding:15px; margin-bottom:20px">Close</button>
                                 <!--<?php if($item_total != 0): ?>
-                                    <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:15px;margin-bottom:20px">Checkout</a>
+                                    <a href="checkout.php?res_id=48&action=check"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:15px;margin-bottom:20px">Checkout</a>
                                 <?php elseif ($item_total == 0): ?>
                                     <a href="dishes.php?res_id=48" onclick="return confirm('Cart is Empty. Go to Menu?');" class="btn theme-btn btn-lg" style="font-size:small; width: 30%;padding:15px;margin-bottom:20px">Checkout</a>
                                 <?php endif; ?>  
@@ -215,17 +213,7 @@
                             
                     </div>
                 </div>-->
-                
-                    <div class="container">
-                    
-                        <span style="color:green;">
-                                    <?php echo $success; ?>
-                                            </span>
-                        
-                    </div>
-                
-                
-                
+
                     
                 <div class="container m-t-30">
                     <table class="co">
@@ -317,8 +305,7 @@
                                             
                     <div class="cart-totals-fields">
                         <?php
-                            $result = mysqli_query($db,"SELECT * FROM users_orders WHERE o_id = '".$_GET['o_id']."'");
-                            $details = mysqli_fetch_assoc($result);
+                            
 
                             $result1 = mysqli_query($db,"select * from users where u_id='".$_SESSION['user_id']."'");
                             $userdetails = mysqli_fetch_assoc($result1);
@@ -357,62 +344,52 @@
                     </div>
                     <!--left side end--></td>
 
-                    <!--right side start--><td>
-                    <div class="right-side">
-                <form action="" method="post">
+                    <!--right side start-->
+        <td>
+            <div class="right-side">
+                <div>
                     <div class="clearfix">
-
                         <div class="widget-body">
                             <form method="post" action="#">
-                                <div class="row">
-                                    
+                                <div class="row"> 
                                     <div class="col-sm-12">
                                         <div class="cart-totals margin-b-20">
                                             <div class="cart-totals-title">
                                                 <h4>Shipping Details</h4>
-                                            </div>
-                                            <div> <!-- address -->
-                                            
                                             </div>
                                             <div>
                                                 <p class="mb-0"><?php echo $userdetails['f_name']." ".$userdetails['l_name']?></p>
                                                 <p class="mb-0"><?php echo $userdetails['address'] ?></p>
                                                 <p class="mb-0"><?php echo $userdetails['email'] ?></p>
                                                 <p class="mb-0"><?php echo $userdetails['phone'] ?></p>
-                                            </div>
-                                                            
-                                            </div>
-                        
-                                                        
-                                                        <!--cart summary-->
-                                            <br>
-                                            <h4>Payment Option</h4>
-                                            
-                                            <div class="payment-option">
-                                                <ul class=" list-unstyled">
-                                                    <li>
-                                                        <label class="custom-control custom-radio  m-b-20">
-                                                            <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Payment on delivery</span>
-                                                            <br> <span>Please send your payment to Zinnovare, Bucal IV-A, Maragondon, Cavite, Philippines, 4112.</span> </label>
-                                                    </li>
-                                                    <li>
-                                                        <label class="custom-control custom-radio  m-b-10">
-                                                            <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Online Payment<br><img src="src/payment.png" style="margin-top:4px;" alt="" width="95"></span> </label>
-                                                    </li>
-                                                </ul>
-                                                <p class="text-xs-center"><input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn theme-btn btn-lg" value="Order now"></p>
-                                            </div>
-                                        </form>
+                                            </div>          
+                                        </div>
+                                        <br>
+                                        <h4>Payment Option</h4>
+                                        <div class="payment-option">
+                                            <ul class=" list-unstyled">
+                                                <li>
+                                                    <label class="custom-control custom-radio  m-b-20">
+                                                    <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Payment on delivery</span>
+                                                    <br>
+                                                    <span>Please send your payment to Zinnovare, Bucal IV-A, Maragondon, Cavite, Philippines, 4112.</span> </label>
+                                                </li>
+                                                <li>
+                                                    <label class="custom-control custom-radio  m-b-10">
+                                                    <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Online Payment<br><img src="src/payment.png" style="margin-top:4px;" alt="" width="95"></span> </label>
+                                                </li>
+                                            </ul>
+                                            <p class="text-xs-center"><input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn theme-btn btn-lg" value="Order now"></p>
+                                        </div>
                                     </div>
                                 </div>
-                        
+                            </form>
                         </div>
                     </div>
-                    </form>
-                    </div>
-
-                    </td><!--right side end-->
-                        </tr>
+                </div>
+            </div>
+        </td><!--right side end-->
+        </tr>
                     </table>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <?php
 
 include("../connection/connect.php");
-error_reporting(0);
+error_reporting(E_ALL);
 session_start();
 
   if(isset($_POST['update']))

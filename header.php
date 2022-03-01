@@ -104,7 +104,7 @@
                                         ?>									
                                     
                                         <div class="title-row" style="font-weight: bold;">
-                                            <?php echo $item["title"]; ?><a href="?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
+                                            <?php echo $item["title"]; ?><a href="?res_id=48&action=remove&id=<?php echo $item["d_id"]; ?>" >
                                             <i class="fa fa-trash pull-right"></i></a>
                                         </div>
                                         
@@ -139,7 +139,7 @@
                                 </div>
                             </div>
                             <center>
-                            <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:15px;margin-bottom:20px">Checkout</a>
+                            <a href="checkout.php?res_id=48&action=check"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:15px;margin-bottom:20px;">Checkout</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:small; width: 30%; padding:15px; margin-bottom:20px">Close</button>
                             <!--<?php if($item_total != 0): ?>
                                 <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg" style="font-size:small; width: 30%; padding:15px;margin-bottom:20px">Checkout</a>

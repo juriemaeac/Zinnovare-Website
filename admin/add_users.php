@@ -4,7 +4,9 @@
 
 
 session_start();
-error_reporting(0);
+error_reporting(E_ALL);
+$error="";
+$success="";
 include("../connection/connect.php");
 
 if(isset($_POST['submit'] ))
@@ -17,8 +19,8 @@ if(isset($_POST['submit'] ))
 		empty($_POST['phone']) ||
 		empty($_POST['address']))
 		{
-			$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			$error = '<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+																<button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>All fields Required!</strong>
 															</div>';
 		}

@@ -18,8 +18,9 @@
 <body>
 	<?php
 		include("connection/connect.php"); //INCLUDE CONNECTION
-		error_reporting(0); // hide undefine index errors
+		error_reporting(E_ALL); // hide undefine index errors
 		session_start(); // temp sessions
+		$message="";
 		if(isset($_POST['submit']))   // if button is submit
 		{
 			$username = $_POST['username'];  //fetch records from login form
@@ -80,7 +81,7 @@
 					</form>-->
 					<!--<span>username:admin</span>&nbsp;<span>password:1234</span>-->
 				
-					<span style="color:green;"><?php echo $success; ?></span>
+					
 					<form class="login-form" action="" method="post">
 						<input style="background: #D9D9D9;border-radius: 5px;" style="margin-top: 30px" type="text" placeholder="Username" name="username"/>
 						<input style="background: #D9D9D9;border-radius: 5px;" type="password" placeholder="Password" name="password"/>
