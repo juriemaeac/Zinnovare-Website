@@ -58,7 +58,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 			  
 													$success = 	'<div class="alert alert-success alert-dismissible fade show" style="background-color:#00CC00; color:#fff; border:#00CC00">
 																<button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Congrats!</strong> New Dish Added Successfully.
+																<strong>Congratulations!</strong> New Dish Added Successfully.
 															</div>';
                 
 	

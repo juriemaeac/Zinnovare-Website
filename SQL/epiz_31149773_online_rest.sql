@@ -1,0 +1,283 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 19, 2018 at 07:11 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `online_rest`
+--
+CREATE DATABASE IF NOT EXISTS `epiz_31149773_online_rest` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `epiz_31149773_online_rest`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `adm_id` int(222) NOT NULL AUTO_INCREMENT,
+  `username` varchar(222) NOT NULL,
+  `password` varchar(222) NOT NULL,
+  `email` varchar(222) NOT NULL,
+  `code` varchar(222) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`adm_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`adm_id`, `username`, `password`, `email`, `code`, `date`) VALUES
+(6, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'admin@gmail.com', '', '2018-04-09 07:36:18'),
+(8, 'abc888', '6d0361d5777656072438f6e314a852bc', 'abc@gmail.com', 'QX5ZMN', '2018-04-13 18:12:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_codes`
+--
+
+CREATE TABLE IF NOT EXISTS `admin_codes` (
+  `id` int(222) NOT NULL AUTO_INCREMENT,
+  `codes` varchar(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `admin_codes`
+--
+
+INSERT INTO `admin_codes` (`id`, `codes`) VALUES
+(1, 'QX5ZMN'),
+(2, 'QFE6ZM'),
+(3, 'QMZR92'),
+(4, 'QPGIOV'),
+(5, 'QSTE52'),
+(6, 'QMTZ2J');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dishes`
+--
+
+CREATE TABLE IF NOT EXISTS `dishes` (
+  `d_id` int(222) NOT NULL AUTO_INCREMENT,
+  `rs_id` int(222) NOT NULL,
+  `title` varchar(222) NOT NULL,
+  `slogan` varchar(222) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `img` varchar(222) NOT NULL,
+  PRIMARY KEY (`d_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `dishes`
+--
+
+INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
+(11, 48, 'Burgerdilla', 'A hybrid of a burger and a quesadilla', '160', 'dish1.png'),
+(12, 48, 'Tacos', '3 Fried tortilla filled with ground beef, sauce, cheese, and veggies', '150', 'dish2.png'),
+(13, 48, 'Tuna Quesadilla', '8” tortilla filled with chicken chunks and triple cheese cut into 4 slices', '170', 'dish3.png'),
+(14, 48, 'Icecream', 'Fresh icecream available in different flavors', '100', 'dish4.png'),
+(15, 48, 'Tachos', '2 layer taco strips with ground beef, sauce, cheese, and veggies', '130', 'dish5.png'),
+(16, 48, 'Chicken', 'Fried chicken filled with ground beef, sauce, cheese, and veggies', '120', 'dish6.png'),
+(17, 48, 'Decker', '2 deck of soft tortilla filled with beef strips, sauce, cheese, and veggies', '160', 'dish7.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `remark`
+--
+
+CREATE TABLE IF NOT EXISTS `remark` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `frm_id` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `remark` mediumtext NOT NULL,
+  `remarkDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=71 ;
+
+--
+-- Dumping data for table `remark`
+--
+
+INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
+(62, 32, 'in process', 'hi', '2018-04-18 17:35:52'),
+(63, 32, 'closed', 'cc', '2018-04-18 17:36:46'),
+(64, 32, 'in process', 'fff', '2018-04-18 18:01:37'),
+(65, 32, 'closed', 'its delv', '2018-04-18 18:08:55'),
+(66, 34, 'in process', 'on a way', '2018-04-18 18:56:32'),
+(67, 35, 'closed', 'ok', '2018-04-18 18:59:08'),
+(68, 37, 'in process', 'on the way!', '2018-04-18 19:50:06'),
+(69, 37, 'rejected', 'if admin cancel for any reason this box is for remark only for buter perposes', '2018-04-18 19:51:19'),
+(70, 37, 'closed', 'delivered success', '2018-04-18 19:51:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `restaurant`
+--
+
+CREATE TABLE IF NOT EXISTS `restaurant` (
+  `rs_id` int(222) NOT NULL AUTO_INCREMENT,
+  `c_id` int(222) NOT NULL,
+  `title` varchar(222) NOT NULL,
+  `email` varchar(222) NOT NULL,
+  `phone` varchar(222) NOT NULL,
+  `url` varchar(222) NOT NULL,
+  `o_hr` varchar(222) NOT NULL,
+  `c_hr` varchar(222) NOT NULL,
+  `o_days` varchar(222) NOT NULL,
+  `address` text NOT NULL,
+  `image` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`rs_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
+
+--
+-- Dumping data for table `restaurant`
+--
+
+INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
+(48, 5, 'Hari Burger', 'HariBurger@gmail.com', ' 090412 64676', 'HariBurger.com', '7am', '4pm', 'mon-tue', ' Palace,   natwar jalandhar', '5ad74ce37c383.jpg', '2018-04-18 13:49:23'),
+(49, 5, 'The Great Kabab Factory', 'kwbab@gmail.com', '011 2677 9070', 'kwbab.com', '6am', '5pm', 'mon-fri', 'Radisson Blu Plaza Hotel, Delhi Airport, NH-8, New Delhi, 110037', '5ad74de005016.jpg', '2018-04-18 13:53:36'),
+(50, 6, 'Aarkay Vaishno Dhaba', 'Vaishno@gmail.com', '090410 35147', 'Vaishno.com', '6am', '6pm', 'mon-sat', 'Bhargav Nagar, Jalandhar - Nakodar Rd, Jalandhar, Punjab 144003', '5ad74e5310ae4.jpg', '2018-04-18 13:55:31'),
+(51, 7, 'Martini', 'martin@gmail.com', '3454345654', 'martin.com', '8am', '4pm', 'mon-thu', '399 L Near Apple Showroom, Model Town,', '5ad74ebf1d103.jpg', '2018-04-18 13:57:19'),
+(52, 8, 'hudson', 'hud@gmail.com', '2345434567', 'hudson.com', '6am', '7pm', 'mon-fri', 'Opposite Lovely Sweets, Nakodar Road, Jalandhar, Punjab 144001', '5ad756f1429e3.jpg', '2018-04-18 14:32:17'),
+(53, 9, 'kriyana store', 'kari@gmail.com', '4512545784', 'kari.com', '7am', '7pm', 'mon-sat', 'near kalu gali hotel india what everrrr.', '5ad79e7d01c5a.jpg', '2018-04-18 19:37:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `res_category`
+--
+
+CREATE TABLE IF NOT EXISTS `res_category` (
+  `c_id` int(222) NOT NULL AUTO_INCREMENT,
+  `c_name` varchar(222) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `res_category`
+--
+
+INSERT INTO `res_category` (`c_id`, `c_name`, `date`) VALUES
+(5, 'grill', '2018-04-14 18:45:28'),
+(6, 'pizza', '2018-04-14 18:44:56'),
+(7, 'pasta', '2018-04-14 18:45:13'),
+(8, 'thaifood', '2018-04-14 18:32:56'),
+(9, 'fish', '2018-04-14 18:44:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `u_id` int(222) NOT NULL AUTO_INCREMENT,
+  `username` varchar(222) NOT NULL,
+  `f_name` varchar(222) NOT NULL,
+  `l_name` varchar(222) NOT NULL,
+  `email` varchar(222) NOT NULL,
+  `phone` varchar(222) NOT NULL,
+  `password` varchar(222) NOT NULL,
+  `address` text NOT NULL,
+  `status` int(222) NOT NULL DEFAULT '1',
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`u_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `users`
+--
+INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `password`, `address`, `status`, `date`) VALUES
+(1, 'jurie123', 'jurie', 'mae', 'juriemae@gmail.com', '9041240385', '6d0361d5777656072438f6e314a852bc', 'badri col phase 2', 1, '2022-04-18 10:05:03'),
+(2, 'lance123', 'lance', 'philip', 'lancephilip@gmail.com', '6232125458', '6d0361d5777656072438f6e314a852bc', 'badri col phase 1', 1, '2022-04-18 09:50:56');
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_orders`
+--
+
+CREATE TABLE IF NOT EXISTS `users_orders` (
+  `o_id` int(222) NOT NULL AUTO_INCREMENT,
+  `u_id` int(222) NOT NULL,
+  `title` varchar(222) NOT NULL,
+  `quantity` int(222) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `status` varchar(222) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`o_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `users_orders`
+--
+INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `total`, `status`, `date`) VALUES
+(1, 1, 'chicken', 5, '17.99', '89.95', 'closed', '2022-04-18 19:51:50'),
+(2, 2, 'burgerdilla', 2, '34.99', '69.98', '', '2022-04-18 19:52:34');
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `f_id` int(222) NOT NULL AUTO_INCREMENT,
+  `o_id` int(222) NOT NULL,
+  `u_id` int(222) NOT NULL,
+  `feed` varchar(222) NOT NULL,
+  `rating` varchar(222) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`f_id`, `o_id`, `u_id`, `feed`, `rating`, `date`) VALUES
+(1, 56, 34, 'awesome food', 'excellent', '2022-04-18 19:51:50'),
+(2, 57, 34, 'good food', 'excellent', '2022-04-18 19:52:34');
+
+-- --------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `fb` (
+  `f_id` int(222) NOT NULL AUTO_INCREMENT,
+  `o_id` int(222) NOT NULL,
+  `u_id` int(222) NOT NULL,
+  `feedback` varchar(222) NOT NULL,
+  `rating` int(222) NOT NULL,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

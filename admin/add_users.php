@@ -33,48 +33,48 @@ if(isset($_POST['submit'] ))
 	
     if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) // Validate email address
     {
-       	$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>invalid email!</strong>
-															</div>';
+       	$error = '<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+            <button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>invalid email!</strong>
+        </div>';
     }
 	elseif(strlen($_POST['password']) < 6)
 	{
-		$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Password must be >=6!</strong>
-															</div>';
+		$error = '<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+                    <button type="button"style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Password must be >=6!</strong>
+                </div>';
 	}
 	
 	elseif(strlen($_POST['phone']) < 10)
 	{
-		$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>invalid phone!</strong>
-															</div>';
+		$error = '<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+                    <button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>invalid phone!</strong>
+                </div>';
 	}
 	elseif(mysqli_num_rows($check_username) > 0)
      {
-    	$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Username already exist!</strong>
-															</div>';
+    	$error = '<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+                    <button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Username already exist!</strong>
+                </div>';
      }
 	elseif(mysqli_num_rows($check_email) > 0)
      {
-    	$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>email already exist!</strong>
-															</div>';
+    	$error = '<div class="alert alert-danger alert-dismissible fade show" style="background-color:red; color:#fff; border:red">
+                    <button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>email already exist!</strong>
+                </div>';
      }
 	else{
        
 	
 	$mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('".$_POST['uname']."','".$_POST['fname']."','".$_POST['lname']."','".$_POST['email']."','".$_POST['phone']."','".md5($_POST['password'])."','".$_POST['address']."')";
 	mysqli_query($db, $mql);
-			$success = 	'<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Congrass!</strong> New User Added Successfully.</br></div>';
+			$success = 	'<div class="alert alert-success alert-dismissible fade show" style="background-color:#00CC00; color:#fff; border:#00CC00">
+                        <button type="button" style="color:#fff; opacity:100%;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Congratulations!</strong> New User Added Successfully.</br></div>';
 	
     }
 	}
