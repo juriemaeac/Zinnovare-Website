@@ -3,7 +3,7 @@
     <?php
         include("connection/connect.php");
         include_once 'product-action.php'; //including controller
-        error_reporting(0);
+        error_reporting(E_ALL);
         session_start();
 
         if(empty($_SESSION['user_id']))  //if usser is not login redirected baack to login page

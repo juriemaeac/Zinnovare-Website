@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 include("connection/connect.php");  //include connection file
-error_reporting(0);  // using to hide undefine undex errors
+error_reporting(E_ALL);  // using to hide undefine undex errors
 session_start(); //start temp session until logout/browser closed
 
 include_once 'product-action.php'; //including controller
@@ -228,19 +228,18 @@ include_once 'product-action.php'; //including controller
                                 $rws123=mysqli_num_rows($result123);
 
                                 $sum = $row['SUM(rating)'];
-                                $ave = $sum/$rws123;
-                                $percentage = ($ave/5)*100;
+                                if ($rws123 == 0){
+                                    $ave = 0;
+                                    $percentage = 0;
+                                }
+                                else{
+                                    $ave = $sum/$rws123;
+                                    $percentage = ($ave/5)*100;
+                                }
                             ?>
                             <img src="src/star.png" style="height: 50px; width: 50px">      
                             <h2 style="color:orange; text-align:center;padding-top:8px; font-weight:bold">
-                                <?php 
-                                    if ($rws123 == NULL){
-                                        echo '0%';
-                                    }
-                                    else{
-                                        echo round($percentage, 2).'%';
-                                    }
-                                ?> 
+                                <?php echo round($percentage, 2).'%';?> 
                             </h2>
                             <?php
                                 if ($percentage >= 75){
