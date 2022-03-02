@@ -907,37 +907,36 @@ background-color: #f0ecec;
 
 .itemBox-head {
     position: absolute;
-    top: 15px;
+    top: 1vw;
     left: 0;
-    padding: 18px;
-    margin-left: 21px;
+    padding: 1vw;
+    margin-left: 2vw;
     padding-left: 0;
-    font-size: xx-large;
+    font-size: 2vw;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .itemBox .itemBox-sub-text {
     position: absolute;
     left: 0;
-    top: 80px;
+    top: 5vw;
     line-height: 1;
-    margin: 52px 8px;
-    margin-left: 21px;
+    margin: 3.5vw 1vw;
+    margin-left: 2vw;
     width: 80%;
     font-style: italic;
-    font-size: 18px;
+    font-size: 1vw;
     color: #e6e6e6;
 }
 
 .itemBox .itemBox-btn {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 105px 8px;
-    margin-left: 22px;
-    font-size: 14px;
-    padding: 5px 18px;
+    top: 8vw;
+    left: 8vw;
+    margin: 7vw 0.5vw;
+    margin-left: 2vw;
+    font-size: 0.8vw;
+    padding: 0.5vw 1vw;
     color: #fff;
     background-color: #e47618;
     border: 0;

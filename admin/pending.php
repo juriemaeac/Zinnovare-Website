@@ -14,7 +14,7 @@
             $password = ""; //password
             $dbname = "online_rest";  //database
             $db = mysqli_connect($servername, $username, $password, $dbname);
-            $sql = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ORDER BY o_id ASC";  
+            $sql = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id WHERE users_orders.status IN ('', 'null') ORDER BY o_id ASC";  
             $result = mysqli_query($db, $sql);  
             while($rows = mysqli_fetch_array($result))  
             {       
@@ -37,7 +37,7 @@
             require_once('tcpdf/tcpdf.php');  
             $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
             $obj_pdf->SetCreator(PDF_CREATOR);  
-            $obj_pdf->SetTitle("Zinnovare's Orders Report");  
+            $obj_pdf->SetTitle("Zinnovare's Pending Orders Report");  
             $obj_pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
             $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));  
             $obj_pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));  
@@ -51,7 +51,7 @@
             $obj_pdf->AddPage();  
             $content = '';  
             $content .= '  
-            <h3 align="center">Zinnovare\'s Orders Report</h3><br /><br />  
+            <h3 align="center">Zinnovare\'s Pending Orders Report</h3><br /><br />  
             <table border="1" cellspacing="0" cellpadding="5">  
                 <tr>  
                     <th width="5%">ID</th>
@@ -70,7 +70,7 @@
             while( ob_get_level() ) {
                 ob_end_clean();
             }
-            $obj_pdf->Output('Zinnovare-Orders-Report.pdf', 'I');  
+            $obj_pdf->Output('Pending-Orders-Report.pdf', 'I');  
         } 
 
         if(isset($_POST['update']))
@@ -236,7 +236,7 @@
                         
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">All User Orders</h4>
+                                    <h4 class="card-title">Pending Orders</h4>
                                 
                                     <div class="table-responsive m-t-40">
                                         <table id="myTable" class="table table-hover" style="font-size:15px;">
@@ -256,7 +256,7 @@
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                    $sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id";
+                                                    $sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id where users_orders.status IN ('', 'null')";
                                                     $query=mysqli_query($db,$sql);
                                                     
                                                     if(!mysqli_num_rows($query) > 0 )

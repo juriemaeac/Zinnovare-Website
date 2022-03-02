@@ -141,25 +141,9 @@ else*/
                 <!-- Start Page Content -->
                      <div class="row" style="padding-bottom:0">
                    
-                    <div class="col-md-3">
-                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i><img src="images/icons/menu1.png" alt="user" width="60px" height="60px"/></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from restaurant";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Categories</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 					
-					 <div class="col-md-3">
+					 <div class="col-md-3" onclick="location.href='all_menu.php';" style="cursor:pointer">
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
@@ -177,7 +161,7 @@ else*/
                         </div>
                     </div>
 					
-                    <div class="col-md-3">
+                    <div class="col-md-3" onclick="location.href='allusers.php';" style="cursor:pointer">
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle">
@@ -194,8 +178,10 @@ else*/
                             </div>
                         </div>
                     </div>
+
+                    
 					
-					<div class="col-md-3">
+					<div class="col-md-3" onclick="location.href='all_orders.php';" style="cursor:pointer">
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
@@ -220,61 +206,7 @@ else*/
                         <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/pending1.png" alt="user" width="60px" height="60px"/></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders WHERE status=''";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Pending</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <div class="media">
-                                <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/process1.png" alt="user" width="60px" height="60px"/></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders WHERE status='in process'";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Processing</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <div class="media">
-                                <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/rejected1.png" alt="user" width="60px" height="60px"/></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders WHERE status='rejected'";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Rejected</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <div class="media">
-                                <div class="media-left meida media-middle"> 
-                                    <span><i><img src="images/icons/revenue1.png" alt="user" width="60px" height="60px"/></i></span>
+                                    <span><i><img src="images/icons/revenue.png" alt="user" width="60px" height="60px"/></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
                                 <h2><?php 
@@ -300,6 +232,80 @@ else*/
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-3" onclick="location.href='pending.php';" style="cursor:pointer">
+                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i><img src="images/icons/pending1.png" alt="user" width="60px" height="60px"/></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php $sql="select * from users_orders WHERE status=''";
+												$result=mysqli_query($db,$sql); 
+													$rws=mysqli_num_rows($result);
+													
+													echo $rws;?></h2>
+                                    <p class="m-b-0">Pending</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" onclick="location.href='processing.php';" style="cursor:pointer">
+                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i><img src="images/icons/process1.png" alt="user" width="60px" height="60px"/></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php $sql="select * from users_orders WHERE status='in process'";
+												$result=mysqli_query($db,$sql); 
+													$rws=mysqli_num_rows($result);
+													
+													echo $rws;?></h2>
+                                    <p class="m-b-0">Processing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" onclick="location.href='delivered.php';" style="cursor:pointer">
+                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i><img src="images/icons/delivered.png" alt="user" width="60px" height="60px"/></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php $sql="select * from users_orders WHERE status='closed'";
+												$result=mysqli_query($db,$sql); 
+													$rws=mysqli_num_rows($result);
+													
+													echo $rws;?></h2>
+                                    <p class="m-b-0">Delivered</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" onclick="location.href='rejected.php';" style="cursor:pointer">
+                        <div class="card p-30" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i><img src="images/icons/rejected1.png" alt="user" width="60px" height="60px"/></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php $sql="select * from users_orders WHERE status='rejected'";
+												$result=mysqli_query($db,$sql); 
+													$rws=mysqli_num_rows($result);
+													
+													echo $rws;?></h2>
+                                    <p class="m-b-0">Cancelled</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
 
 
                     <div class="col-md-8">
@@ -515,70 +521,331 @@ else*/
                                 if ($rws == 0){
                                     echo '<center>No feedback yet.</center>';
                                 }
-                                else{
+                                else
+                                {
                                     ?>
-                                    <div class="feedback">
-                        
-                                        <div class="slider">
-                                            <div class="slides">
-                                                <!--radio buttons start-->
-                                                <input type="radio" name="radio-btn" id="radio1">
-                                                <input type="radio" name="radio-btn" id="radio2">
-                                                <input type="radio" name="radio-btn" id="radio3">
-                                                <input type="radio" name="radio-btn" id="radio4">
-                                                <!--radio buttons end-->
-                                                <!--slide images start-->
-                                                    <div class="slide first">
-                                                        <?php 
-                                                            $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
-                                                                JOIN dishes ON dishes.title=users_orders.title 
-                                                                JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
-                                                            $food1 = mysqli_fetch_assoc($result1);
-                                                            $food2 = mysqli_fetch_assoc($result1);
-                                                            $food3 = mysqli_fetch_assoc($result1);
-                                                            $food4 = mysqli_fetch_assoc($result1);
-                                                        ?>
+                                        <div class="feedback">
+                                            <?php 
+                                                $result1 = mysqli_query($db,"SELECT * FROM fb  JOIN users_orders ON fb.o_id=users_orders.o_id
+                                                    JOIN dishes ON dishes.title=users_orders.title 
+                                                    JOIN users ON fb.u_id=users.u_id ORDER BY RAND()");
+                                                $food1 = mysqli_fetch_assoc($result1);
+                                                $food2 = mysqli_fetch_assoc($result1);
+                                                $food3 = mysqli_fetch_assoc($result1);
+                                                $food4 = mysqli_fetch_assoc($result1);
 
-                                                        <center>
-                                                            <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
-                                                            <h6 style="color: gray;padding:0;"><?php echo $food1['title'] ?></h6>
-                                                            <h6 style="color: gray;padding:0;margin:0"><?php echo $food1['username'] ?></h6>
-                                                        </center>
+                                                if($food1 == NULL)
+                                                {
+                                                ?>
+                                                    <div class="slider">
+                                                        <div class="slides">
+                                                            <!--radio buttons start-->
+                                                            <input type="radio" name="radio-btn" id="radio1">
+                                                            <input type="radio" name="radio-btn" id="radio2">
+                                                            <input type="radio" name="radio-btn" id="radio3">
+                                                            <input type="radio" name="radio-btn" id="radio4">
+                                                            <!--radio buttons end-->
+                                                            <!--slide images start-->
+                                                                <div class="slide first">
+                                                                    
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <!--slide images end-->
+                                                                <!--automatic navigation start
+                                                                <div class="navigation-auto">
+                                                                    <div  class="auto-btn1"></div>
+                                                                    <div class="auto-btn2"></div>
+                                                                    <div class="auto-btn3"></div>
+                                                                    <div class="auto-btn4"></div>
+                                                                </div>-->
+                                                                <!--automatic navigation end-->
+                                                            </div>
+                                                            <!--manual navigation start-->
+                                                            <div class="navigation-manual">
+                                                                <label for="radio1" class="manual-btn"></label>
+                                                                <label for="radio2" class="manual-btn"></label>
+                                                                <label for="radio3" class="manual-btn"></label>
+                                                                <label for="radio4" class="manual-btn"></label>
+                                                            </div>
+                                                            <!--manual navigation end-->
+                                                        </div>
+                                                        <!--image slider end-->
+
                                                     </div>
+                                                <?php
+                                                
+                                                }
+                                                else if ($food2 == NULL)
+                                                {
+                                                ?>
+                                                    <div class="slider">
+                                                        <div class="slides">
+                                                            <!--radio buttons start-->
+                                                            <input type="radio" name="radio-btn" id="radio1">
+                                                            <input type="radio" name="radio-btn" id="radio2">
+                                                            <input type="radio" name="radio-btn" id="radio3">
+                                                            <input type="radio" name="radio-btn" id="radio4">
+                                                            <!--radio buttons end-->
+                                                            <!--slide images start-->
+                                                                <div class="slide first">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food1['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <!--slide images end-->
+                                                                <!--automatic navigation start
+                                                                <div class="navigation-auto">
+                                                                    <div  class="auto-btn1"></div>
+                                                                    <div class="auto-btn2"></div>
+                                                                    <div class="auto-btn3"></div>
+                                                                    <div class="auto-btn4"></div>
+                                                                </div>-->
+                                                                <!--automatic navigation end-->
+                                                            </div>
+                                                            <!--manual navigation start-->
+                                                            <div class="navigation-manual">
+                                                                <label for="radio1" class="manual-btn"></label>
+                                                                <label for="radio2" class="manual-btn"></label>
+                                                                <label for="radio3" class="manual-btn"></label>
+                                                                <label for="radio4" class="manual-btn"></label>
+                                                            </div>
+                                                            <!--manual navigation end-->
+                                                        </div>
+                                                        <!--image slider end-->
+
+                                                    </div>
+                                                <?php
+                                                }
+                                                else if ($food3 == NULL)
+                                                {
+                                                ?>
+                                                    <div class="slider">
+                                                        <div class="slides">
+                                                            <!--radio buttons start-->
+                                                            <input type="radio" name="radio-btn" id="radio1">
+                                                            <input type="radio" name="radio-btn" id="radio2">
+                                                            <input type="radio" name="radio-btn" id="radio3">
+                                                            <input type="radio" name="radio-btn" id="radio4">
+                                                            <!--radio buttons end-->
+                                                            <!--slide images start-->
+                                                                <div class="slide first">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food1['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food2['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <!--slide images end-->
+                                                                <!--automatic navigation start
+                                                                <div class="navigation-auto">
+                                                                    <div  class="auto-btn1"></div>
+                                                                    <div class="auto-btn2"></div>
+                                                                    <div class="auto-btn3"></div>
+                                                                    <div class="auto-btn4"></div>
+                                                                </div>-->
+                                                                <!--automatic navigation end-->
+                                                            </div>
+                                                            <!--manual navigation start-->
+                                                            <div class="navigation-manual">
+                                                                <label for="radio1" class="manual-btn"></label>
+                                                                <label for="radio2" class="manual-btn"></label>
+                                                                <label for="radio3" class="manual-btn"></label>
+                                                                <label for="radio4" class="manual-btn"></label>
+                                                            </div>
+                                                            <!--manual navigation end-->
+                                                        </div>
+                                                        <!--image slider end-->
+
+                                                    </div>
+                                                <?php
+                                                }
+                                                else if ($food4 == NULL)
+                                                {
+                                                ?>
+                                                    <div class="slider">
+                                                        <div class="slides">
+                                                            <!--radio buttons start-->
+                                                            <input type="radio" name="radio-btn" id="radio1">
+                                                            <input type="radio" name="radio-btn" id="radio2">
+                                                            <input type="radio" name="radio-btn" id="radio3">
+                                                            <input type="radio" name="radio-btn" id="radio4">
+                                                            <!--radio buttons end-->
+                                                            <!--slide images start-->
+                                                                <div class="slide first">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food1['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food2['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food2['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h6 style="color: gray">No feedback yet.</h6>
+                                                                    </center>
+                                                                </div>
+                                                                <!--slide images end-->
+                                                                <!--automatic navigation start
+                                                                <div class="navigation-auto">
+                                                                    <div  class="auto-btn1"></div>
+                                                                    <div class="auto-btn2"></div>
+                                                                    <div class="auto-btn3"></div>
+                                                                    <div class="auto-btn4"></div>
+                                                                </div>-->
+                                                                <!--automatic navigation end-->
+                                                            </div>
+                                                            <!--manual navigation start-->
+                                                            <div class="navigation-manual">
+                                                                <label for="radio1" class="manual-btn"></label>
+                                                                <label for="radio2" class="manual-btn"></label>
+                                                                <label for="radio3" class="manual-btn"></label>
+                                                                <label for="radio4" class="manual-btn"></label>
+                                                            </div>
+                                                            <!--manual navigation end-->
+                                                        </div>
+                                                        <!--image slider end-->
+
+                                                    </div>
+                                                <?php
+                                                }
+                                                else
+                                                {
+                                                ?>
+                                                    <div class="slider">
+                                                        <div class="slides">
+                                                            <!--radio buttons start-->
+                                                            <input type="radio" name="radio-btn" id="radio1">
+                                                            <input type="radio" name="radio-btn" id="radio2">
+                                                            <input type="radio" name="radio-btn" id="radio3">
+                                                            <input type="radio" name="radio-btn" id="radio4">
+                                                            <!--radio buttons end-->
+                                                            <!--slide images start-->
+                                                                <div class="slide first">
+                                                                    
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food1['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food1['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food1['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food2['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food3['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <center>
+                                                                        <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
+                                                                        <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
+                                                                        <h6 style="color: gray; font-weight:100"><?php echo $food4['username'] ?></h6>
+                                                                    </center>
+                                                                </div>
+                                                                <!--slide images end-->
+                                                                <!--automatic navigation start
+                                                                <div class="navigation-auto">
+                                                                    <div  class="auto-btn1"></div>
+                                                                    <div class="auto-btn2"></div>
+                                                                    <div class="auto-btn3"></div>
+                                                                    <div class="auto-btn4"></div>
+                                                                </div>-->
+                                                                <!--automatic navigation end-->
+                                                            </div>
+                                                            <!--manual navigation start-->
+                                                            <div class="navigation-manual">
+                                                                <label for="radio1" class="manual-btn"></label>
+                                                                <label for="radio2" class="manual-btn"></label>
+                                                                <label for="radio3" class="manual-btn"></label>
+                                                                <label for="radio4" class="manual-btn"></label>
+                                                            </div>
+                                                            <!--manual navigation end-->
+                                                        </div>
+                                                        <!--image slider end-->
+
+                                                    </div>
+                                                <?php
+                                                }
+                                                                                        
+                                            ?>
                                                     
-                                                    <div class="slide">
-                                                        <center>
-                                                            <h3 class="feedbackContent"><?php echo $food2['feedback'] ?></h3>
-                                                            <h6 style="color: gray"><?php echo $food2['title'] ?></h6>
-                                                            <h6 style="color: gray"><?php echo $food2['username'] ?></h6>
-                                                        </center>
-                                                    </div>
-                                                    <div class="slide">
-                                                        <center>
-                                                            <h3 class="feedbackContent"><?php echo $food3['feedback'] ?></h3>
-                                                            <h6 style="color: gray"><?php echo $food3['title'] ?></h6>
-                                                            <h6 style="color: gray"><?php echo $food3['username'] ?></h6>
-                                                        </center>
-                                                    </div>
-                                                    <div class="slide">
-                                                        <center>
-                                                            <h3 class="feedbackContent"><?php echo $food4['feedback'] ?></h3>
-                                                            <h6 style="color: gray"><?php echo $food4['title'] ?></h6>
-                                                            <h6 style="color: gray"><?php echo $food4['username'] ?></h6>
-                                                        </center>
-                                                    </div>
-                                                    <!--automatic navigation start-->
-                                                    <div class="navigation-auto">
-                                                        <div  class="auto-btn1"></div>
-                                                        <div class="auto-btn2"></div>
-                                                        <div class="auto-btn3"></div>
-                                                        <div class="auto-btn4"></div>
-                                                    </div>
-                                                    <!--automatic navigation end-->
-                                            </div>
-                                            <!--image slider end-->
-                                        </div>
-                                    </div>  
+                                        </div>  
                                     <!--Feedback-->
 
                                     <?php

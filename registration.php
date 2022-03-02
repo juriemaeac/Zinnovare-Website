@@ -133,11 +133,11 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
                                  </div>
                                  <div class="form-group col-sm-6">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> <small id="emailHelp" class="form-text text-muted">We"ll never share your email with anyone else.</small> 
+                                    <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> <small id="emailHelp" class="form-text text-muted">We will never share your email with anyone else.</small> 
                                  </div>
                                  <div class="form-group col-sm-6">
                                     <label for="exampleInputEmail1">Phone number</label>
-                                    <input class="form-control" type="text" name="phone" id="example-tel-input-3" placeholder="Phone"> <small class="form-text text-muted">We"ll never share your email with anyone else.</small> 
+                                    <input class="form-control" type="text" name="phone" id="example-tel-input-3" placeholder="Phone"> <small class="form-text text-muted">We will never share your phone number with anyone else.</small> 
                                  </div>
                                  <div class="form-group col-sm-6">
                                     <label for="exampleInputPassword1">Password</label>
