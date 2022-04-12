@@ -6,8 +6,7 @@ Check: http://zinnovare.great-site.net/
 
 Preview:
 ![image](https://user-images.githubusercontent.com/59803167/162956890-eb60e873-30f2-4105-85c6-59150fd1b037.png)
-![image](https://user-images.githubusercontent.com/59803167/162957166-9dadf570-be7c-4d4c-9bf2-ce18ed5753a3.png)
-![image](https://user-images.githubusercontent.com/59803167/162957344-66a14942-26f0-4d76-b7ca-930f28f6311a.png)
-![image](https://user-images.githubusercontent.com/59803167/162957377-4fe55d2c-9ca4-441f-82d1-78ad8f57385f.png)
-![image](https://user-images.githubusercontent.com/59803167/162957418-5e3e6cf9-5c0b-412f-8f6d-49e7018f2355.png)
-
+![image](https://user-images.githubusercontent.com/59803167/162957913-7c6ef342-3b37-4693-93b8-d5e2723faa8d.png)
+![image](https://user-images.githubusercontent.com/59803167/162957669-07197d67-6f96-45a2-8869-171ae59659c8.png)
+![image](https://user-images.githubusercontent.com/59803167/162957779-a1f60e52-dde0-4bdf-ae5d-feab2a846bd9.png)
+![image](https://user-images.githubusercontent.com/59803167/162957958-f17eda51-74e3-4aea-a26d-1829add5ec08.png)
