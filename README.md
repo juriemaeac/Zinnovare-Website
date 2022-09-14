@@ -1,7 +1,8 @@
 # Zinnovare-Website
 
-The idea of this project is to assist the business in improving its customer service. This will help the business to reach more customers as more people rely on food delivery services. Furthermore, with more customers to deal with, keeping track of their daily transactions is becoming a challenge. That’s why this project will also help the owners to store all the data such as customer list, sales, revenue, and profit.
+The idea of this e-commerce website project is to assist the business in improving its customer service. This will help the business to reach more customers as more people rely on food delivery services. Furthermore, with more customers to deal with, keeping track of their daily transactions is becoming a challenge. That’s why this project will also help the owners to store all the data such as customer list, sales, revenue, and profit.
 
+This was developed using HTML, CSS, PHP, and JavaScript. It also uses XAMPP cross-platform web server.
 
 Preview:
 ![image](https://user-images.githubusercontent.com/59803167/162956890-eb60e873-30f2-4105-85c6-59150fd1b037.png)
